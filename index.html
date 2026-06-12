@@ -1,460 +1,1000 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubens Simi - Apresentação Executiva</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* 1. CORPORATE VARIABLES & SETUP */
-        :root {
-            --bg-page: #e2e8f0; 
-            --bg-slide: #ffffff; 
-            --primary: #0f172a; 
-            --secondary: #0284c7; 
-            --accent: #38bdf8; 
-            --text-dark: #1e293b; 
-            --text-body: #475569; 
-            --border-light: #e2e8f0;
-            --shadow-subtle: 0 10px 40px rgba(15, 23, 42, 0.08);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubens Simi — Arquiteto & Desenvolvedor Sênior ADVPL/TLPP</title>
+<meta name="description" content="Portfólio de Rubens Simi: 20+ anos de engenharia TOTVS Protheus. Integrações de larga escala, arquitetura ADVPL/TLPP e cases em Avianca, Natura, Goodyear, JadLog e mais.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='bold' fill='%23ffc24b' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================================
+   RUBENS SIMI — ENGINEERING PORTFOLIO
+   Estética: "dark engineering / terminal editorial"
+   ============================================================ */
+:root {
+    --ink: #0a0e14;
+    --ink-2: #0e131c;
+    --ink-3: #131a26;
+    --line: rgba(232, 236, 241, 0.08);
+    --line-strong: rgba(232, 236, 241, 0.16);
+    --text: #e8ecf1;
+    --muted: #8b95a5;
+    --faint: #5a6372;
+    --amber: #ffc24b;
+    --amber-deep: #e8a020;
+    --cyan: #5fd4ff;
+    --green: #4fd6a5;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Archivo', sans-serif;
+    --serif: 'Fraunces', serif;
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            background-color: var(--bg-page);
-            background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
-            background-size: 20px 20px;
-            color: var(--text-body);
-            display: grid;
-            gap: 40px;
-            place-items: center;
-            padding: 40px 0;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: var(--amber); color: var(--ink); }
 
-        /* 2. SLIDE CONTAINER */
-        .slide-container {
-            align-items: center;
-            background: var(--bg-slide);
-            border-radius: 8px;
-            border: 1px solid #ffffff;
-            box-shadow: var(--shadow-subtle);
-            display: flex;
-            flex-direction: column;
-            height: 720px;
-            justify-content: center;
-            overflow: hidden;
-            padding: 50px 60px;
-            position: relative;
-            width: 1280px;
-        }
+html { scroll-behavior: smooth; }
 
-        .slide-container::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
+body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        /* 3. TYPOGRAPHY */
-        h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; letter-spacing: -0.5px; }
-        h1 { font-size: 70px; line-height: 1.1; margin-bottom: 10px; font-family: 'Merriweather', serif;}
-        h1 span { color: var(--secondary); }
-        .slide-title {
-            align-self: flex-start;
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-            color: var(--primary);
-        }
-        .slide-title::after {
-            content: ''; position: absolute; bottom: -10px; left: 0; width: 50px; height: 4px;
-            background: var(--secondary); border-radius: 2px;
-        }
-        p, li { font-size: 16px; line-height: 1.6; color: var(--text-body); }
-        strong { color: var(--text-dark); font-weight: 600; }
-        .content-area { width: 100%; display: flex; flex-direction: column; flex-grow: 1; justify-content: center; }
+/* grain + grid atmosphere */
+body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(232,236,241,0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(232,236,241,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    z-index: 0;
+}
+body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 70% -10%, rgba(95, 212, 255, 0.07), transparent 60%),
+                radial-gradient(ellipse 60% 40% at 10% 110%, rgba(255, 194, 75, 0.05), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
 
-        /* 4. LAYOUTS & COMPONENTS */
-        .tag-pill {
-            display: inline-flex; align-items: center;
-            background: #f1f5f9;
-            border: 1px solid var(--border-light);
-            color: var(--secondary);
-            padding: 6px 14px; border-radius: 20px;
-            font-size: 12px; font-weight: 600;
-            margin: 0 8px 8px 0; text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .hero-layout { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 40px; height: 100%; align-items: center; }
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; margin-top: 40px; }
-        .stat-box { background: #ffffff; border: 1px solid var(--border-light); padding: 40px 30px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s ease; }
-        .stat-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-subtle); }
-        .stat-num { font-size: 56px; font-weight: 800; color: var(--secondary); margin-bottom: 10px; }
-        .stat-label { font-size: 15px; color: var(--text-body); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;}
+main, header, footer { position: relative; z-index: 1; }
 
-        /* 5. CASES GRID */
-        .cases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
-        .case-card { background: #ffffff; border: 1px solid var(--border-light); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.3s ease; }
-        .case-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.06); border-color: #cbd5e1; transform: translateY(-3px); }
-        .company-logo-area { height: 50px; display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px; }
-        .company-logo-area img { max-height: 35px; max-width: 110px; object-fit: contain; filter: grayscale(100%) opacity(0.7); transition: all 0.3s ease; }
-        .case-card:hover .company-logo-area img { filter: grayscale(0%) opacity(1); }
-        .logo-fallback { font-size: 20px; font-weight: 700; color: var(--text-dark); display: none; align-items: center; gap: 8px; }
-        .logo-fallback i { color: var(--secondary); font-size: 18px;}
-        .case-card h4 { font-size: 17px; margin-bottom: 8px; color: var(--primary); }
-        .case-card p { font-size: 13px; line-height: 1.5; color: var(--text-body); flex-grow: 1; }
-        .case-tech { margin-top: 15px; font-size: 11px; color: var(--secondary); font-weight: 600; text-transform: uppercase; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 
-        /* 6. VERTICAL TIMELINE */
-        .timeline-container { display: flex; gap: 40px; width: 100%; height: 100%; align-items: flex-start; }
-        .vertical-timeline { position: relative; padding-left: 24px; width: 100%; }
-        .vertical-timeline::before { content: ''; position: absolute; left: 0; top: 10px; height: 95%; width: 2px; background: var(--border-light); }
-        .v-node { position: relative; margin-bottom: 22px; }
-        .v-node::before { content: ''; position: absolute; left: -31px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--secondary); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--border-light); }
-        .v-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
-        .v-title { font-size: 16px; font-weight: 700; color: var(--primary); }
-        .v-date { font-size: 12px; font-weight: 600; color: var(--secondary); background: #f0f9ff; padding: 2px 8px; border-radius: 12px; }
-        .v-company { font-size: 14px; font-weight: 600; color: var(--text-body); margin-bottom: 6px; display: block;}
-        .v-desc { font-size: 13px; line-height: 1.5; color: var(--text-body); text-align: justify; }
+/* ============ SCROLL PROGRESS ============ */
+#progress {
+    position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+    background: linear-gradient(90deg, var(--amber), var(--cyan));
+    z-index: 200;
+}
 
-        /* 7. LINKEDIN POSTS GRID (NEW) - OPTIMIZED FOR NO CLIPPING */
-        .posts-grid { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 15px; }
-        .post-card { 
-            display: flex; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); 
-            border-radius: 8px; padding: 12px 20px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s, border-color 0.2s; 
-        }
-        .post-card:hover { transform: translateX(8px); box-shadow: 0 6px 15px rgba(0,0,0,0.06); border-color: var(--secondary); }
-        .post-icon { font-size: 24px; color: #0a66c2; margin-right: 20px; /* LinkedIn Blue */ }
-        .post-content { flex: 1; }
-        .post-content h4 { color: var(--primary); font-size: 16px; margin-bottom: 4px; }
-        .post-content p { font-size: 13px; color: var(--text-body); margin: 0; line-height: 1.4; font-style: italic; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .post-btn { 
-            background: #e0f2fe; color: #0284c7; padding: 6px 14px; border-radius: 20px; 
-            font-size: 12px; font-weight: 600; white-space: nowrap; margin-left: 15px; transition: background 0.2s; 
-        }
-        .post-card:hover .post-btn { background: #0284c7; color: white; }
+/* ============ NAV ============ */
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+nav.scrolled {
+    background: rgba(10, 14, 20, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom-color: var(--line);
+}
+.nav-inner {
+    max-width: 1180px; margin: 0 auto; padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.nav-logo {
+    font-family: var(--mono); font-weight: 600; font-size: 15px;
+    color: var(--text); text-decoration: none; letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+.nav-logo span { color: var(--amber); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+    font-family: var(--mono); font-size: 12.5px; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.4px; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-links a::before { content: '/'; color: var(--faint); margin-right: 4px; }
+.nav-cta {
+    font-family: var(--mono); font-size: 12.5px; font-weight: 600;
+    color: var(--ink) !important; background: var(--amber);
+    padding: 8px 16px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+.nav-cta::before { content: '' !important; margin: 0 !important; }
+.nav-cta:hover { background: #ffd070; color: var(--ink) !important; transform: translateY(-1px); }
 
-        /* 8. BUSINESS CARD */
-        .biz-card { background: #ffffff; border: 1px solid var(--border-light); border-radius: 12px; box-shadow: var(--shadow-subtle); display: flex; overflow: hidden; width: 900px; height: 350px; }
-        .biz-left { background: var(--primary); color: #ffffff; padding: 50px; width: 40%; display: flex; flex-direction: column; justify-content: center; }
-        .biz-left h2 { color: #ffffff; font-size: 36px; font-family: 'Merriweather', serif; margin-bottom: 10px;}
-        .biz-left p { color: var(--accent); font-size: 18px; }
-        .biz-right { padding: 50px; width: 60%; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-        .contact-row { display: flex; align-items: center; gap: 15px; font-size: 18px; color: var(--text-dark); text-decoration: none;}
-        .contact-row i { color: var(--secondary); font-size: 24px; width: 30px; text-align: center; }
-        .contact-row:hover span { color: var(--secondary); }
+/* ============ HERO ============ */
+.hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 140px 0 80px;
+    position: relative;
+}
+.hero-grid {
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px; align-items: center; width: 100%;
+}
+.hero-label {
+    font-family: var(--mono); font-size: 13px; color: var(--green);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+}
+.hero-label .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 0 0 rgba(79, 214, 165, 0.6);
+    animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(79, 214, 165, 0.5); }
+    70% { box-shadow: 0 0 0 9px rgba(79, 214, 165, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(79, 214, 165, 0); }
+}
+h1 {
+    font-size: clamp(52px, 7.2vw, 88px);
+    font-weight: 900; line-height: 0.98;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+h1 .accent { color: var(--amber); }
+h1 .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--line-strong);
+}
+.hero-role {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: clamp(19px, 2.2vw, 24px); color: var(--muted);
+    margin-bottom: 26px; max-width: 520px;
+}
+.hero-role strong { color: var(--cyan); font-weight: 600; }
+.hero-desc {
+    font-size: 16.5px; color: var(--muted); max-width: 520px;
+    margin-bottom: 36px;
+}
+.hero-desc strong { color: var(--text); font-weight: 600; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 14px; font-weight: 600;
+    padding: 14px 26px; border-radius: 6px; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+}
+.btn-primary {
+    background: var(--amber); color: var(--ink);
+    box-shadow: 0 8px 24px -8px rgba(255, 194, 75, 0.45);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px -8px rgba(255, 194, 75, 0.55); }
+.btn-ghost {
+    border: 1px solid var(--line-strong); color: var(--text); background: transparent;
+}
+.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-3px); }
 
-        .tech-vector-container { width: 100%; max-width: 450px; height: auto; display: flex; justify-content: center; align-items: center; }
+/* ============ TERMINAL ============ */
+.terminal {
+    background: var(--ink-2);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(95, 212, 255, 0.04);
+    overflow: hidden;
+    transform: rotate(1.2deg);
+    transition: transform 0.4s ease;
+}
+.terminal:hover { transform: rotate(0deg) scale(1.01); }
+.term-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 13px 18px; border-bottom: 1px solid var(--line);
+    background: rgba(232, 236, 241, 0.02);
+}
+.term-bar .b { width: 12px; height: 12px; border-radius: 50%; }
+.b-r { background: #ff5f57; } .b-y { background: #febc2e; } .b-g { background: #28c840; }
+.term-title {
+    font-family: var(--mono); font-size: 12px; color: var(--faint);
+    margin-left: auto; margin-right: auto;
+}
+.term-body {
+    padding: 24px 26px 28px;
+    font-family: var(--mono); font-size: 13.5px; line-height: 1.85;
+    min-height: 300px;
+}
+.term-body .ln { display: block; white-space: pre-wrap; }
+.tk-kw { color: var(--cyan); }
+.tk-fn { color: var(--amber); }
+.tk-str { color: var(--green); }
+.tk-cm { color: var(--faint); font-style: italic; }
+.tk-var { color: #c8a8ff; }
+.cursor {
+    display: inline-block; width: 8px; height: 17px;
+    background: var(--amber); vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 
-        @media print {
-            body { background: #ffffff !important; background-image: none !important; padding: 0 !important; margin: 0 !important; }
-            .slide-container { width: 297mm !important; height: 210mm !important; page-break-after: always !important; break-after: page !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; margin: 0 !important; padding: 30px 40px !important; position: relative !important; display: flex !important; flex-direction: column !important; justify-content: center !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            .slide-container::before { height: 4px !important; }
-            .slide-title { margin-bottom: 25px !important; font-size: 30px !important; }
-            .post-card { border-color: #e2e8f0 !important; break-inside: avoid !important;}
-        }
-    </style>
+/* ============ MARQUEE ============ */
+.marquee-section {
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 26px 0; overflow: hidden; background: var(--ink-2);
+}
+.marquee { display: flex; width: max-content; animation: scroll 36s linear infinite; }
+.marquee-section:hover .marquee { animation-play-state: paused; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+.marquee-group { display: flex; align-items: center; }
+.marquee-item {
+    font-family: var(--sans); font-weight: 800; font-size: 22px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--faint); padding: 0 36px;
+    display: flex; align-items: center; gap: 36px;
+    transition: color 0.3s; white-space: nowrap;
+}
+.marquee-item:hover { color: var(--amber); }
+.marquee-item::after { content: '◆'; font-size: 10px; color: var(--amber); }
+.marquee-item .logo-chip { margin-right: -18px; }
+
+/* toast "e-mail copiado" */
+#toast {
+    position: fixed; bottom: 28px; left: 50%;
+    transform: translate(-50%, 16px);
+    background: var(--ink-3); border: 1px solid var(--line-strong);
+    color: var(--text); font-family: var(--mono); font-size: 13px;
+    padding: 11px 20px; border-radius: 6px;
+    opacity: 0; transition: opacity 0.3s, transform 0.3s;
+    z-index: 300; pointer-events: none;
+}
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+#toast i { color: var(--green); margin-right: 8px; }
+
+/* ============ SECTIONS ============ */
+section { padding: 110px 0; }
+.sec-head { margin-bottom: 60px; }
+.sec-tag {
+    font-family: var(--mono); font-size: 13px; color: var(--amber);
+    display: block; margin-bottom: 14px; letter-spacing: 0.5px;
+}
+.sec-title {
+    font-size: clamp(34px, 4.5vw, 52px); font-weight: 800;
+    letter-spacing: -0.02em; line-height: 1.05;
+    text-transform: uppercase;
+}
+.sec-title em { font-family: var(--serif); font-weight: 400; text-transform: none; color: var(--cyan); letter-spacing: 0; }
+.sec-sub { color: var(--muted); max-width: 640px; margin-top: 18px; font-size: 16.5px; }
+
+/* ============ STATS ============ */
+.stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line-strong); border-radius: 12px; overflow: hidden;
+}
+.stat {
+    padding: 44px 32px; border-right: 1px solid var(--line);
+    background: var(--ink-2); transition: background 0.3s;
+    position: relative;
+}
+.stat:last-child { border-right: none; }
+.stat:hover { background: var(--ink-3); }
+.stat:hover .stat-num { color: var(--amber); }
+.stat-num {
+    font-size: 54px; font-weight: 900; letter-spacing: -0.03em;
+    color: var(--text); line-height: 1; margin-bottom: 12px;
+    transition: color 0.3s; font-variant-numeric: tabular-nums;
+}
+.stat-num sup { font-size: 26px; color: var(--amber); }
+.stat-label {
+    font-family: var(--mono); font-size: 12.5px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* ============ CASES ============ */
+.cases-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.case {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 34px 34px 30px; background: var(--ink-2);
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.case::before {
+    content: attr(data-num);
+    position: absolute; top: 18px; right: 24px;
+    font-family: var(--mono); font-size: 13px; color: var(--faint);
+}
+.case::after {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--amber); transform: scaleY(0); transform-origin: top;
+    transition: transform 0.35s ease;
+}
+.case:hover { border-color: var(--line-strong); transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(0,0,0,0.7); }
+.case:hover::after { transform: scaleY(1); }
+.case-client {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+}
+/* logo chip: mostra o logo real da empresa; cai para o ícone se falhar */
+.logo-chip {
+    width: 42px; height: 42px; flex: none;
+    display: grid; place-items: center; overflow: hidden;
+    border: 1px solid var(--line-strong); border-radius: 9px;
+    background: rgba(255, 194, 75, 0.06);
+}
+.logo-chip i { font-size: 17px; color: var(--amber); }
+.logo-chip img { display: none; width: 78%; height: 78%; object-fit: contain; }
+.logo-chip.logo-ok { background: #fff; border-color: #fff; }
+.logo-chip.logo-ok img { display: block; }
+.logo-chip.logo-ok i { display: none; }
+.logo-chip.mini { width: 34px; height: 34px; border-radius: 7px; }
+.logo-chip.mini i { font-size: 14px; }
+.case-client span {
+    font-weight: 800; font-size: 17px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.case h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+.case p { font-size: 14.5px; color: var(--muted); margin-bottom: 20px; }
+.case p strong { color: var(--text); }
+.case-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+.case-tech span {
+    font-family: var(--mono); font-size: 11px; color: var(--cyan);
+    border: 1px solid rgba(95, 212, 255, 0.25); border-radius: 4px;
+    padding: 4px 10px; background: rgba(95, 212, 255, 0.05);
+}
+
+/* ============ STACK ============ */
+#stack { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stack-col {
+    border: 1px solid var(--line); border-radius: 12px; padding: 34px;
+    background: var(--ink);
+}
+.stack-col h3 {
+    font-family: var(--mono); font-size: 14px; font-weight: 600;
+    color: var(--amber); margin-bottom: 24px; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 10px;
+}
+.stack-col h3 i { color: var(--cyan); }
+.stack-list { list-style: none; }
+.stack-list li {
+    font-size: 15px; color: var(--muted); padding: 9px 0;
+    border-bottom: 1px dashed var(--line); display: flex; gap: 12px; align-items: baseline;
+    transition: color 0.2s, padding-left 0.2s;
+}
+.stack-list li:last-child { border-bottom: none; }
+.stack-list li:hover { color: var(--text); padding-left: 6px; }
+.stack-list li::before { content: '▸'; color: var(--amber); font-size: 11px; }
+.stack-list li strong { color: var(--text); font-weight: 600; }
+
+/* ============ TIMELINE ============ */
+.timeline { position: relative; max-width: 860px; }
+.timeline::before {
+    content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(to bottom, var(--amber), var(--line) 30%, var(--line));
+}
+.t-item { position: relative; padding: 0 0 48px 52px; }
+.t-item:last-child { padding-bottom: 0; }
+.t-item::before {
+    content: ''; position: absolute; left: 0; top: 7px;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: var(--ink); border: 2px solid var(--amber);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.t-item:hover::before { background: var(--amber); box-shadow: 0 0 18px rgba(255, 194, 75, 0.5); }
+.t-date {
+    font-family: var(--mono); font-size: 12.5px; color: var(--amber);
+    display: inline-block; margin-bottom: 8px;
+    border: 1px solid rgba(255, 194, 75, 0.3); border-radius: 4px;
+    padding: 3px 10px; background: rgba(255, 194, 75, 0.06);
+}
+.t-item h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.t-company {
+    font-family: var(--mono); font-size: 13.5px; color: var(--cyan);
+    display: block; margin: 5px 0 12px;
+}
+.t-item p { font-size: 15px; color: var(--muted); max-width: 700px; }
+.t-item p strong { color: var(--text); }
+.t-edu {
+    margin-top: 56px; border: 1px solid var(--line-strong); border-radius: 12px;
+    padding: 30px 34px; background: var(--ink-2); max-width: 860px;
+    display: flex; gap: 22px; align-items: flex-start;
+}
+.t-edu i { font-size: 26px; color: var(--amber); margin-top: 4px; }
+.t-edu h4 { font-size: 17px; margin-bottom: 8px; }
+.t-edu p { font-size: 14.5px; color: var(--muted); }
+.t-edu p strong { color: var(--text); }
+
+/* ============ INSIGHTS ============ */
+#insights { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.posts { display: flex; flex-direction: column; }
+.post {
+    display: grid; grid-template-columns: 64px 1fr auto; gap: 26px; align-items: center;
+    padding: 30px 10px; border-bottom: 1px solid var(--line);
+    text-decoration: none; transition: background 0.25s, padding-left 0.25s;
+    border-radius: 8px;
+}
+.post:first-child { border-top: 1px solid var(--line); }
+.post:hover { background: rgba(255, 194, 75, 0.04); padding-left: 22px; }
+.post-num {
+    font-family: var(--mono); font-size: 14px; color: var(--faint);
+}
+.post h3 {
+    font-size: 20px; font-weight: 700; color: var(--text);
+    letter-spacing: -0.01em; margin-bottom: 6px; transition: color 0.25s;
+}
+.post:hover h3 { color: var(--amber); }
+.post p { font-size: 14px; color: var(--muted); font-family: var(--serif); font-style: italic; max-width: 720px; }
+.post-arrow {
+    font-size: 20px; color: var(--faint); transition: transform 0.25s, color 0.25s;
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 12px;
+}
+.post-arrow i { font-size: 18px; }
+.post:hover .post-arrow { color: var(--amber); transform: translateX(6px); }
+
+/* ============ CONTACT ============ */
+#contato { padding-bottom: 60px; }
+.contact-box {
+    border: 1px solid var(--line-strong); border-radius: 18px;
+    padding: 80px 60px; text-align: center; position: relative; overflow: hidden;
+    background: radial-gradient(ellipse 70% 90% at 50% 120%, rgba(255, 194, 75, 0.1), transparent 60%), var(--ink-2);
+}
+.contact-box h2 {
+    font-size: clamp(34px, 4.5vw, 56px); font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.05;
+    margin-bottom: 18px;
+}
+.contact-box h2 em { font-family: var(--serif); font-weight: 400; text-transform: none; color: var(--amber); }
+.contact-box > p { color: var(--muted); max-width: 540px; margin: 0 auto 40px; font-size: 16.5px; }
+.contact-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+.contact-rows {
+    display: flex; gap: 36px; justify-content: center; flex-wrap: wrap;
+    border-top: 1px solid var(--line); padding-top: 36px;
+}
+.contact-rows a, .contact-rows span {
+    font-family: var(--mono); font-size: 13.5px; color: var(--muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    transition: color 0.2s;
+}
+.contact-rows a:hover { color: var(--amber); }
+.contact-rows i { color: var(--amber); }
+
+/* ============ FOOTER ============ */
+footer {
+    padding: 34px 0; border-top: 1px solid var(--line);
+}
+.footer-inner {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+footer p { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+footer p span { color: var(--amber); }
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .terminal { transform: rotate(0); max-width: 620px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--line); }
+    .stat:nth-child(2n) { border-right: none; }
+    .stack-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .post { grid-template-columns: 1fr; gap: 10px; }
+    .post-num { display: none; }
+    .post-arrow { justify-content: flex-start; }
+    .contact-box { padding: 56px 28px; }
+    section { padding: 80px 0; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat { border-right: none; }
+}
+
+/* ============ PRINT ============ */
+@media print {
+    body { background: #fff; color: #111; }
+    body::before, body::after, #progress, nav, .marquee-section { display: none; }
+    .terminal, .case, .stack-col, .contact-box, .stat { border-color: #ddd; background: #fff; box-shadow: none; }
+    .reveal { opacity: 1; transform: none; }
+    h1, .sec-title, .case h3, .t-item h3, .post h3, .contact-box h2, .stat-num { color: #111; }
+    p, li, .stat-label, .hero-desc, .sec-sub { color: #444; }
+}
+</style>
 </head>
 <body>
 
-<div class="slide-container" id="slide1">
-    <div class="hero-layout">
-        <div style="padding-right: 20px;">
-            <h1>Rubens<br><span>Simi</span></h1>
-            <h2 style="font-size: 26px; color: var(--text-body); margin: 15px 0 25px 0; font-weight: 400;">Arquiteto & Desenvolvedor <strong style="color: var(--primary);">Sênior ADVPL</strong></h2>
-            
-            <div style="margin-bottom: 25px;">
-                <span class="tag-pill"><i class="fa-solid fa-microchip" style="margin-right: 6px;"></i> Arquitetura TOTVS</span>
-                <span class="tag-pill"><i class="fa-solid fa-network-wired" style="margin-right: 6px;"></i> Integrações Complexas</span>
-                <span class="tag-pill"><i class="fa-solid fa-database" style="margin-right: 6px;"></i> Gestão de Dados</span>
-            </div>
-            
-            <p style="font-size: 17px; line-height: 1.6; margin-bottom: 25px;">Soluções sistêmicas orientadas a resultados. Transformando requisitos de negócio complexos em arquiteturas resilientes, escaláveis e focadas na otimização de custos.</p>
-            
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="https://www.linkedin.com/in/rubens-simi/" target="_blank" style="display: inline-flex; align-items: center; background: #0a66c2; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 15px; box-shadow: 0 4px 6px rgba(10, 102, 194, 0.2);">
-                    <i class="fa-brands fa-linkedin" style="font-size: 20px; margin-right: 10px;"></i> Conecte-se no LinkedIn
-                </a>
-                
-                <a href="https://wa.me/5511953523317" target="_blank" style="display: inline-flex; align-items: center; background: #25D366; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 15px; box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 20px; margin-right: 10px;"></i> Enviar WhatsApp
-                </a>
-            </div>
-        </div>
-        <div class="tech-vector-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
-                <defs>
-                    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#0f172a" /><stop offset="100%" stop-color="#1e293b" />
-                    </linearGradient>
-                    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
-                        <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.15" />
-                    </filter>
-                </defs>
-                <rect x="150" y="140" width="200" height="120" rx="10" fill="url(#primaryGrad)" filter="url(#dropShadow)" stroke="#e2e8f0" stroke-width="2"/>
-                <rect x="170" y="165" width="160" height="20" rx="4" fill="#0284c7" fill-opacity="0.2" />
-                <circle cx="185" cy="175" r="5" fill="#38bdf8" />
-                <rect x="200" y="172" width="110" height="6" rx="3" fill="#38bdf8" />
-                <rect x="170" y="200" width="160" height="20" rx="4" fill="#0284c7" fill-opacity="0.2" />
-                <circle cx="185" cy="210" r="5" fill="#38bdf8" />
-                <rect x="200" y="207" width="110" height="6" rx="3" fill="#38bdf8" />
-                <g transform="translate(40, 80)" filter="url(#dropShadow)">
-                    <circle cx="40" cy="40" r="35" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
-                    <path d="M30 40 h20 M40 30 v20" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
-                    <text x="40" y="92" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#0f172a" text-anchor="middle">APIs & Integrations</text>
-                </g>
-                <path d="M115 120 Q 150 160 170 170" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,5"/>
-                <g transform="translate(380, 80)" filter="url(#dropShadow)">
-                    <circle cx="40" cy="40" r="35" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-                    <path d="M28 32 h24 v6 h-24 z M28 42 h24 v6 h-24 z M28 52 h24 v6 h-24 z" fill="none" stroke="#0f172a" stroke-width="2"/>
-                    <text x="40" y="92" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#0f172a" text-anchor="middle">Data Core</text>
-                </g>
-                <path d="M385 120 Q 350 160 330 170" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="5,5"/>
-                <g transform="translate(210, 280)" filter="url(#dropShadow)">
-                    <rect x="25" y="10" width="30" height="55" rx="5" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="30" y="15" width="20" height="38" rx="2" fill="#f1f5f9"/>
-                    <circle cx="35" cy="58" r="2" fill="#0284c7"/>
-                    <text x="40" y="82" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#0f172a" text-anchor="middle">Mobile Delivery</text>
-                </g>
-                <path d="M250 260 L 250 285" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="5,5"/>
-            </svg>
+<div id="progress"></div>
+
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">rubens<span>.</span>simi<span>()</span></a>
+        <div class="nav-links">
+            <a href="#numeros">números</a>
+            <a href="#cases">cases</a>
+            <a href="#stack">stack</a>
+            <a href="#trajetoria">trajetória</a>
+            <a href="#insights">artigos</a>
+            <a href="#contato" class="nav-cta">Contratar</a>
         </div>
     </div>
+</nav>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+    <div class="wrap hero-grid">
+        <div>
+            <div class="hero-label reveal visible">
+                <span class="dot"></span> disponível para projetos &amp; consultoria
+            </div>
+            <h1 class="reveal visible">
+                Rubens<br>
+                <span class="accent">Simi</span><span class="outline">_</span>
+            </h1>
+            <p class="hero-role reveal visible reveal-d1">
+                Arquiteto &amp; Desenvolvedor <strong>Sênior ADVPL/TLPP</strong> — engenharia de missão crítica no ecossistema TOTVS Protheus.
+            </p>
+            <p class="hero-desc reveal visible reveal-d2">
+                Há mais de <strong>duas décadas</strong> transformando requisitos complexos de negócio em arquiteturas <strong>resilientes, escaláveis e auditáveis</strong> — de integrações com Oracle e VTEX a automação industrial com IoT.
+            </p>
+            <div class="hero-ctas reveal visible reveal-d3">
+                <a href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-brands fa-linkedin"></i> Conecte-se no LinkedIn
+                </a>
+                <a href="https://wa.me/5511953523317" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="terminal reveal visible reveal-d2">
+            <div class="term-bar">
+                <span class="b b-r"></span><span class="b b-y"></span><span class="b b-g"></span>
+                <span class="term-title">rubens_simi.tlpp — Protheus</span>
+            </div>
+            <div class="term-body" id="termBody"></div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee-section" aria-label="Empresas atendidas">
+    <div class="marquee" id="marquee"></div>
 </div>
 
-<div class="slide-container" id="slide2">
-    <h2 class="slide-title">Visão Estratégica & Entrega</h2>
-    <div class="content-area">
-        <p style="font-size: 24px; text-align: center; max-width: 900px; margin: 0 auto; color: var(--primary); font-family: 'Merriweather', serif; font-style: italic;">
-            "Mais de duas décadas de expertise técnica garantindo que a tecnologia atue como o principal pilar estratégico na alavancagem de resultados em grandes corporações."
-        </p>
-        <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-num">20+</div>
-                <div class="stat-label">Anos de Experiência Sólida</div>
-                <p style="font-size: 14px; margin-top: 15px;">Desenvolvimento, implantação e análise contínua.</p>
+<!-- ================= NÚMEROS ================= -->
+<section id="numeros">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="sec-tag">// 01 — track record</span>
+            <h2 class="sec-title">Números que <em>entregam</em></h2>
+            <p class="sec-sub">Tecnologia como pilar estratégico na alavancagem de resultados em grandes corporações — medida em produção, não em promessa.</p>
+        </div>
+        <div class="stats-grid reveal">
+            <div class="stat">
+                <div class="stat-num"><span data-count="20">0</span><sup>+</sup></div>
+                <div class="stat-label">Anos de experiência sólida</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-num">Protheus</div>
-                <div class="stat-label">Domínio ERP TOTVS</div>
-                <p style="font-size: 14px; margin-top: 15px;">Backoffice, Logística, PCP, Controladoria e Fiscal.</p>
+            <div class="stat">
+                <div class="stat-num"><span data-count="270">0</span><sup>+</sup></div>
+                <div class="stat-label">PDVs sincronizados em escala</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-num">APIs</div>
-                <div class="stat-label">Integrações Larga Escala</div>
-                <p style="font-size: 14px; margin-top: 15px;">Web Services (REST/SOAP), Mobile e IoT.</p>
+            <div class="stat">
+                <div class="stat-num"><span data-count="10">0</span><sup>+</sup></div>
+                <div class="stat-label">Grandes corporações atendidas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num"><span data-count="7">0</span><sup>+</sup></div>
+                <div class="stat-label">Módulos Protheus dominados</div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="slide-container" id="slide3">
-    <h2 class="slide-title">Projetos e Cases de Alto Impacto</h2>
-    <div class="content-area">
+<!-- ================= CASES ================= -->
+<section id="cases">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="sec-tag">// 02 — projetos de alto impacto</span>
+            <h2 class="sec-title">Cases que <em>rodam em produção</em></h2>
+            <p class="sec-sub">Arquiteturas críticas entregues em ambientes onde falha não é opção: aviação, indústria, logística nacional e mercado financeiro.</p>
+        </div>
         <div class="cases-grid">
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/avianca.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Avianca Logo"><div class="logo-fallback"><i class="fa-solid fa-plane"></i> Avianca</div></div>
-                <h4>Integração ERP-Oracle</h4>
-                <p>Arquitetura de integrações via Web Services conectando o ERP local com o sistema central Oracle de forma fluida.</p>
-                <div class="case-tech">ADVPL • WS REST/SOAP • Oracle</div>
+            <article class="case reveal" data-num="01">
+                <div class="case-client"><span class="logo-chip" data-domain="avianca.com"><i class="fa-solid fa-plane"></i><img src="Avianca-Logo.png" alt="Avianca" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>Avianca</span></div>
+                <h3>Integração ERP ↔ Oracle Central</h3>
+                <p>Arquitetura de integrações via Web Services conectando o ERP local ao sistema central <strong>Oracle</strong> da companhia aérea, com comunicação contínua e tolerante a falhas.</p>
+                <div class="case-tech"><span>ADVPL</span><span>REST/SOAP</span><span>Oracle</span></div>
+            </article>
+            <article class="case reveal reveal-d1" data-num="02">
+                <div class="case-client"><span class="logo-chip" data-domain="natura.com.br"><i class="fa-solid fa-leaf"></i><img src="natura-logo-png_seeklogo-97474.png" alt="Natura" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>Natura</span></div>
+                <h3>Automação Industrial de Pesagem</h3>
+                <p>Comunicação crítica direta entre o ERP e <strong>balanças eletrônicas industriais</strong>, garantindo precisão de dados no chão de fábrica em tempo real.</p>
+                <div class="case-tech"><span>IoT</span><span>ADVPL</span><span>Automação</span></div>
+            </article>
+            <article class="case reveal" data-num="03">
+                <div class="case-client"><span class="logo-chip" data-domain="goodyear.com"><i class="fa-solid fa-car"></i><img src="goodyear.png" alt="Goodyear" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>Goodyear</span></div>
+                <h3>Sincronização em Larga Escala</h3>
+                <p>Implantação de dados logísticos e de vendas conectando <strong>mais de 270 PDVs simultaneamente</strong> ao sistema central — escalabilidade comprovada.</p>
+                <div class="case-tech"><span>Sync de Dados</span><span>Escalabilidade</span></div>
+            </article>
+            <article class="case reveal reveal-d1" data-num="04">
+                <div class="case-client"><span class="logo-chip" data-domain="totvs.com"><i class="fa-solid fa-credit-card"></i><img src="totvs logo.jpg" alt="TOTVS" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>TOTVS</span></div>
+                <h3>Gateways de Pagamento</h3>
+                <p>Integrações <strong>seguras e homologadas</strong> para transações financeiras diretas com adquirentes Master e Visa, sob exigência total de compliance.</p>
+                <div class="case-tech"><span>APIs de Pagamento</span><span>Segurança</span></div>
+            </article>
+            <article class="case reveal" data-num="05">
+                <div class="case-client"><span class="logo-chip" data-domain="ampm.com.br"><i class="fa-solid fa-cart-shopping"></i><img src="ampm logo.jpg" alt="AmPm" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>AmPm</span></div>
+                <h3>Omnichannel E-commerce VTEX</h3>
+                <p>Implementação <strong>bidirecional</strong> de pedidos e logística entre o ERP financeiro e a plataforma VTEX, unificando o operacional físico e digital.</p>
+                <div class="case-tech"><span>VTEX API</span><span>E-commerce</span></div>
+            </article>
+            <article class="case reveal reveal-d1" data-num="06">
+                <div class="case-client"><span class="logo-chip" data-domain="jadlog.com.br"><i class="fa-solid fa-truck-fast"></i><img src="JadLog.jpg" alt="JadLog" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>JadLog</span></div>
+                <h3>Reengenharia do Módulo Financeiro</h3>
+                <p><strong>Liderança</strong> na reestruturação profunda do módulo financeiro para suportar a volumetria de uma das maiores logísticas do país.</p>
+                <div class="case-tech"><span>Performance</span><span>SIGAFIN</span></div>
+            </article>
+            <article class="case reveal" data-num="07">
+                <div class="case-client"><span class="logo-chip" data-domain="petros.com.br"><i class="fa-solid fa-building-columns"></i><img src="Petros.png" alt="Petros" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>Petros</span></div>
+                <h3>Migração de Sistemas Legados</h3>
+                <p>Mapeamento sensível de dados e construção de integrações para comunicação contínua com os <strong>sistemas legados</strong> da fundação.</p>
+                <div class="case-tech"><span>Legados</span><span>Data Mapping</span></div>
+            </article>
+            <article class="case reveal reveal-d1" data-num="08">
+                <div class="case-client"><span class="logo-chip" data-domain="certisign.com.br"><i class="fa-solid fa-shield-halved"></i><img src="Certisign.png" alt="Certisign" onload="this.parentElement.classList.add('logo-ok')" onerror="this.style.display='none'"></span><span>Certisign</span></div>
+                <h3>Compliance em Controladoria</h3>
+                <p>Suporte <strong>Nível 3</strong> e melhorias sistêmicas no módulo corporativo de Controladoria, garantindo agilidade e conformidade contábil.</p>
+                <div class="case-tech"><span>Compliance Fiscal</span><span>SIGACTB</span></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="sec-tag">// 03 — arsenal técnico</span>
+            <h2 class="sec-title">Stack de <em>quem constrói</em></h2>
+        </div>
+        <div class="stack-grid">
+            <div class="stack-col reveal">
+                <h3><i class="fa-solid fa-cubes"></i> MÓDULOS PROTHEUS</h3>
+                <ul class="stack-list">
+                    <li><strong>Financeiro</strong> (SIGAFIN) — reengenharia &amp; volumetria</li>
+                    <li><strong>Controladoria</strong> (SIGACTB) — instrutor oficial TOTVS</li>
+                    <li><strong>Fiscal</strong> — SPED, TAF, eSocial</li>
+                    <li><strong>Logística &amp; Faturamento</strong> — cargas, romaneio, WMS</li>
+                    <li><strong>PCP</strong> — produção estruturada</li>
+                    <li><strong>Loja / Varejo</strong> — PDV, conciliação de caixa</li>
+                </ul>
             </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/natura.com.br" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Natura Logo"><div class="logo-fallback"><i class="fa-solid fa-leaf"></i> Natura</div></div>
-                <h4>Automação de Pesagem</h4>
-                <p>Comunicação crítica direta entre o ERP e balanças eletrônicas industriais, garantindo precisão no chão de fábrica.</p>
-                <div class="case-tech">IoT • ADVPL • Automação</div>
+            <div class="stack-col reveal reveal-d1">
+                <h3><i class="fa-solid fa-code"></i> LINGUAGENS &amp; ENGENHARIA</h3>
+                <ul class="stack-list">
+                    <li><strong>ADVPL</strong> — domínio profundo, 20+ anos</li>
+                    <li><strong>TLPP</strong> — OOP, type safety, anotações REST</li>
+                    <li><strong>SQL</strong> — Oracle, SQL Server, tuning de queries</li>
+                    <li><strong>Git</strong> — versionamento aplicado ao RPO</li>
+                    <li><strong>MVC Protheus</strong> — FWFormModel / FWFormView</li>
+                    <li><strong>CNAB &amp; SPED</strong> — implantações críticas</li>
+                </ul>
             </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/goodyear.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Goodyear Logo"><div class="logo-fallback"><i class="fa-solid fa-car"></i> Goodyear</div></div>
-                <h4>Sync Larga Escala</h4>
-                <p>Implantação de dados logísticos e vendas conectando mais de 270 PDVs simultaneamente ao sistema central.</p>
-                <div class="case-tech">Escalabilidade • Sync Dados</div>
-            </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/totvs.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="TOTVS Logo"><div class="logo-fallback"><i class="fa-solid fa-server"></i> TOTVS</div></div>
-                <h4>Gateways Pagamento</h4>
-                <p>Integrações seguras e homologadas para transações financeiras diretas com adquirentes (Master/Visa).</p>
-                <div class="case-tech">APIs de Pagamento • Segurança</div>
-            </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/vtex.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="VTEX Logo"><div class="logo-fallback"><i class="fa-solid fa-cart-shopping"></i> AmPm</div></div>
-                <h4>Omnichannel E-commerce</h4>
-                <p>Implementação bidirecional de pedidos e logística entre o ERP financeiro e a plataforma VTEX.</p>
-                <div class="case-tech">VTEX API • Integração E-commerce</div>
-            </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/jadlog.com.br" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Jadlog Logo"><div class="logo-fallback"><i class="fa-solid fa-truck-fast"></i> JadLog</div></div>
-                <h4>Reengenharia Financeira</h4>
-                <p>Liderança na reestruturação profunda do módulo para adequação à volumetria da logística nacional.</p>
-                <div class="case-tech">Performance • Módulo Financeiro</div>
-            </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/petros.com.br" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Petros Logo"><div class="logo-fallback"><i class="fa-solid fa-building-columns"></i> Petros</div></div>
-                <h4>Migração de Legados</h4>
-                <p>Mapeamento sensível e construção de integrações para comunicação contínua com legados da fundação.</p>
-                <div class="case-tech">Sistemas Legados • Data Mapping</div>
-            </div>
-            <div class="case-card">
-                <div class="company-logo-area"><img src="https://logo.clearbit.com/certisign.com.br" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Certisign Logo"><div class="logo-fallback"><i class="fa-solid fa-shield-halved"></i> Certisign</div></div>
-                <h4>Compliance Controladoria</h4>
-                <p>Suporte Nível 3 e melhorias sistêmicas no módulo corporativo, garantindo total agilidade contábil.</p>
-                <div class="case-tech">Compliance Fiscal • Controladoria</div>
+            <div class="stack-col reveal reveal-d2">
+                <h3><i class="fa-solid fa-network-wired"></i> INTEGRAÇÕES</h3>
+                <ul class="stack-list">
+                    <li><strong>Web Services</strong> — REST &amp; SOAP em larga escala</li>
+                    <li><strong>VTEX</strong> — e-commerce omnichannel</li>
+                    <li><strong>WhatsApp API</strong> — envio automatizado de boletos</li>
+                    <li><strong>Google Maps API</strong> — otimização de frotas</li>
+                    <li><strong>IoT industrial</strong> — balanças, automação fabril</li>
+                    <li><strong>Gateways de pagamento</strong> — Master / Visa</li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="slide-container" id="slide4">
-    <h2 class="slide-title">Trajetória Profissional Detalhada</h2>
-    <div class="content-area">
-        <div class="timeline-container">
-            <div style="flex: 1;">
-                <div class="vertical-timeline">
-                    <div class="v-node">
-                        <div class="v-header">
-                            <h3 class="v-title">Analista Desenvolvedor Sênior</h3>
-                            <span class="v-date">2022 - Atual</span>
-                        </div>
-                        <span class="v-company"><i class="fa-solid fa-building" style="margin-right: 5px;"></i> Totalit Solutions</span>
-                        <p class="v-desc">Atuação consultiva em projetos de arquitetura e desenvolvimento. Liderança no levantamento de requisitos técnicos, análise de desempenho de sistemas e reestruturação de rotinas legadas com foco na entrega de customizações robustas.</p>
-                    </div>
-                    <div class="v-node">
-                        <div class="v-header">
-                            <h3 class="v-title">Analista de Sistemas Sênior</h3>
-                            <span class="v-date">2015 - 2022</span>
-                        </div>
-                        <span class="v-company"><i class="fa-solid fa-snowflake" style="margin-right: 5px;"></i> São Rafael Câmaras Frigoríficas</span>
-                        <p class="v-desc">Supervisão de equipe técnica Protheus. Liderou o desenvolvimento do módulo de Assistência Técnica e a criação de integrações via Mobile e AutoCad. Responsável pela adequação sistêmica do SIGATAF, E-social e fluxo de caixa.</p>
-                    </div>
-                    <div class="v-node">
-                        <div class="v-header">
-                            <h3 class="v-title">Consultor e Programador Sênior</h3>
-                            <span class="v-date">2013 - 2015</span>
-                        </div>
-                        <span class="v-company"><i class="fa-solid fa-globe" style="margin-right: 5px;"></i> QsDoBrasil</span>
-                        <p class="v-desc">Gestão e execução técnica de grandes projetos. Desenvolveu integrações complexas de comunicação (WS/TXT) na Avianca, migrações contábeis e fiscais (SPED) na Schneider Electric e reestruturação de módulos centrais do ERP.</p>
-                    </div>
-                </div>
+<!-- ================= TRAJETÓRIA ================= -->
+<section id="trajetoria">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="sec-tag">// 04 — trajetória profissional</span>
+            <h2 class="sec-title">Duas décadas <em>de evolução contínua</em></h2>
+        </div>
+        <div class="timeline">
+            <div class="t-item reveal">
+                <span class="t-date">2022 — ATUAL</span>
+                <h3>Analista Desenvolvedor Sênior</h3>
+                <span class="t-company">Totalit Solutions</span>
+                <p>Atuação consultiva em projetos de <strong>arquitetura e desenvolvimento</strong>. Liderança no levantamento de requisitos técnicos, análise de desempenho de sistemas e reestruturação de rotinas legadas com foco em customizações robustas.</p>
             </div>
-            <div style="flex: 1;">
-                <div class="vertical-timeline">
-                    <div class="v-node">
-                        <div class="v-header">
-                            <h3 class="v-title">Consultor Pleno de Sistemas</h3>
-                            <span class="v-date">2011 - 2013</span>
-                        </div>
-                        <span class="v-company"><i class="fa-solid fa-industry" style="margin-right: 5px;"></i> Montarte Indústria e Comércio</span>
-                        <p class="v-desc">Inovação técnica: conectou o ERP à API do Google Maps (Android) para otimização de frotas e criou consumo nativo com o portal dos Correios. Implantou rotinas automáticas de controle de contratos e PCP estruturado.</p>
-                    </div>
-                    <div class="v-node">
-                        <div class="v-header">
-                            <h3 class="v-title">Consultor Especialista (Nível 2)</h3>
-                            <span class="v-date">2005 - 2011</span>
-                        </div>
-                        <span class="v-company"><i class="fa-solid fa-server" style="margin-right: 5px;"></i> TOTVS S/A | Symm Consultoria</span>
-                        <p class="v-desc">Na matriz da TOTVS, atuou no suporte corporativo de alta complexidade (Nível 2) e atuou como Instrutor Oficial homologado de Controladoria. Na Symm, executou implantações críticas de CNAB e SPED em clientes como Multilaser.</p>
-                    </div>
-                    <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 15px; border-radius: 8px; margin-top: 15px;">
-                        <h4 style="color: var(--primary); margin-bottom: 6px; font-size: 15px;"><i class="fa-solid fa-graduation-cap" style="color: var(--secondary); margin-right: 8px;"></i> Formação & Voluntariado</h4>
-                        <p style="font-size: 13px; margin-bottom: 4px;"><strong>Graduação:</strong> Ciências Contábeis com ênfase em Análise de Sistemas (UNIC - 2000).</p>
-                        <p style="font-size: 13px;"><strong>SENAI:</strong> Instrutor voluntário de tecnologia no sertão baiano.</p>
-                    </div>
-                </div>
+            <div class="t-item reveal">
+                <span class="t-date">2015 — 2022</span>
+                <h3>Analista de Sistemas Sênior</h3>
+                <span class="t-company">São Rafael Câmaras Frigoríficas</span>
+                <p><strong>Supervisão de equipe técnica Protheus.</strong> Liderou o desenvolvimento do módulo de Assistência Técnica e integrações via Mobile e AutoCAD. Responsável pela adequação sistêmica do SIGATAF, eSocial e fluxo de caixa.</p>
+            </div>
+            <div class="t-item reveal">
+                <span class="t-date">2013 — 2015</span>
+                <h3>Consultor e Programador Sênior</h3>
+                <span class="t-company">QsDoBrasil</span>
+                <p>Gestão e execução técnica de grandes projetos: integrações complexas de comunicação (WS/TXT) na <strong>Avianca</strong>, migrações contábeis e fiscais (SPED) na <strong>Schneider Electric</strong> e reestruturação de módulos centrais do ERP.</p>
+            </div>
+            <div class="t-item reveal">
+                <span class="t-date">2011 — 2013</span>
+                <h3>Consultor Pleno de Sistemas</h3>
+                <span class="t-company">Montarte Indústria e Comércio</span>
+                <p>Inovação técnica: conectou o ERP à <strong>API do Google Maps</strong> (Android) para otimização de frotas e criou consumo nativo do portal dos Correios. Implantou rotinas automáticas de controle de contratos e PCP estruturado.</p>
+            </div>
+            <div class="t-item reveal">
+                <span class="t-date">2005 — 2011</span>
+                <h3>Consultor Especialista — Nível 2</h3>
+                <span class="t-company">TOTVS S/A | Symm Consultoria</span>
+                <p>Na matriz da TOTVS, suporte corporativo de alta complexidade (Nível 2) e <strong>Instrutor Oficial homologado de Controladoria</strong>. Na Symm, implantações críticas de CNAB e SPED em clientes como Multilaser.</p>
+            </div>
+        </div>
+        <div class="t-edu reveal">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+                <h4>Formação &amp; Voluntariado</h4>
+                <p><strong>Graduação:</strong> Ciências Contábeis com ênfase em Análise de Sistemas (UNIC — 2000) · <strong>SENAI:</strong> Instrutor voluntário de tecnologia no sertão baiano.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="slide-container" id="slide5">
-    <h2 class="slide-title">Tech Insights & Liderança de Pensamento</h2>
-    <div class="content-area">
-        <p style="font-size: 17px; margin-bottom: 10px;">Um profissional de tecnologia Sênior não apenas codifica, ele <strong>questiona, debate e compartilha soluções</strong>. Abaixo selecionei alguns dos meus recentes artigos e análises publicadas no LinkedIn que mostram minha visão estratégica sobre a engenharia de software:</p>
-        
-        <div class="posts-grid">
-            
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7406334711566077952/" target="_blank" class="post-card">
-                <i class="fa-brands fa-linkedin post-icon"></i>
-                <div class="post-content">
-                    <h4>Arquitetura TLPP: A Morte do 'Do Case'</h4>
-                    <p>"O seu código ADVPL procedural é uma bomba-relógio. Neste artigo, disseco a transição para TLPP, abordando Polimorfismo, Type Safety e porque ignorar Orientação a Objetos no Protheus custa performance."</p>
+<!-- ================= INSIGHTS ================= -->
+<section id="insights">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="sec-tag">// 05 — tech insights</span>
+            <h2 class="sec-title">Quem é sênior <em>compartilha o que sabe</em></h2>
+            <p class="sec-sub">Artigos e análises publicados no LinkedIn — visão estratégica sobre engenharia de software no ecossistema Protheus.</p>
+        </div>
+        <div class="posts">
+            <a class="post reveal" href="https://www.linkedin.com/feed/update/urn:li:activity:7406334711566077952/" target="_blank" rel="noopener">
+                <span class="post-num">[01]</span>
+                <div>
+                    <h3>Arquitetura TLPP: A Morte do "Do Case"</h3>
+                    <p>O código ADVPL procedural é uma bomba-relógio. Polimorfismo, type safety e por que ignorar OOP no Protheus custa performance.</p>
                 </div>
-                <div class="post-btn">Ler no LinkedIn <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                <span class="post-arrow">ler artigo <i class="fa-solid fa-arrow-right"></i></span>
             </a>
-            
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7453136339321024512/" target="_blank" class="post-card">
-                <i class="fa-brands fa-linkedin post-icon"></i>
-                <div class="post-content">
-                    <h4>Git e Protheus: O Fim do "Fonte_Final_V3.prw"</h4>
-                    <p>"Compilar no mesmo RPO não precisa ser um teste cardíaco. Escrevi um guia sobre como aplicar Git no universo ADVPL/TLPP, padronizando commits e garantindo um fluxo seguro de Engenharia de Software."</p>
+            <a class="post reveal" href="https://www.linkedin.com/feed/update/urn:li:activity:7453136339321024512/" target="_blank" rel="noopener">
+                <span class="post-num">[02]</span>
+                <div>
+                    <h3>Git e Protheus: O Fim do "Fonte_Final_V3.prw"</h3>
+                    <p>Compilar no mesmo RPO não precisa ser um teste cardíaco. Guia de Git aplicado ao universo ADVPL/TLPP com fluxo seguro de engenharia.</p>
                 </div>
-                <div class="post-btn">Ler no LinkedIn <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                <span class="post-arrow">ler artigo <i class="fa-solid fa-arrow-right"></i></span>
             </a>
-
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6709169960486273025/" target="_blank" class="post-card">
-                <i class="fa-brands fa-linkedin post-icon"></i>
-                <div class="post-content">
-                    <h4>Integração Protheus x WhatsApp (Envio de Boletos)</h4>
-                    <p>"Integrar o ERP corporativo com o WhatsApp não é mais luxo, é necessidade. Demonstro na prática a arquitetura completa para o envio automatizado de boletos direto para o celular do cliente final."</p>
+            <a class="post reveal" href="https://www.linkedin.com/feed/update/urn:li:activity:6709169960486273025/" target="_blank" rel="noopener">
+                <span class="post-num">[03]</span>
+                <div>
+                    <h3>Integração Protheus × WhatsApp: Envio de Boletos</h3>
+                    <p>Integrar o ERP ao WhatsApp não é luxo, é necessidade. Arquitetura completa para envio automatizado de boletos ao cliente final.</p>
                 </div>
-                <div class="post-btn">Ler no LinkedIn <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                <span class="post-arrow">ler artigo <i class="fa-solid fa-arrow-right"></i></span>
             </a>
-            
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6717758699034738688/" target="_blank" class="post-card">
-                <i class="fa-brands fa-linkedin post-icon"></i>
-                <div class="post-content">
-                    <h4>O 'Puzzle' da Logística: Automação de Cargas</h4>
-                    <p>"Um desafio de engenharia: estruturei uma rotina completa de montagem de cargas customizadas (usando dbtree), indo do controle físico de caixas e paletes até o romaneio final. Um puzzle resolvido via sistema."</p>
+            <a class="post reveal" href="https://www.linkedin.com/feed/update/urn:li:activity:6717758699034738688/" target="_blank" rel="noopener">
+                <span class="post-num">[04]</span>
+                <div>
+                    <h3>O "Puzzle" da Logística: Automação de Cargas</h3>
+                    <p>Rotina completa de montagem de cargas customizadas (dbTree), do controle físico de caixas e paletes ao romaneio final.</p>
                 </div>
-                <div class="post-btn">Ler no LinkedIn <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                <span class="post-arrow">ler artigo <i class="fa-solid fa-arrow-right"></i></span>
             </a>
-
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6957726557247279105/" target="_blank" class="post-card">
-                <i class="fa-brands fa-linkedin post-icon"></i>
-                <div class="post-content">
-                    <h4>Conciliação de Caixa no SigaLoja</h4>
-                    <p>"Adeus processos manuais complexos. Mostro como desenvolvi uma rotina em ADVPL para a conciliação substituta de Caixas no SigaLoja, permitindo fechar movimentos e emitir relatórios no Excel com poucos cliques."</p>
+            <a class="post reveal" href="https://www.linkedin.com/feed/update/urn:li:activity:6957726557247279105/" target="_blank" rel="noopener">
+                <span class="post-num">[05]</span>
+                <div>
+                    <h3>Conciliação de Caixa no SigaLoja</h3>
+                    <p>Adeus, processos manuais: rotina ADVPL para conciliação substituta de caixas com fechamento e relatórios em Excel em poucos cliques.</p>
                 </div>
-                <div class="post-btn">Ler no LinkedIn <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                <span class="post-arrow">ler artigo <i class="fa-solid fa-arrow-right"></i></span>
             </a>
-
         </div>
     </div>
-</div>
+</section>
 
-<div class="slide-container" id="slide6" style="align-items: center; justify-content: center;">
-    <div class="biz-card">
-        <div class="biz-left">
-            <h2>Rubens Simi</h2>
-            <p>Sênior Developer ADVPL</p>
-            <div style="margin-top: 30px; width: 50px; height: 3px; background: var(--accent);"></div>
-        </div>
-        <div class="biz-right">
-            
-            <a href="mailto:rubens.c.simi@hotmail.com" class="contact-row">
-                <i class="fa-solid fa-envelope"></i>
-                <span style="font-weight: 500;">rubens.c.simi@hotmail.com</span>
-            </a>
-            <a href="https://wa.me/5511953523317" target="_blank" class="contact-row" style="text-decoration: none;">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span style="font-weight: 500;">(11) 95352-3317</span>
-            </a>
-            <a href="https://www.linkedin.com/in/rubens-simi/" target="_blank" class="contact-row">
-                <i class="fa-brands fa-linkedin"></i>
-                <span style="font-weight: 500;">linkedin.com/in/rubens-simi</span>
-            </a>
-            <div class="contact-row" style="cursor: default;">
-                <i class="fa-solid fa-location-dot"></i>
-                <span style="color: var(--text-body);">São Paulo / Mogi das Cruzes, SP</span>
+<!-- ================= CONTATO ================= -->
+<section id="contato">
+    <div class="wrap">
+        <div class="contact-box reveal">
+            <h2>Seu próximo projeto<br><em>precisa de quem entrega.</em></h2>
+            <p>Arquitetura, integrações de larga escala, reengenharia de módulos ou consultoria especializada — vamos conversar sobre o seu desafio Protheus.</p>
+            <div class="contact-ctas">
+                <a href="https://wa.me/5511953523317" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                <a href="mailto:rubens.c.simi@gmail.com" class="btn btn-ghost copy-mail">
+                    <i class="fa-solid fa-envelope"></i> Enviar e-mail
+                </a>
             </div>
-            
+            <div class="contact-rows">
+                <a href="mailto:rubens.c.simi@gmail.com" class="copy-mail"><i class="fa-solid fa-envelope"></i> rubens.c.simi@gmail.com</a>
+                <a href="https://wa.me/5511953523317" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (11) 95352-3317</a>
+                <a href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> /in/rubens-simi</a>
+                <span><i class="fa-solid fa-location-dot"></i> São Paulo / Mogi das Cruzes, SP</span>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap footer-inner">
+        <p>© 2026 Rubens Simi — compilado sem <span>warnings</span>.</p>
+        <p>User Function Portfolio() <span>Return .T.</span></p>
+    </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ============ SCROLL PROGRESS + NAV ============ */
+const nav = document.getElementById('nav');
+const progress = document.getElementById('progress');
+addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', scrollY > 30);
+    const h = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+
+/* ============ REVEAL ON SCROLL ============ */
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal:not(.visible)').forEach(el => io.observe(el));
+
+/* ============ ANIMATED COUNTERS ============ */
+const counterIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        counterIO.unobserve(e.target);
+        const el = e.target;
+        const target = +el.dataset.count;
+        const dur = 1400;
+        const t0 = performance.now();
+        (function tick(now) {
+            const p = Math.min((now - t0) / dur, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+    });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+/* ============ TERMINAL TYPING ============ */
+const termLines = [
+    [['cm', '// rubens_simi.tlpp — 20+ anos em produção']],
+    [['kw', 'Class '], ['fn', 'Arquiteto'], ['kw', ' From '], ['fn', 'DesenvolvedorSenior']],
+    [['kw', '    Public Method '], ['fn', 'New'], ['', '() '], ['kw', 'Constructor']],
+    [['kw', 'EndClass']],
+    [['', '']],
+    [['kw', 'Method '], ['fn', 'New'], ['', '() '], ['kw', 'Class '], ['fn', 'Arquiteto']],
+    [['var', '    ::cNome'], ['', '     := '], ['str', '"Rubens Simi"']],
+    [['var', '    ::nAnosExp'], ['', '  := '], ['str', '20'], ['cm', '  // e contando']],
+    [['var', '    ::aClientes'], ['', ' := {'], ['str', '"Avianca"'], ['', ', '], ['str', '"Natura"'], ['', ', '], ['str', '"Goodyear"'], ['', '}']],
+    [['var', '    ::lEntrega'], ['', '  := '], ['kw', '.T.']],
+    [['kw', 'Return '], ['var', 'Self']]
+];
+const termBody = document.getElementById('termBody');
+let li = 0, ti = 0, lineEl = null, cursor = document.createElement('span');
+cursor.className = 'cursor';
+function typeTerm() {
+    if (li >= termLines.length) { termBody.appendChild(cursor); return; }
+    if (!lineEl) {
+        lineEl = document.createElement('span');
+        lineEl.className = 'ln';
+        termBody.appendChild(lineEl);
+        termBody.appendChild(cursor);
+        ti = 0;
+    }
+    // flatten current line into [class, char] pairs
+    const flat = [];
+    termLines[li].forEach(([cls, txt]) => [...txt].forEach(ch => flat.push([cls, ch])));
+    if (ti < flat.length) {
+        const [cls, ch] = flat[ti];
+        const last = lineEl.lastElementChild;
+        if (last && last.dataset.cls === cls) {
+            last.textContent += ch;
+        } else {
+            const s = document.createElement('span');
+            s.dataset.cls = cls;
+            if (cls) s.className = 'tk-' + cls;
+            s.textContent = ch;
+            lineEl.appendChild(s);
+        }
+        termBody.insertBefore(lineEl, cursor);
+        ti++;
+        setTimeout(typeTerm, 14 + Math.random() * 26);
+    } else {
+        li++; lineEl = null;
+        setTimeout(typeTerm, flat.length ? 120 : 40);
+    }
+}
+setTimeout(typeTerm, 600);
+
+/* ============ MARQUEE — build with logos ============ */
+(function() {
+    const companies = [
+        { name: 'Avianca',       logo: 'Avianca-Logo.png',                   icon: 'fa-solid fa-plane' },
+        { name: 'Natura',        logo: 'natura-logo-png_seeklogo-97474.png',  icon: 'fa-solid fa-leaf' },
+        { name: 'Goodyear',      logo: 'goodyear.png',                       icon: 'fa-solid fa-car' },
+        { name: 'TOTVS',         logo: 'totvs logo.jpg',                     icon: 'fa-solid fa-credit-card' },
+        { name: 'AmPm',          logo: 'ampm logo.jpg',                      icon: 'fa-solid fa-cart-shopping' },
+        { name: 'JadLog',        logo: 'JadLog.jpg',                         icon: 'fa-solid fa-truck-fast' },
+        { name: 'Petros',        logo: 'Petros.png',                         icon: 'fa-solid fa-building-columns' },
+        { name: 'Certisign',     logo: 'Certisign.png',                      icon: 'fa-solid fa-shield-halved' },
+        { name: 'Multilaser',    logo: 'multilase.png',                      icon: 'fa-solid fa-microchip' },
+        { name: 'Schneider Electric', logo: 'Schneider.png',                     icon: 'fa-solid fa-bolt' },
+    ];
+    const marquee = document.getElementById('marquee');
+    function buildGroup() {
+        const g = document.createElement('div');
+        g.className = 'marquee-group';
+        companies.forEach(c => {
+            const item = document.createElement('span');
+            item.className = 'marquee-item';
+            if (c.logo) {
+                const chip = document.createElement('span');
+                chip.className = 'logo-chip mini';
+                const icon = document.createElement('i');
+                icon.className = c.icon;
+                chip.appendChild(icon);
+                const img = document.createElement('img');
+                img.src = c.logo;
+                img.alt = c.name;
+                img.onload = () => chip.classList.add('logo-ok');
+                img.onerror = () => { img.style.display = 'none'; };
+                chip.appendChild(img);
+                item.appendChild(chip);
+            }
+            item.appendChild(document.createTextNode(c.name));
+            g.appendChild(item);
+        });
+        return g;
+    }
+    marquee.appendChild(buildGroup());
+    marquee.appendChild(buildGroup()); // duplicate for seamless loop
+})();
+
+/* ============ COPY-MAIL FALLBACK ============ */
+document.querySelectorAll('.copy-mail').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const email = 'rubens.c.simi@gmail.com';
+        /* let the mailto: try to open normally */
+        /* after a short delay, copy to clipboard as fallback */
+        setTimeout(() => {
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById('toast');
+                toast.innerHTML = '<i class="fa-solid fa-check"></i> E-mail copiado: ' + email;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            }).catch(() => {});
+        }, 300);
+    });
+});
+</script>
 
 </body>
 </html>
