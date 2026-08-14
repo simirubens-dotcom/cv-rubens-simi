@@ -279,10 +279,10 @@ h2{
 .logo-cel:hover{background:#fff}
 .logo-cel img{
   max-height:100%;width:auto;object-fit:contain;
-  filter:grayscale(1) contrast(.9);opacity:.7;
-  transition:filter .22s, opacity .22s;
+  opacity:1;
+  transition:transform .22s;
 }
-.logo-cel:hover img{filter:none;opacity:1}
+.logo-cel:hover img{transform:scale(1.04)}
 
 /* ---------------- FICHAS DE CASE ---------------- */
 .fichas{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:0;
@@ -502,6 +502,71 @@ footer{padding:26px 0 40px}
   a{text-decoration:none;color:#000}
   .logo-cel img{filter:none;opacity:1}
 }
+
+/* ---------------- ADICAO: MARCAS EM CARROSSEL ---------------- */
+.marcas-cab,.frentes-cab{
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;margin-top:34px;padding-bottom:8px;border-bottom:1px solid var(--regra);
+}
+.marcas-tit{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.marcas-nota{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--tinta-3)}
+.marcas{overflow:hidden;margin-top:14px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marcas-fita{display:flex;width:max-content;animation:marcas-desliza 70s linear infinite}
+.marcas:hover .marcas-fita{animation-play-state:paused}
+@keyframes marcas-desliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marca-cel{flex:none;width:150px;height:84px;display:flex;align-items:center;
+  justify-content:center;padding:14px;background:var(--papel);
+  border:1px solid var(--regra);margin-right:-1px}
+.marca-cel--escura{background:var(--tinta)}
+.marca-cel img{max-height:100%;max-width:100%;width:auto;object-fit:contain;
+  opacity:1}
+
+/* ---------------- ADICAO: INTEGRACOES POR FRENTE ---------------- */
+.frentes{margin-top:40px}
+.frente-abas{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.frente-aba{
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--tinta-2);background:var(--papel-2);border:1px solid var(--regra);
+  padding:9px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  transition:background .16s,color .16s,border-color .16s;
+}
+.frente-aba b{font-size:10px;color:var(--tinta-3);font-weight:500}
+.frente-aba:hover{background:#fff;border-color:var(--planta)}
+.frente-aba[aria-selected="true"]{background:var(--planta);color:var(--papel);
+  border-color:var(--planta)}
+.frente-aba[aria-selected="true"] b{color:var(--planta-luz)}
+.frente-paineis{margin-top:2px;border-top:2.5px solid var(--planta)}
+.frente-linha{display:grid;grid-template-columns:190px minmax(0,1fr) minmax(0,1fr);
+  gap:18px;padding:14px 2px;border-bottom:1px solid var(--regra);align-items:start}
+.frente-linha:hover{background:var(--papel-2)}
+.frente-cli{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.frente-desc{color:var(--tinta-2);font-size:16px;line-height:1.45}
+.frente-apis{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
+.frente-apis span{font-family:var(--mono);font-size:11px;letter-spacing:.03em;
+  color:var(--planta-2);background:var(--planta-luz);border:1px solid #cddbe7;
+  padding:4px 7px;white-space:nowrap}
+@media (max-width:820px){
+  .frente-linha{grid-template-columns:1fr;gap:8px}
+  .marca-cel{width:126px;height:74px}
+}
+@media (prefers-reduced-motion:reduce){
+  .marcas-fita{animation:none}
+  .marcas{overflow-x:auto}
+}
+
+.frentes-chamada{
+  margin-top:14px;padding:11px 14px;background:var(--planta-luz);
+  border-left:3px solid var(--planta);color:var(--planta-2);
+  font-family:var(--display);font-weight:500;font-size:16px;line-height:1.4;
+}
+.frentes-chamada b{font-weight:700}
+.frente-apis::after{
+  content:"× Protheus";font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-3);align-self:center;
+}
 </style>
 </head>
 <body>
@@ -514,9 +579,9 @@ footer{padding:26px 0 40px}
     <nav aria-label="Índice do dossiê">
       <a href="#clientes"><b>01</b>Clientes</a>
       <a href="#entregas"><b>02</b>Entregas</a>
-      <a href="#produtos"><b>03</b>Produtos</a>
-      <a href="#stack"><b>04</b>Stack</a>
-      <a href="#trajetoria"><b>05</b>Trajetória</a>
+      <a href="#stack"><b>03</b>Stack</a>
+      <a href="#trajetoria"><b>04</b>Trajetória</a>
+      <a href="#produtos"><b>05</b>Produtos</a>
       <a href="#artigos"><b>06</b>Artigos</a>
       <a href="#contato"><b>07</b>Contato</a>
     </nav>
@@ -618,6 +683,26 @@ footer{padding:26px 0 40px}
       <a class="logo-cel" href="#e-certisign"><img src="Certisign.png" alt="Certisign" width="261" height="193" loading="lazy"></a>
       <a class="logo-cel" href="#e-schneider"><img src="Schneider.png" alt="Schneider Electric" width="480" height="270" loading="lazy"></a>
       <a class="logo-cel" href="#e-multilaser"><img src="multilase.png" alt="Multilaser" width="225" height="225" loading="lazy"></a>
+    </div>
+  
+    <!-- ============ ADICAO: marcas em carrossel ============ -->
+    <div class="marcas-cab">
+      <span class="marcas-tit">Mais marcas atendidas</span>
+      <span class="marcas-nota">47 empresas &middot; passe o mouse para parar</span>
+    </div>
+    <div class="marcas">
+      <div class="marcas-fita"><div class="marca-cel"><img src="logos/adias.webp" alt="A.Dias" loading="lazy"></div><div class="marca-cel"><img src="logos/adimax.png" alt="Adimax" loading="lazy"></div><div class="marca-cel"><img src="logos/alliar_ico.png" alt="Alliar" loading="lazy"></div><div class="marca-cel"><img src="logos/alice_ico.png" alt="Alice" loading="lazy"></div><div class="marca-cel"><img src="logos/asics.png" alt="Asics" loading="lazy"></div><div class="marca-cel"><img src="logos/athena.svg" alt="Athena Saúde" loading="lazy"></div><div class="marca-cel"><img src="logos/atrialub.png" alt="Atria Lub" loading="lazy"></div><div class="marca-cel"><img src="logos/baciodilatte.svg" alt="Bacio di Latte" loading="lazy"></div><div class="marca-cel"><img src="logos/careplus.png" alt="Care Plus" loading="lazy"></div><div class="marca-cel"><img src="logos/cemigsaude.svg" alt="CEMIG Saúde" loading="lazy"></div><div class="marca-cel"><img src="logos/certisign.gif" alt="Certisign" loading="lazy"></div><div class="marca-cel"><img src="logos/comerc.png" alt="Comerc Energia" loading="lazy"></div><div class="marca-cel"><img src="logos/conexao.webp" alt="Conexão" loading="lazy"></div><div class="marca-cel marca-cel--escura"><img src="logos/crawford.svg" alt="Crawford" loading="lazy"></div><div class="marca-cel"><img src="logos/criare.png" alt="Criare" loading="lazy"></div><div class="marca-cel"><img src="logos/csu_ico.png" alt="CSU" loading="lazy"></div><div class="marca-cel"><img src="logos/espro.png" alt="Espro" loading="lazy"></div><div class="marca-cel"><img src="logos/fernandez.png" alt="Fernandez Papel" loading="lazy"></div><div class="marca-cel"><img src="logos/flash.svg" alt="FlashOn" loading="lazy"></div><div class="marca-cel"><img src="logos/fortbras.png" alt="Fortbras" loading="lazy"></div><div class="marca-cel"><img src="logos/geru.png" alt="Geru" loading="lazy"></div><div class="marca-cel"><img src="logos/glovis.jpg" alt="Hyundai Glovis" loading="lazy"></div><div class="marca-cel"><img src="logos/golden.webp" alt="Golden" loading="lazy"></div><div class="marca-cel"><img src="logos/grupoaldo_ico.png" alt="Grupo Aldo" loading="lazy"></div><div class="marca-cel"><img src="logos/hbr.svg" alt="HBR Aviação" loading="lazy"></div><div class="marca-cel"><img src="logos/hci_ico.png" alt="HCI" loading="lazy"></div><div class="marca-cel"><img src="logos/hinode.png" alt="Hinode" loading="lazy"></div><div class="marca-cel"><img src="logos/reciclabr_ico.jpg" alt="Latasa / Recicla BR" loading="lazy"></div><div class="marca-cel"><img src="logos/madeiramadeira_ico.png" alt="MadeiraMadeira" loading="lazy"></div><div class="marca-cel"><img src="logos/madero.png" alt="Madero" loading="lazy"></div><div class="marca-cel"><img src="logos/master.svg" alt="Master" loading="lazy"></div><div class="marca-cel"><img src="logos/mentholatum_ico.png" alt="Mentholatum" loading="lazy"></div><div class="marca-cel"><img src="logos/mgn.png" alt="MGN" loading="lazy"></div><div class="marca-cel"><img src="logos/oncoclinicas.png" alt="Oncoclínicas" loading="lazy"></div><div class="marca-cel marca-cel--escura"><img src="logos/ontime.png" alt="Ontime" loading="lazy"></div><div class="marca-cel marca-cel--escura"><img src="logos/opusoculos.svg" alt="Opus Óculos / Óticas Diniz" loading="lazy"></div><div class="marca-cel"><img src="logos/osklen_ico.png" alt="Osklen" loading="lazy"></div><div class="marca-cel"><img src="logos/petz.svg" alt="Petz" loading="lazy"></div><div class="marca-cel"><img src="logos/prozyn.png" alt="Prozyn" loading="lazy"></div><div class="marca-cel"><img src="logos/renova.png" alt="Renova" loading="lazy"></div><div class="marca-cel"><img src="logos/setta.png" alt="Setta" loading="lazy"></div><div class="marca-cel"><img src="logos/tateti.png" alt="Tateti" loading="lazy"></div><div class="marca-cel"><img src="logos/tiscoski_ico.png" alt="Tiscoski" loading="lazy"></div><div class="marca-cel"><img src="logos/topico.svg" alt="Tópico" loading="lazy"></div><div class="marca-cel"><img src="logos/verquimica.png" alt="Verquímica" loading="lazy"></div><div class="marca-cel"><img src="logos/wdc_ico.png" alt="WDC Networks" loading="lazy"></div><div class="marca-cel"><img src="logos/yama.svg" alt="Yama" loading="lazy"></div><div class="marca-cel"><img src="logos/adias.webp" alt="A.Dias" loading="lazy"></div><div class="marca-cel"><img src="logos/adimax.png" alt="Adimax" loading="lazy"></div><div class="marca-cel"><img src="logos/alliar_ico.png" alt="Alliar" loading="lazy"></div><div class="marca-cel"><img src="logos/alice_ico.png" alt="Alice" loading="lazy"></div><div class="marca-cel"><img src="logos/asics.png" alt="Asics" loading="lazy"></div><div class="marca-cel"><img src="logos/athena.svg" alt="Athena Saúde" loading="lazy"></div><div class="marca-cel"><img src="logos/atrialub.png" alt="Atria Lub" loading="lazy"></div><div class="marca-cel"><img src="logos/baciodilatte.svg" alt="Bacio di Latte" loading="lazy"></div><div class="marca-cel"><img src="logos/careplus.png" alt="Care Plus" loading="lazy"></div><div class="marca-cel"><img src="logos/cemigsaude.svg" alt="CEMIG Saúde" loading="lazy"></div><div class="marca-cel"><img src="logos/certisign.gif" alt="Certisign" loading="lazy"></div><div class="marca-cel"><img src="logos/comerc.png" alt="Comerc Energia" loading="lazy"></div><div class="marca-cel"><img src="logos/conexao.webp" alt="Conexão" loading="lazy"></div><div class="marca-cel marca-cel--escura"><img src="logos/crawford.svg" alt="Crawford" loading="lazy"></div><div class="marca-cel"><img src="logos/criare.png" alt="Criare" loading="lazy"></div><div class="marca-cel"><img src="logos/csu_ico.png" alt="CSU" loading="lazy"></div><div class="marca-cel"><img src="logos/espro.png" alt="Espro" loading="lazy"></div><div class="marca-cel"><img src="logos/fernandez.png" alt="Fernandez Papel" loading="lazy"></div><div class="marca-cel"><img src="logos/flash.svg" alt="FlashOn" loading="lazy"></div><div class="marca-cel"><img src="logos/fortbras.png" alt="Fortbras" loading="lazy"></div><div class="marca-cel"><img src="logos/geru.png" alt="Geru" loading="lazy"></div><div class="marca-cel"><img src="logos/glovis.jpg" alt="Hyundai Glovis" loading="lazy"></div><div class="marca-cel"><img src="logos/golden.webp" alt="Golden" loading="lazy"></div><div class="marca-cel"><img src="logos/grupoaldo_ico.png" alt="Grupo Aldo" loading="lazy"></div><div class="marca-cel"><img src="logos/hbr.svg" alt="HBR Aviação" loading="lazy"></div><div class="marca-cel"><img src="logos/hci_ico.png" alt="HCI" loading="lazy"></div><div class="marca-cel"><img src="logos/hinode.png" alt="Hinode" loading="lazy"></div><div class="marca-cel"><img src="logos/reciclabr_ico.jpg" alt="Latasa / Recicla BR" loading="lazy"></div><div class="marca-cel"><img src="logos/madeiramadeira_ico.png" alt="MadeiraMadeira" loading="lazy"></div><div class="marca-cel"><img src="logos/madero.png" alt="Madero" loading="lazy"></div><div class="marca-cel"><img src="logos/master.svg" alt="Master" loading="lazy"></div><div class="marca-cel"><img src="logos/mentholatum_ico.png" alt="Mentholatum" loading="lazy"></div><div class="marca-cel"><img src="logos/mgn.png" alt="MGN" loading="lazy"></div><div class="marca-cel"><img src="logos/oncoclinicas.png" alt="Oncoclínicas" loading="lazy"></div><div class="marca-cel marca-cel--escura"><img src="logos/ontime.png" alt="Ontime" loading="lazy"></div><div class="marca-cel"><img src="logos/opusoculos.svg" alt="Opus Óculos / Óticas Diniz" loading="lazy"></div><div class="marca-cel"><img src="logos/osklen_ico.png" alt="Osklen" loading="lazy"></div><div class="marca-cel"><img src="logos/petz.svg" alt="Petz" loading="lazy"></div><div class="marca-cel"><img src="logos/prozyn.png" alt="Prozyn" loading="lazy"></div><div class="marca-cel"><img src="logos/renova.png" alt="Renova" loading="lazy"></div><div class="marca-cel"><img src="logos/setta.png" alt="Setta" loading="lazy"></div><div class="marca-cel"><img src="logos/tateti.png" alt="Tateti" loading="lazy"></div><div class="marca-cel"><img src="logos/tiscoski_ico.png" alt="Tiscoski" loading="lazy"></div><div class="marca-cel"><img src="logos/topico.svg" alt="Tópico" loading="lazy"></div><div class="marca-cel"><img src="logos/verquimica.png" alt="Verquímica" loading="lazy"></div><div class="marca-cel"><img src="logos/wdc_ico.png" alt="WDC Networks" loading="lazy"></div><div class="marca-cel"><img src="logos/yama.svg" alt="Yama" loading="lazy"></div></div>
+    </div>
+
+    <!-- ============ ADICAO: integracoes por frente ============ -->
+    <div class="frentes" id="integracoes">
+      <div class="frentes-cab">
+        <span class="marcas-tit">Integra&ccedil;&otilde;es por frente</span>
+        <span class="marcas-nota">sistema externo &times; Protheus</span>
+      </div>
+      <p class="frentes-chamada">Clique na frente para abrir as integra&ccedil;&otilde;es que entreguei nela &mdash; cada linha liga um <b>sistema externo ao Protheus</b>.</p>
+      <div class="frente-abas" role="tablist" aria-label="Frentes de integra&ccedil;&atilde;o"><button class="frente-aba" role="tab" id="aba-fin" aria-controls="p-fin" aria-selected="true" tabindex="0">Financeiro e bancos<b>17</b></button><button class="frente-aba" role="tab" id="aba-log" aria-controls="p-log" aria-selected="false" tabindex="-1">Logística e frete<b>16</b></button><button class="frente-aba" role="tab" id="aba-fiscal" aria-controls="p-fiscal" aria-selected="false" tabindex="-1">Fiscal e documentos<b>14</b></button><button class="frente-aba" role="tab" id="aba-ecom" aria-controls="p-ecom" aria-selected="false" tabindex="-1">E-commerce e vendas<b>13</b></button><button class="frente-aba" role="tab" id="aba-bpm" aria-controls="p-bpm" aria-selected="false" tabindex="-1">BPM e ECM<b>13</b></button><button class="frente-aba" role="tab" id="aba-dados" aria-controls="p-dados" aria-selected="false" tabindex="-1">Dados e cadastros<b>12</b></button><button class="frente-aba" role="tab" id="aba-compras" aria-controls="p-compras" aria-selected="false" tabindex="-1">Compras e suprimentos<b>7</b></button><button class="frente-aba" role="tab" id="aba-msg" aria-controls="p-msg" aria-selected="false" tabindex="-1">Mensageria<b>7</b></button><button class="frente-aba" role="tab" id="aba-rh" aria-controls="p-rh" aria-selected="false" tabindex="-1">RH e ponto<b>7</b></button><button class="frente-aba" role="tab" id="aba-iot" aria-controls="p-iot" aria-selected="false" tabindex="-1">IoT e telemetria<b>5</b></button><button class="frente-aba" role="tab" id="aba-saude" aria-controls="p-saude" aria-selected="false" tabindex="-1">Saúde<b>5</b></button><button class="frente-aba" role="tab" id="aba-wms" aria-controls="p-wms" aria-selected="false" tabindex="-1">WMS e armazém<b>3</b></button><button class="frente-aba" role="tab" id="aba-crm" aria-controls="p-crm" aria-selected="false" tabindex="-1">CRM<b>2</b></button></div>
+      <div class="frente-paineis"><div class="frente-painel" role="tabpanel" id="p-fin" aria-labelledby="aba-fin"><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Vindi</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>Vadu</span></div></div><div class="frente-linha"><div class="frente-cli">Avanço Resources</div><div class="frente-desc">Requisições, adiantamentos e prestação de contas</div><div class="frente-apis"><span>Argo</span></div></div><div class="frente-linha"><div class="frente-cli">Care Plus</div><div class="frente-desc">Conciliação de recebíveis de cartão</div><div class="frente-apis"><span>Conciliadora</span></div></div><div class="frente-linha"><div class="frente-cli">Certisign</div><div class="frente-desc">Gestão de pedidos e AR, conciliação de pagamentos</div><div class="frente-apis"><span>GAR ERP</span><span>Adyen</span></div></div><div class="frente-linha"><div class="frente-cli">Cronimet</div><div class="frente-desc">Open Banking e manifestação do destinatário</div><div class="frente-apis"><span>Finnet</span></div></div><div class="frente-linha"><div class="frente-cli">DMC / Sou Vaga Lume</div><div class="frente-desc">Chatbot, pagamentos, marketing e consulta de crédito</div><div class="frente-apis"><span>BluPay</span><span>SPC</span><span>Bradesco</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>Serasa</span></div></div><div class="frente-linha"><div class="frente-cli">FlashOn</div><div class="frente-desc">Despesas corporativas e benefícios</div><div class="frente-apis"><span>ExpenseOn</span></div></div><div class="frente-linha"><div class="frente-cli">Funpar</div><div class="frente-desc">Boletos registrados e PIX</div><div class="frente-apis"><span>Itaú</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Kobold</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Braspag</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Conciliadora</span></div></div><div class="frente-linha"><div class="frente-cli">Opus Óculos / Óticas Diniz</div><div class="frente-desc">Conciliação de cartões e consulta de CEP</div><div class="frente-apis"><span>ConciliadorBR</span></div></div><div class="frente-linha"><div class="frente-cli">Surf Telecom</div><div class="frente-desc">Despesas corporativas e NFS-e</div><div class="frente-apis"><span>VExpenses</span></div></div><div class="frente-linha"><div class="frente-cli">Vivest</div><div class="frente-desc">Benefícios, pagamentos e prestação de contas ao TCE</div><div class="frente-apis"><span>Facil Informática</span><span>CMFlex</span></div></div><div class="frente-linha"><div class="frente-cli">WDC Networks</div><div class="frente-desc">Assinatura digital e boletos</div><div class="frente-apis"><span>Portal de Boletos</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-log" aria-labelledby="aba-log" hidden><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Correios SIGEP</span><span>Rapidão Cometa</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>Correios</span><span>Veloe</span></div></div><div class="frente-linha"><div class="frente-cli">Biodente</div><div class="frente-desc">Impressão remota, postagem e índices econômicos</div><div class="frente-apis"><span>VisualSet</span></div></div><div class="frente-linha"><div class="frente-cli">Conexão</div><div class="frente-desc">Frete, rastreio e etiquetas de postagem</div><div class="frente-apis"><span>Correios API</span><span>LeanTrack</span><span>VisualSet</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>SimFrete</span></div></div><div class="frente-linha"><div class="frente-cli">Fernandez Papel</div><div class="frente-desc">Transporte e CT-e, cotação de câmbio</div><div class="frente-apis"><span>Usemol</span><span>Multiembarcador</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>Correios</span></div></div><div class="frente-linha"><div class="frente-cli">Golden</div><div class="frente-desc">Averbação de carga e integração de vendas</div><div class="frente-apis"><span>Averbe Porto</span><span>Connect Inc</span></div></div><div class="frente-linha"><div class="frente-cli">HCI</div><div class="frente-desc">Rastreio de encomendas e portal de chamados</div><div class="frente-apis"><span>Track3r</span></div></div><div class="frente-linha"><div class="frente-cli">Hyundai Glovis</div><div class="frente-desc">Comércio exterior</div><div class="frente-apis"><span>Ecomex</span></div></div><div class="frente-linha"><div class="frente-cli">Mentholatum</div><div class="frente-desc">E-commerce e rastreio de transportadoras</div><div class="frente-apis"><span>Correios</span><span>Braspress</span><span>Total Express</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>Comprovei</span></div></div><div class="frente-linha"><div class="frente-cli">Ontime</div><div class="frente-desc">Gestão operacional e TSS</div><div class="frente-apis"><span>Apply System</span></div></div><div class="frente-linha"><div class="frente-cli">Paviloche</div><div class="frente-desc">Roteirização de entregas e NF-e</div><div class="frente-apis"><span>Way Data Solution</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>Loggi</span><span>Shippify</span><span>ClickEntregas</span><span>JadLog</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>Intelipost</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-fiscal" aria-labelledby="aba-fiscal" hidden><div class="frente-linha"><div class="frente-cli">Alice</div><div class="frente-desc">Faturamento de saúde e emissão de NFS-e</div><div class="frente-apis"><span>eNotas</span></div></div><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Arquivei</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>Dootax</span></div></div><div class="frente-linha"><div class="frente-cli">Comerc Energia</div><div class="frente-desc">NFS-e e mercado livre de energia</div><div class="frente-apis"><span>Prefeitura de SP</span><span>CCEE</span></div></div><div class="frente-linha"><div class="frente-cli">Criare</div><div class="frente-desc">NFS-e e portal de suprimentos</div><div class="frente-apis"><span>TecnoSpeed</span></div></div><div class="frente-linha"><div class="frente-cli">Cronimet</div><div class="frente-desc">Open Banking e manifestação do destinatário</div><div class="frente-apis"><span>TOTVS</span></div></div><div class="frente-linha"><div class="frente-cli">Geru</div><div class="frente-desc">Assinatura eletrônica e cálculo tributário</div><div class="frente-apis"><span>AddTax Cloud</span></div></div><div class="frente-linha"><div class="frente-cli">Ontime</div><div class="frente-desc">Gestão operacional e TSS</div><div class="frente-apis"><span>TSS TOTVS</span></div></div><div class="frente-linha"><div class="frente-cli">Paviloche</div><div class="frente-desc">Roteirização de entregas e NF-e</div><div class="frente-apis"><span>WMSul</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>Conexão NFe</span></div></div><div class="frente-linha"><div class="frente-cli">Surf Telecom</div><div class="frente-desc">Despesas corporativas e NFS-e</div><div class="frente-apis"><span>Prefeituras SP e Rio</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>IBPT</span></div></div><div class="frente-linha"><div class="frente-cli">Vivest</div><div class="frente-desc">Benefícios, pagamentos e prestação de contas ao TCE</div><div class="frente-apis"><span>AUDESP</span></div></div><div class="frente-linha"><div class="frente-cli">Yama</div><div class="frente-desc">Força de vendas e XML de notas</div><div class="frente-apis"><span>Arquivei</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-ecom" aria-labelledby="aba-ecom" hidden><div class="frente-linha"><div class="frente-cli">A.Dias</div><div class="frente-desc">Pedidos de e-commerce, marketplace e gateway de pagamento</div><div class="frente-apis"><span>FBits</span><span>AnyMarket</span><span>ClicArCondicionado</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>FastChannel</span><span>SignaShop</span></div></div><div class="frente-linha"><div class="frente-cli">Bacio di Latte</div><div class="frente-desc">Integração de vendas</div><div class="frente-apis"><span>MakeValue</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>API Dorel</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>VTEX</span><span>Mercado Livre</span></div></div><div class="frente-linha"><div class="frente-cli">Hinode</div><div class="frente-desc">E-commerce e cotação de câmbio</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Mentholatum</div><div class="frente-desc">E-commerce e rastreio de transportadoras</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>Illimitar</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>WS Petz</span><span>Aptus</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>PalmApp</span></div></div><div class="frente-linha"><div class="frente-cli">São Rafael</div><div class="frente-desc">Força de vendas em campo</div><div class="frente-apis"><span>uMov.me</span></div></div><div class="frente-linha"><div class="frente-cli">Yama</div><div class="frente-desc">Força de vendas e XML de notas</div><div class="frente-apis"><span>SoftSite / GeoSales</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-bpm" aria-labelledby="aba-bpm" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>TOTVS iPaaS</span><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Espro</div><div class="frente-desc">Vagas e recrutamento, workflow e cálculo de distância</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>LinkAPI</span><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Geru</div><div class="frente-desc">Assinatura eletrônica e cálculo tributário</div><div class="frente-apis"><span>SmartDocx</span></div></div><div class="frente-linha"><div class="frente-cli">Grupo Aldo</div><div class="frente-desc">Gestão jurídica</div><div class="frente-apis"><span>Projuris</span></div></div><div class="frente-linha"><div class="frente-cli">Grupo Águas do Brasil</div><div class="frente-desc">BPM de aprovações e API corporativa do grupo</div><div class="frente-apis"><span>Zeev</span><span>API própria</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">TOTVS / TIFIN</div><div class="frente-desc">Portais corporativos, assinatura eletrônica e marketing</div><div class="frente-apis"><span>SSIM</span><span>Fluig</span><span>DocuSign</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>AgileProcess</span></div></div><div class="frente-linha"><div class="frente-cli">Tiscoski</div><div class="frente-desc">Barramento de integração</div><div class="frente-apis"><span>Digibee</span></div></div><div class="frente-linha"><div class="frente-cli">WDC Networks</div><div class="frente-desc">Assinatura digital e boletos</div><div class="frente-apis"><span>Portal de Assinaturas</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-dados" aria-labelledby="aba-dados" hidden><div class="frente-linha"><div class="frente-cli">Athena Saúde</div><div class="frente-desc">Exposição do ERP por API gateway</div><div class="frente-apis"><span>Sensedia</span><span>AllStrategy</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>ReceitaWS</span><span>Strider / Cropwise</span></div></div><div class="frente-linha"><div class="frente-cli">Biodente</div><div class="frente-desc">Impressão remota, postagem e índices econômicos</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Comerc Energia</div><div class="frente-desc">NFS-e e mercado livre de energia</div><div class="frente-apis"><span>PowerView</span></div></div><div class="frente-linha"><div class="frente-cli">Fernandez Papel</div><div class="frente-desc">Transporte e CT-e, cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Hinode</div><div class="frente-desc">E-commerce e cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Opus Óculos / Óticas Diniz</div><div class="frente-desc">Conciliação de cartões e consulta de CEP</div><div class="frente-apis"><span>ViaCEP</span><span>Postmon</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>CNPJ.ws</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Setta</div><div class="frente-desc">Plataforma de dados</div><div class="frente-apis"><span>Carol (TOTVS)</span></div></div><div class="frente-linha"><div class="frente-cli">Verquímica</div><div class="frente-desc">Consulta de CNPJ e cotação de câmbio</div><div class="frente-apis"><span>ReceitaWS</span><span>CNPJ.ws</span><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">ViaMarke</div><div class="frente-desc">Exposição de REST do Protheus: pedidos, títulos e estoque</div><div class="frente-apis"><span>VMBrain</span><span>StarMaker</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-compras" aria-labelledby="aba-compras" hidden><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Bionexo</span></div></div><div class="frente-linha"><div class="frente-cli">Criare</div><div class="frente-desc">NFS-e e portal de suprimentos</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">Madero</div><div class="frente-desc">WMS de centro de distribuição e EDI de fornecedores</div><div class="frente-apis"><span>Neogrid</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>Bionexo</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>Nimbi</span><span>Neogrid</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-msg" aria-labelledby="aba-msg" hidden><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>Confirma Fácil</span></div></div><div class="frente-linha"><div class="frente-cli">DMC / Sou Vaga Lume</div><div class="frente-desc">Chatbot, pagamentos, marketing e consulta de crédito</div><div class="frente-apis"><span>Blip</span><span>Salesforce Marketing Cloud</span></div></div><div class="frente-linha"><div class="frente-cli">HBR Aviação</div><div class="frente-desc">Envio de mensagens WhatsApp</div><div class="frente-apis"><span>WhatsMsg</span></div></div><div class="frente-linha"><div class="frente-cli">MGN</div><div class="frente-desc">Telemetria industrial e WhatsApp</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Pernambuco Construtora</div><div class="frente-desc">WhatsApp e boletos</div><div class="frente-apis"><span>Zenvia</span><span>Infobip</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-rh" aria-labelledby="aba-rh" hidden><div class="frente-linha"><div class="frente-cli">CSU</div><div class="frente-desc">Integração de folha e RH</div><div class="frente-apis"><span>AcessoRH</span></div></div><div class="frente-linha"><div class="frente-cli">Crawford</div><div class="frente-desc">Envio de holerites e rescisão para o RH (SFTP)</div><div class="frente-apis"><span>PeopleHub</span></div></div><div class="frente-linha"><div class="frente-cli">Espro</div><div class="frente-desc">Vagas e recrutamento, workflow e cálculo de distância</div><div class="frente-apis"><span>Taqe</span></div></div><div class="frente-linha"><div class="frente-cli">FlashOn</div><div class="frente-desc">Despesas corporativas e benefícios</div><div class="frente-apis"><span>Flash</span></div></div><div class="frente-linha"><div class="frente-cli">Leccor</div><div class="frente-desc">Ponto eletrônico</div><div class="frente-apis"><span>Nexti</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Secullum</span></div></div><div class="frente-linha"><div class="frente-cli">Tópico</div><div class="frente-desc">CRM e ponto eletrônico</div><div class="frente-apis"><span>Dimep Kairos</span><span>Nexti</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-iot" aria-labelledby="aba-iot" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Omnilink</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>Autotrac</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Astrein</span></div></div><div class="frente-linha"><div class="frente-cli">MGN</div><div class="frente-desc">Telemetria industrial e WhatsApp</div><div class="frente-apis"><span>ScadaBR</span></div></div><div class="frente-linha"><div class="frente-cli">Renova</div><div class="frente-desc">Manutenção de ativos</div><div class="frente-apis"><span>Tractian</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-saude" aria-labelledby="aba-saude" hidden><div class="frente-linha"><div class="frente-cli">Alice</div><div class="frente-desc">Faturamento de saúde e emissão de NFS-e</div><div class="frente-apis"><span>Alice (Wonderland)</span></div></div><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Pleres</span></div></div><div class="frente-linha"><div class="frente-cli">CEMIG Saúde</div><div class="frente-desc">Cartão virtual, agendamento e custos assistenciais</div><div class="frente-apis"><span>MobileSaúde</span><span>SigQuali</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>SinSolution</span><span>Roche</span><span>Fidelize</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Philips</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-wms" aria-labelledby="aba-wms" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Koerber WCS</span></div></div><div class="frente-linha"><div class="frente-cli">Madero</div><div class="frente-desc">WMS de centro de distribuição e EDI de fornecedores</div><div class="frente-apis"><span>SAGA / Abnet</span></div></div><div class="frente-linha"><div class="frente-cli">Master</div><div class="frente-desc">WMS de armazém</div><div class="frente-apis"><span>Alcis</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-crm" aria-labelledby="aba-crm" hidden><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Salesforce</span></div></div><div class="frente-linha"><div class="frente-cli">Tópico</div><div class="frente-desc">CRM e ponto eletrônico</div><div class="frente-apis"><span>Salesforce</span></div></div></div></div>
     </div>
   </div>
 </section>
@@ -732,82 +817,13 @@ footer{padding:26px 0 40px}
 </section>
 
 <!-- ============ 03 PRODUTOS AUTORAIS ============ -->
-<section id="produtos">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;03</div>
-      <div>
-        <h2>O que eu construo quando o problema não cabe no ERP</h2>
-        <p class="sec-sub">Produtos concebidos, arquitetados e desenvolvidos por mim — do modelo de dados à
-        interface, incluindo segurança, desempenho e conformidade. Em case de cliente eu afirmo; aqui eu mostro.</p>
-      </div>
-    </div>
 
-    <article class="produto">
-      <div class="produto-cab">
-        <h3>MRoTrack</h3>
-        <span class="papel-tag">Java 21 · Spring Boot 4 · PostgreSQL</span>
-      </div>
-      <p class="resumo">Plataforma web multiempresa para manutenção de aeronaves segundo a regulamentação da
-      ANAC (RBAC 91, 135 e 145). Concepção, arquitetura e desenvolvimento integral — hoje o sistema mais
-      complexo que já escrevi sozinho.</p>
-
-      <div class="numeros">
-        <div class="numero"><b>36.000</b><span>linhas de Java</span></div>
-        <div class="numero"><b>68</b><span>entidades de domínio</span></div>
-        <div class="numero"><b>173</b><span>telas</span></div>
-        <div class="numero"><b>43</b><span>relatórios</span></div>
-        <div class="numero"><b>8</b><span>documentos ANAC</span></div>
-      </div>
-
-      <ul class="marcas">
-        <li><strong>Multi-tenant real por schema</strong> no PostgreSQL, com catálogo global compartilhado e
-        chave estrangeira atravessando schemas — cada empresa isolada na própria base lógica.</li>
-        <li><strong>Motor declarativo de relatórios</strong> em PDF e Excel com tela única de parâmetros, que
-        emite os documentos regulatórios exigidos: Ordem de Serviço, SEGVOO 001/003, FCDA, CVA, Peso e
-        Balanceamento, Cadernetas e MEL.</li>
-        <li><strong>Assinatura eletrônica com 2FA TOTP</strong> e hash SHA-256, registro imutável depois de
-        assinado e auditoria protegida por trigger no banco — o que a norma chama de rastreabilidade.</li>
-        <li><strong>Desempenho dimensionado para crescer:</strong> paginação por cursor (keyset, sem OFFSET)
-        nas tabelas de movimento, eliminação de N+1 e busca textual com <code>pg_trgm</code>.</li>
-      </ul>
-    </article>
-
-    <article class="produto secundario">
-      <div class="produto-cab">
-        <h3>MatchCards</h3>
-        <span class="papel-tag">React Native · Expo · Supabase</span>
-      </div>
-      <p class="resumo">Aplicativo mobile para iOS e Android, com mecânica de cartas colecionáveis aplicada a
-      relacionamento. Full-stack: banco, backend serverless, app e publicação nas lojas.</p>
-      <ul class="marcas">
-        <li><strong>Backend serverless</strong> em Supabase com Row Level Security por tabela, funções SQL,
-        migrações versionadas e Edge Functions — inclusive a exclusão de conta exigida pela <strong>LGPD</strong>.</li>
-        <li><strong>Tempo real:</strong> duelos, chat com mídia, notificações push, geolocalização e
-        animações nativas; painel administrativo próprio em Next.js.</li>
-      </ul>
-    </article>
-
-    <article class="produto secundario">
-      <div class="produto-cab">
-        <h3>Vagas-Bot</h3>
-        <span class="papel-tag">Node.js · SQLite · Playwright</span>
-      </div>
-      <p class="resumo">Pipeline de coleta e qualificação de oportunidades e decisores, com painel web e
-      suíte de testes.</p>
-      <ul class="marcas">
-        <li>Coleta multi-fonte com <strong>deduplicação por similaridade</strong>, classificação de cargos e
-        empresas-alvo, ranqueamento e métricas de degradação das fontes.</li>
-      </ul>
-    </article>
-  </div>
-</section>
 
 <!-- ============ 04 STACK ============ -->
 <section id="stack">
   <div class="wrap">
     <div class="sec-cab">
-      <div class="sec-num">§&nbsp;04</div>
+      <div class="sec-num">§&nbsp;03</div>
       <div>
         <h2>Ferramentas de trabalho</h2>
         <p class="sec-sub">O que eu uso de fato — não uma lista de tudo que já vi na frente.</p>
@@ -863,7 +879,7 @@ footer{padding:26px 0 40px}
 <section id="trajetoria">
   <div class="wrap">
     <div class="sec-cab">
-      <div class="sec-num">§&nbsp;05</div>
+      <div class="sec-num">§&nbsp;04</div>
       <div>
         <h2>Trajetória</h2>
         <p class="sec-sub">De suporte nível 2 na fabricante do ERP a arquiteto das próprias soluções.</p>
@@ -949,6 +965,77 @@ footer{padding:26px 0 40px}
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<section id="produtos">
+  <div class="wrap">
+    <div class="sec-cab">
+      <div class="sec-num">§&nbsp;05</div>
+      <div>
+        <h2>O que eu construo quando o problema não cabe no ERP</h2>
+        <p class="sec-sub">Produtos concebidos, arquitetados e desenvolvidos por mim — do modelo de dados à
+        interface, incluindo segurança, desempenho e conformidade. Em case de cliente eu afirmo; aqui eu mostro.</p>
+      </div>
+    </div>
+
+    <article class="produto">
+      <div class="produto-cab">
+        <h3>MRoTrack</h3>
+        <span class="papel-tag">Java 21 · Spring Boot 4 · PostgreSQL</span>
+      </div>
+      <p class="resumo">Plataforma web multiempresa para manutenção de aeronaves segundo a regulamentação da
+      ANAC (RBAC 91, 135 e 145). Concepção, arquitetura e desenvolvimento integral — hoje o sistema mais
+      complexo que já escrevi sozinho.</p>
+
+      <div class="numeros">
+        <div class="numero"><b>36.000</b><span>linhas de Java</span></div>
+        <div class="numero"><b>68</b><span>entidades de domínio</span></div>
+        <div class="numero"><b>173</b><span>telas</span></div>
+        <div class="numero"><b>43</b><span>relatórios</span></div>
+        <div class="numero"><b>8</b><span>documentos ANAC</span></div>
+      </div>
+
+      <ul class="marcas">
+        <li><strong>Multi-tenant real por schema</strong> no PostgreSQL, com catálogo global compartilhado e
+        chave estrangeira atravessando schemas — cada empresa isolada na própria base lógica.</li>
+        <li><strong>Motor declarativo de relatórios</strong> em PDF e Excel com tela única de parâmetros, que
+        emite os documentos regulatórios exigidos: Ordem de Serviço, SEGVOO 001/003, FCDA, CVA, Peso e
+        Balanceamento, Cadernetas e MEL.</li>
+        <li><strong>Assinatura eletrônica com 2FA TOTP</strong> e hash SHA-256, registro imutável depois de
+        assinado e auditoria protegida por trigger no banco — o que a norma chama de rastreabilidade.</li>
+        <li><strong>Desempenho dimensionado para crescer:</strong> paginação por cursor (keyset, sem OFFSET)
+        nas tabelas de movimento, eliminação de N+1 e busca textual com <code>pg_trgm</code>.</li>
+      </ul>
+    </article>
+
+    <article class="produto secundario">
+      <div class="produto-cab">
+        <h3>MatchCards</h3>
+        <span class="papel-tag">React Native · Expo · Supabase</span>
+      </div>
+      <p class="resumo">Aplicativo mobile para iOS e Android, com mecânica de cartas colecionáveis aplicada a
+      relacionamento. Full-stack: banco, backend serverless, app e publicação nas lojas.</p>
+      <ul class="marcas">
+        <li><strong>Backend serverless</strong> em Supabase com Row Level Security por tabela, funções SQL,
+        migrações versionadas e Edge Functions — inclusive a exclusão de conta exigida pela <strong>LGPD</strong>.</li>
+        <li><strong>Tempo real:</strong> duelos, chat com mídia, notificações push, geolocalização e
+        animações nativas; painel administrativo próprio em Next.js.</li>
+      </ul>
+    </article>
+
+    <article class="produto secundario">
+      <div class="produto-cab">
+        <h3>Vagas-Bot</h3>
+        <span class="papel-tag">Node.js · SQLite · Playwright</span>
+      </div>
+      <p class="resumo">Pipeline de coleta e qualificação de oportunidades e decisores, com painel web e
+      suíte de testes.</p>
+      <ul class="marcas">
+        <li>Coleta multi-fonte com <strong>deduplicação por similaridade</strong>, classificação de cargos e
+        empresas-alvo, ranqueamento e métricas de degradação das fontes.</li>
+      </ul>
+    </article>
   </div>
 </section>
 
@@ -1138,5 +1225,30 @@ footer{padding:26px 0 40px}
 })();
 </script>
 
+
+<script>
+/* ADICAO: alterna as frentes de integracao */
+(function(){
+  var abas = document.querySelectorAll('.frente-aba');
+  function abrir(aba){
+    abas.forEach(function(b){
+      var on = b === aba;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  abas.forEach(function(aba, i){
+    aba.addEventListener('click', function(){ abrir(aba); });
+    aba.addEventListener('keydown', function(ev){
+      var d = ev.key === 'ArrowRight' ? 1 : ev.key === 'ArrowLeft' ? -1 : 0;
+      if(!d) return;
+      ev.preventDefault();
+      var alvo = abas[(i + d + abas.length) % abas.length];
+      abrir(alvo); alvo.focus();
+    });
+  });
+})();
+</script>
 </body>
 </html>
