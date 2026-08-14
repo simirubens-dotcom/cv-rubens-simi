@@ -4,21 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rubens Simi — Analista Desenvolvedor Sênior | TOTVS Protheus, Java e Mobile</title>
-<meta name="description" content="21 anos de ERP TOTVS Protheus (AdvPL/TLPP): integrações críticas em aviação, indústria, logística e meios de pagamento — e produtos autorais em Java, Spring Boot e React Native.">
+<meta name="description" content="21 anos de TOTVS Protheus (AdvPL/TLPP): 40 projetos em produção, 121 integrações críticas em aviação, indústria, logística e meios de pagamento — e produtos autorais em Java, Spring Boot e React Native.">
 <meta name="author" content="Rubens Carneiro Simi">
 <meta name="theme-color" content="#F6F3EC">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Rubens Simi — Analista Desenvolvedor Sênior | TOTVS Protheus, Java e Mobile">
-<meta property="og:description" content="21 anos de ERP TOTVS Protheus (AdvPL/TLPP): integrações críticas em aviação, indústria, logística e meios de pagamento — e produtos autorais em Java, Spring Boot e React Native.">
+<meta property="og:description" content="21 anos de TOTVS Protheus (AdvPL/TLPP): integrações críticas em aviação, indústria, logística e meios de pagamento — e produtos autorais em Java, Spring Boot e React Native.">
 <meta property="og:url" content="https://simirubens-dotcom.github.io/cv-rubens-simi/">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://simirubens-dotcom.github.io/cv-rubens-simi/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6F3EC'/%3E%3Crect x='6' y='6' width='88' height='88' fill='none' stroke='%2314456E' stroke-width='4'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='46' font-weight='bold' fill='%2314456E' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,1157 +30,431 @@
   "knowsAbout": ["TOTVS Protheus", "AdvPL", "TLPP", "Java", "Spring Boot", "PostgreSQL", "React Native", "SQL Server", "Oracle", "Integração de sistemas"]
 }
 </script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&display=swap" rel="stylesheet">
 <style>
-/* =============================================================
-   RUBENS SIMI — DOSSIÊ TÉCNICO
-   Papel, tinta, azul-planta e um carimbo. Sem terminal falso.
-   ============================================================= */
+/* =========================================================
+   PORTFÓLIO RUBENS SIMI
+   Prioridade 1: achar um projeto em 3 segundos.
+   Busca instantânea + filtros + lista densa. Sem tema.
+   ========================================================= */
 :root{
-  --papel:#F6F3EC;
-  --papel-2:#EFEBE1;
-  --papel-3:#E7E1D4;
-  --tinta:#17191C;
-  --tinta-2:#3D444C;
-  --tinta-3:#5F6873;
-  --regra:#CFC8B8;
-  --regra-2:#DED8C9;
-  --planta:#14456E;
-  --planta-2:#0E3252;
-  --planta-luz:#E3EAF1;
-  --carimbo:#A6321F;
-  --carimbo-luz:#F3E4E0;
-  --display:"Bricolage Grotesque","Segoe UI",sans-serif;
-  --corpo:"Newsreader",Georgia,serif;
-  --mono:"JetBrains Mono",ui-monospace,monospace;
-  --w:1180px;
+  /* identidade do portfólio no git: papel, tinta, azul-planta e carimbo */
+  --bg:#F6F3EC; --sup:#FFFFFF; --sup-2:#EFEBE1;
+  --fg:#17191C; --fg-2:#3D444C; --fg-3:#5F6873;
+  --linha:#DED8C9; --linha-2:#CFC8B8;
+  --azul:#14456E; --azul-luz:#E3EAF1;
+  --ok:#2E6B4F; --dest:#A6321F; --dest-luz:#F3E4E0;
+  --ui:"Bricolage Grotesque","Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"JetBrains Mono",monospace;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;color-scheme:light}
-body{
-  background:var(--papel);
-  color:var(--tinta);
-  font-family:var(--corpo);
-  font-size:18px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-/* textura de papel-cartao: granulado de fibra + trama fina, sem glow radial */
-body::before{
-  content:"";
-  position:fixed;inset:0;z-index:0;pointer-events:none;
+html{color-scheme:light;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+/* grão de papel-cartão — mesma técnica do site atual */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23f)' opacity='0.5'/%3E%3C/svg%3E");
-  background-size:220px 220px;
-  opacity:.5;
-  mix-blend-mode:multiply;
-}
-/* trama do cartao: fios claros e escuros quase imperceptiveis */
-body::after{
-  content:"";
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    repeating-linear-gradient(90deg, rgba(120,105,80,.030) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(0deg,  rgba(120,105,80,.026) 0 1px, transparent 1px 3px),
-    linear-gradient(148deg, rgba(255,255,255,.55), rgba(255,255,255,0) 42%);
-  mix-blend-mode:multiply;
-}
+  background-size:220px 220px;opacity:.42;mix-blend-mode:multiply}
 body>*{position:relative;z-index:1}
-body::after{mix-blend-mode:multiply}
-
-::selection{background:var(--planta);color:var(--papel)}
-a{color:inherit}
 img{max-width:100%;display:block}
-
-:focus-visible{
-  outline:2.5px solid var(--planta);
-  outline-offset:3px;
-  border-radius:1px;
-}
-
-.skip{
-  position:absolute;left:-9999px;top:0;
-  background:var(--planta);color:#fff;padding:12px 18px;
-  font-family:var(--mono);font-size:13px;z-index:99;
-}
+a{color:var(--azul)}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--azul);outline-offset:2px;border-radius:2px}
+::selection{background:var(--azul);color:#fff}
+.skip{position:absolute;left:-9999px;background:var(--azul);color:#fff;padding:10px 16px;z-index:99}
 .skip:focus{left:8px;top:8px}
+.wrap{width:min(100% - 32px,1200px);margin-inline:auto}
 
-.wrap{width:min(100% - 40px, var(--w));margin-inline:auto}
+/* ---------- TOPO ---------- */
+.topo{position:sticky;top:0;z-index:40;background:rgba(251,250,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.topo-in{display:flex;align-items:center;gap:20px;height:52px;width:min(100% - 32px,1200px);margin-inline:auto}
+.marca{font-weight:700;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:var(--fg);white-space:nowrap}
+.marca span{color:var(--azul)}
+.topo-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* ---------------- ÍNDICE / NAV ---------------- */
-.indice{
-  position:sticky;top:0;z-index:50;
-  background-color:rgba(246,243,236,.93);
-  backdrop-filter:blur(7px) saturate(1.05);
-  border-bottom:1px solid var(--regra);
-}
-/* a barra recebe o mesmo grao do papel para nao virar uma faixa lisa no topo */
-.indice::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23f)' opacity='0.5'/%3E%3C/svg%3E");
-  background-size:220px 220px;
-  opacity:.42;mix-blend-mode:multiply;
-}
-.indice-in{position:relative;z-index:1}
-.indice-in{
-  width:min(100% - 40px, var(--w));margin-inline:auto;
-  display:flex;align-items:center;gap:18px;
-  height:56px;
-}
-.marca{
-  font-family:var(--display);font-weight:800;font-size:17px;
-  letter-spacing:-.02em;white-space:nowrap;text-decoration:none;
-}
-.marca i{font-style:normal;color:var(--planta)}
-.indice nav{
-  margin-left:auto;
-  display:flex;gap:4px;
-  overflow-x:auto;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
-}
-.indice nav::-webkit-scrollbar{display:none}
-.indice nav a{
-  font-family:var(--mono);font-size:11.5px;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:var(--tinta-3);text-decoration:none;
-  padding:7px 9px;white-space:nowrap;
-  border-bottom:2px solid transparent;
-  transition:color .18s, border-color .18s;
-}
-.indice nav a:hover{color:var(--planta)}
-.indice nav a[aria-current="true"]{color:var(--planta);border-bottom-color:var(--planta)}
-.indice nav a b{color:var(--tinta-3);font-weight:400;margin-right:5px;opacity:.75}
-.indice nav a:hover b,.indice nav a[aria-current="true"] b{color:var(--planta)}
+/* ---------- CAPA COMPACTA ---------- */
+.capa{padding:20px 0 20px;border-bottom:2px solid var(--fg)}
+.registro{display:flex;flex-wrap:wrap;gap:5px 22px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);padding-bottom:11px;margin-bottom:15px;border-bottom:1px solid var(--linha)}
+.registro b{color:var(--fg);font-weight:500}
+.capa h1{font-family:var(--ui);font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.02;letter-spacing:-.032em;max-width:20ch;text-wrap:balance;margin-bottom:16px}
+.capa h1 em{font-style:normal;color:var(--azul)}
+.capa h1 .risco{background:linear-gradient(transparent 66%,var(--azul-luz) 66%);padding:0 2px}
+.capa-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:40px;align-items:start}
+.lede{font-family:var(--serif);font-size:clamp(16px,1.4vw,18.5px);line-height:1.55;color:var(--fg-2);max-width:58ch}
+.lede strong{color:var(--fg);font-weight:600}
+.assinatura{margin-top:18px;padding-top:14px;border-top:1px solid var(--linha);font-family:var(--mono);font-size:12px;color:var(--fg-2);line-height:1.6}
+.assinatura b{color:var(--azul);font-weight:700}
+.provas{list-style:none;display:flex;flex-direction:column}
+.provas li{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:11px 0;border-bottom:1px dotted var(--linha-2);font-family:var(--serif);font-size:15.5px;line-height:1.45;color:var(--fg-2)}
+.provas li:first-child{border-top:1px dotted var(--linha-2)}
+.provas .n{font-family:var(--mono);font-size:10.5px;color:var(--azul);font-weight:700;padding-top:4px}
+.provas strong{color:var(--fg);font-weight:600}
+.carimbo{display:inline-block;margin-top:20px;border:2.5px solid var(--dest);color:var(--dest);
+  font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 13px;transform:rotate(-2.4deg);background:var(--dest-luz);line-height:1.35;text-align:center}
+.carimbo span{display:block;font-size:9px;font-weight:500;letter-spacing:.1em;opacity:.8}
+.acoes{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12.5px;text-decoration:none;padding:10px 16px;border:1.5px solid var(--fg);color:var(--fg);background:transparent;transition:background .16s,color .16s}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.forte{background:var(--azul);border-color:var(--azul);color:#fff}
+.btn.forte:hover{background:#0E3252;border-color:#0E3252;color:#fff}
+.btn svg{width:15px;height:15px;flex:none}
+/* ícones nas cores das marcas — o botão fica claro para a cor aparecer */
+.btn-pdf,.btn-in,.btn-gh,.btn-wa{background:var(--sup);color:var(--fg)}
+.btn-pdf:hover,.btn-in:hover,.btn-gh:hover,.btn-wa:hover{background:var(--sup-2);color:var(--fg)}
+.btn-pdf{border-color:#C8201B;border-width:2px}
+.btn-pdf svg{color:#C8201B}
+.btn-in svg{color:#0A66C2}
+.btn-gh svg{color:#181717}
+.btn-wa svg{color:#25D366}
 
-/* ---------------- CAPA ---------------- */
-.capa{padding:52px 0 46px;border-bottom:2px solid var(--tinta)}
-.registro{
-  display:flex;flex-wrap:wrap;gap:8px 26px;
-  font-family:var(--mono);font-size:11px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-3);
-  padding-bottom:16px;margin-bottom:26px;
-  border-bottom:1px solid var(--regra);
-}
-.registro b{color:var(--tinta);font-weight:500}
-.capa-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:44px;align-items:start}
-h1{
-  font-family:var(--display);
-  font-weight:800;
-  font-size:clamp(34px,5.4vw,62px);
-  line-height:1.02;
-  letter-spacing:-.032em;
-  text-wrap:balance;
-  margin-bottom:20px;
-}
-h1 em{font-style:normal;color:var(--planta)}
-h1 .risco{
-  background:linear-gradient(transparent 66%, var(--planta-luz) 66%);
-  padding:0 2px;
-}
-.lede{
-  font-size:clamp(17px,1.55vw,20px);
-  line-height:1.55;
-  color:var(--tinta-2);
-  max-width:60ch;
-}
-.lede strong{color:var(--tinta);font-weight:600}
-.assinatura{
-  margin-top:22px;padding-top:16px;border-top:1px solid var(--regra);
-  font-family:var(--mono);font-size:12.5px;color:var(--tinta-2);
-  letter-spacing:.01em;
-}
-.assinatura b{color:var(--planta);font-weight:700}
-
-/* provas ancoradas */
-.provas{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:4px}
-.provas li{
-  display:grid;grid-template-columns:26px 1fr;gap:12px;
-  padding:13px 0;border-bottom:1px dotted var(--regra);
-  font-size:16px;line-height:1.45;color:var(--tinta-2);
-}
-.provas li:first-child{border-top:1px dotted var(--regra)}
-.provas .n{
-  font-family:var(--mono);font-size:11px;color:var(--planta);
-  font-weight:700;padding-top:4px;
-}
-.provas strong{color:var(--tinta);font-weight:600}
-
-/* carimbo */
-.carimbo{
-  display:inline-block;
-  margin-top:24px;
-  border:2.5px solid var(--carimbo);
-  color:var(--carimbo);
-  font-family:var(--mono);font-weight:700;font-size:11.5px;
-  letter-spacing:.14em;text-transform:uppercase;
-  padding:9px 14px;
-  transform:rotate(-2.4deg);
-  box-shadow:inset 0 0 0 1.5px var(--papel);
-  background:var(--carimbo-luz);
-  line-height:1.35;
-  text-align:center;
-}
-.carimbo span{display:block;font-size:9.5px;font-weight:500;letter-spacing:.1em;opacity:.8}
-
-/* ações */
-.acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  font-family:var(--mono);font-size:12.5px;font-weight:500;
-  letter-spacing:.02em;text-decoration:none;
-  padding:12px 17px;border:1.5px solid var(--tinta);
-  background:transparent;color:var(--tinta);
-  transition:background .18s, color .18s, transform .18s;
-  touch-action:manipulation;
-}
-.btn:hover{background:var(--tinta);color:var(--papel);transform:translateY(-2px)}
-.btn-forte{background:var(--planta);border-color:var(--planta);color:#fff}
-.btn-forte:hover{background:var(--planta-2);border-color:var(--planta-2);color:#fff}
-.btn svg{width:16px;height:16px;flex:none}
-
-/* ---------------- SEÇÕES ---------------- */
-section{padding:56px 0;border-bottom:1px solid var(--regra)}
-.sec-cab{
-  display:grid;grid-template-columns:74px 1fr;gap:20px;
-  align-items:start;margin-bottom:30px;
-}
-.sec-num{
-  font-family:var(--mono);font-size:12px;font-weight:700;
-  color:var(--planta);letter-spacing:.04em;
-  padding-top:9px;border-top:2.5px solid var(--planta);
-}
-h2{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(23px,2.7vw,33px);letter-spacing:-.02em;
-  line-height:1.1;text-wrap:balance;
-}
-.sec-sub{margin-top:9px;color:var(--tinta-2);font-size:16.5px;max-width:68ch}
-
-/* ---------------- LOGOS ---------------- */
-.logos{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  border-top:1px solid var(--regra);border-left:1px solid var(--regra);
-}
-.logo-cel{
-  border-right:1px solid var(--regra);border-bottom:1px solid var(--regra);
-  aspect-ratio:16/9;
-  display:flex;align-items:center;justify-content:center;
-  padding:16px;background:var(--papel);
-  text-decoration:none;
-  transition:background .18s;
-}
-.logo-cel:hover{background:#fff}
-.logo-cel img{
-  max-height:100%;width:auto;object-fit:contain;
-  opacity:1;
-  transition:transform .22s;
-}
-.logo-cel:hover img{transform:scale(1.04)}
-
-/* ---------------- FICHAS DE CASE ---------------- */
-.fichas{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:0;
-  border-top:1px solid var(--regra);border-left:1px solid var(--regra)}
-.ficha{
-  border-right:1px solid var(--regra);border-bottom:1px solid var(--regra);
-  padding:20px 22px 22px;
-  transition:background .2s;
-}
-.ficha:hover{background:var(--papel-2)}
-.ficha-meta{
-  display:flex;align-items:baseline;gap:10px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--tinta-3);
-  padding-bottom:9px;margin-bottom:12px;
-  border-bottom:1px solid var(--regra-2);
-}
-.ficha-meta .num{color:var(--planta);font-weight:700}
-.ficha-meta .setor{margin-left:auto;text-align:right}
-.ficha h3{
-  font-family:var(--display);font-weight:700;font-size:20px;
-  letter-spacing:-.015em;margin-bottom:3px;
-}
-.ficha .tit{font-size:15.5px;color:var(--planta);font-weight:600;margin-bottom:9px;font-family:var(--corpo)}
-.ficha p{font-size:16px;color:var(--tinta-2);line-height:1.5}
-.ficha .onde{
-  margin-top:10px;font-family:var(--mono);font-size:10.5px;
-  color:var(--tinta-3);letter-spacing:.03em;
-}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px}
-.tag{
-  font-family:var(--mono);font-size:10.5px;
-  padding:4px 7px;border:1px solid var(--regra);
-  background:var(--papel-2);color:var(--tinta-2);
-  white-space:nowrap;
-}
-
-/* ---------------- PRODUTOS AUTORAIS ---------------- */
-.produto{
-  border:1px solid var(--regra);
-  border-left:4px solid var(--planta);
-  background:var(--papel-2);
-  padding:26px 26px 24px;margin-bottom:18px;
-}
-.produto.secundario{border-left-color:var(--carimbo);background:transparent}
-.produto-cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:6px}
-.produto h3{
-  font-family:var(--display);font-weight:800;font-size:clamp(22px,2.4vw,29px);
-  letter-spacing:-.024em;
-}
-.produto .papel-tag{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:#fff;background:var(--planta);padding:4px 8px;
-}
-.produto.secundario .papel-tag{background:var(--carimbo)}
-.produto .resumo{font-size:17px;color:var(--tinta-2);max-width:74ch;margin-bottom:16px}
-.numeros{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));
-  gap:1px;background:var(--regra);border:1px solid var(--regra);margin-bottom:18px;
-}
-.numero{background:var(--papel);padding:11px 13px}
-.numero b{
-  display:block;font-family:var(--display);font-weight:800;font-size:24px;
-  color:var(--planta);line-height:1;letter-spacing:-.02em;
-  font-variant-numeric:tabular-nums;
-}
-.numero span{
-  display:block;margin-top:5px;font-family:var(--mono);font-size:10px;
-  letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-3);line-height:1.35;
-}
-ul.marcas{list-style:none;display:flex;flex-direction:column;gap:7px}
-ul.marcas li{
-  position:relative;padding-left:19px;font-size:16.5px;color:var(--tinta-2);line-height:1.5;
-}
-ul.marcas li::before{
-  content:"";position:absolute;left:0;top:10px;
-  width:9px;height:1.5px;background:var(--planta);
-}
-ul.marcas strong{color:var(--tinta);font-weight:600}
-.produto.secundario ul.marcas li::before{background:var(--carimbo)}
-
-/* ---------------- STACK ---------------- */
-.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;
-  border-top:1px solid var(--regra);border-left:1px solid var(--regra)}
-.stack-col{border-right:1px solid var(--regra);border-bottom:1px solid var(--regra);padding:20px 22px 24px}
-.stack-col h3{
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--planta);
-  padding-bottom:10px;margin-bottom:13px;border-bottom:1px solid var(--regra-2);
-}
-.stack-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
-.stack-col li{font-size:16px;color:var(--tinta-2);line-height:1.45}
-.stack-col li b{color:var(--tinta);font-weight:600}
-.stack-col li i{font-style:normal;color:var(--tinta-3);font-size:14.5px}
-
-/* ---------------- TRAJETÓRIA ---------------- */
-.traj{display:flex;flex-direction:column}
-.cargo{
-  display:grid;grid-template-columns:132px 1fr;gap:24px;
-  padding:20px 0;border-bottom:1px solid var(--regra-2);
-}
-.cargo:first-child{border-top:1px solid var(--regra)}
-.cargo-anos{
-  font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--tinta-3);
-  letter-spacing:.03em;padding-top:5px;font-variant-numeric:tabular-nums;
-}
-.cargo h3{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.017em}
-.cargo .funcao{font-size:15.5px;color:var(--planta);font-weight:600;margin:2px 0 7px}
-.cargo p{font-size:16px;color:var(--tinta-2);line-height:1.5;max-width:76ch}
-
-/* ---------------- ARTIGOS ---------------- */
-.artigos{display:flex;flex-direction:column;border-top:1px solid var(--regra)}
-.artigo{
-  display:grid;grid-template-columns:46px 1fr auto;gap:18px;align-items:center;
-  padding:18px 6px;border-bottom:1px solid var(--regra-2);
-  text-decoration:none;transition:background .18s,padding .18s;
-}
-.artigo:hover{background:var(--papel-2);padding-left:14px}
-.artigo .a-num{font-family:var(--mono);font-size:11.5px;color:var(--planta);font-weight:700}
-.artigo h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;line-height:1.2}
-.artigo p{font-size:15.5px;color:var(--tinta-2);margin-top:3px;line-height:1.45}
-.artigo .seta{
-  font-family:var(--mono);font-size:11px;color:var(--tinta-3);
-  letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
-  display:flex;align-items:center;gap:7px;
-}
-.artigo:hover .seta{color:var(--planta)}
-.artigo .seta svg{width:15px;height:15px;transition:transform .18s}
-.artigo:hover .seta svg{transform:translateX(3px)}
-
-/* ---------------- CREDENCIAIS ---------------- */
-.cred{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:0;
-  border-top:1px solid var(--regra);border-left:1px solid var(--regra)}
-.cred-bloco{border-right:1px solid var(--regra);border-bottom:1px solid var(--regra);padding:20px 22px 24px}
-.cred-bloco h3{
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--planta);
-  padding-bottom:10px;margin-bottom:13px;border-bottom:1px solid var(--regra-2);
-}
-.cred-bloco ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.cred-bloco li{font-size:16px;color:var(--tinta-2);line-height:1.45;display:flex;gap:10px}
-.cred-bloco li b{
-  font-family:var(--mono);font-size:11px;color:var(--planta);font-weight:700;
-  flex:none;padding-top:3px;min-width:36px;font-variant-numeric:tabular-nums;
-}
-.cred-bloco li strong{color:var(--tinta);font-weight:600}
-
-/* ---------------- CONTATO ---------------- */
-.contato{border-bottom:0;padding-bottom:44px}
-.contato-cx{
-  border:2px solid var(--tinta);background:var(--papel-2);
-  padding:clamp(24px,4vw,42px);
-}
-.contato-cx h2{margin-bottom:12px}
-.contato-cx p{font-size:17.5px;color:var(--tinta-2);max-width:62ch;margin-bottom:24px}
-.linhas{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;margin-top:28px;padding-top:22px;border-top:1px solid var(--regra);
-  font-family:var(--mono);font-size:13px;
-}
-.linhas a,.linhas span{
-  display:flex;align-items:center;gap:10px;color:var(--tinta-2);text-decoration:none;
-  word-break:break-word;
-}
-.linhas a:hover{color:var(--planta)}
-.linhas svg{width:16px;height:16px;flex:none;color:var(--planta)}
-
-footer{padding:26px 0 40px}
-.rodape{
-  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;
-  font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--tinta-3);
-  padding-top:18px;border-top:1px solid var(--regra);
-}
-
-/* ---------------- RESPONSIVO ---------------- */
-@media (max-width:900px){
-  .capa-grid{grid-template-columns:1fr;gap:30px}
-  .sec-cab{grid-template-columns:1fr;gap:10px}
-  .sec-num{border-top:none;padding-top:0}
-  .cargo{grid-template-columns:1fr;gap:6px}
-  .cargo-anos{padding-top:0}
-}
-@media (max-width:760px){
-  .logos{grid-template-columns:repeat(3,1fr)}
-}
-@media (max-width:480px){
-  .logos{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:600px){
-  body{font-size:17px}
-  .capa{padding:34px 0 32px}
-  section{padding:42px 0}
-  .artigo{grid-template-columns:32px 1fr;gap:12px}
-  .artigo .seta{display:none}
-  .registro{gap:6px 18px;font-size:10px}
-  .btn{flex:1 1 auto;justify-content:center}
-}
-
-/* ---------------- MOTION ---------------- */
+/* ---------- CARROSSEL DE LOGOS ---------- */
+.esteira{padding:12px 0 6px}
+.esteira-cab{display:flex;align-items:baseline;gap:9px;margin:0 0 7px}
+.e-mais{font-family:var(--ui);font-weight:700;font-size:15px;color:var(--azul);letter-spacing:-.01em}
+.e-num{font-family:var(--ui);font-weight:800;font-size:30px;line-height:1;letter-spacing:-.035em;color:var(--azul);font-variant-numeric:tabular-nums}
+.e-txt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.esteira .mask{background:var(--sup);border:1px solid var(--linha);padding:5px 0}
+.mask{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.fita{display:flex;gap:0;width:max-content;animation:desliza 110s linear infinite;align-items:center}
+.mask:hover .fita{animation-play-state:paused}
+@keyframes desliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lg{flex:none;width:88px;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px}
+.lg img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .18s}
+.lg:hover img{transform:scale(1.08)}
+.lg.esc{background:#22252A}
+.lg.g{width:104px;height:32px}
 @media (prefers-reduced-motion:reduce){
+  .fita{animation:none}
+  .mask{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
   html{scroll-behavior:auto}
-  *,*::before,*::after{
-    animation-duration:.001ms !important;
-    transition-duration:.001ms !important;
-  }
-  .artigo:hover{padding-left:6px}
-  .btn:hover{transform:none}
 }
 
-/* ---------------- IMPRESSÃO ---------------- */
-@media print{
-  body{background:#fff;font-size:11pt}
-  body::before,body::after,.indice,.acoes,.carimbo{display:none !important}
-  section{padding:16pt 0;break-inside:avoid}
-  .produto,.ficha,.cargo{break-inside:avoid}
-  a{text-decoration:none;color:#000}
-  .logo-cel img{filter:none;opacity:1}
+/* ---------- PÁGINAS ---------- */
+/* ---------- ABAS PRINCIPAIS (abaixo do carrossel) ---------- */
+.abas{position:sticky;top:52px;z-index:35;background:var(--bg);border-bottom:2px solid var(--fg);padding:14px 0 0}
+.abas-in{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;
+  width:min(100% - 32px,1200px);margin-inline:auto;padding-bottom:14px}
+.aba{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;
+  padding:12px 15px 13px;background:var(--sup);border:1.5px solid var(--linha-2);border-left:4px solid var(--linha-2);
+  position:relative;transition:transform .16s,border-color .16s,background .16s,box-shadow .16s}
+.aba .n{font-family:var(--ui);font-weight:800;font-size:29px;line-height:1;letter-spacing:-.035em;
+  color:var(--azul);font-variant-numeric:tabular-nums;transition:color .16s}
+.aba .n.seta{font-size:26px;line-height:1.1}
+.aba .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--fg);margin-top:5px}
+.aba .s{font-family:var(--serif);font-size:13px;line-height:1.3;color:var(--fg-3)}
+.aba:hover{transform:translateY(-3px);border-color:var(--azul);border-left-color:var(--azul);
+  box-shadow:0 3px 0 rgba(20,69,110,.14)}
+.aba:hover .n.seta{transform:translateX(3px)}
+.aba .n.seta{display:inline-block;transition:transform .16s}
+.aba[aria-selected="true"]{background:var(--azul);border-color:var(--azul);border-left-color:var(--dest);transform:none;box-shadow:none}
+.aba[aria-selected="true"] .n{color:#fff}
+.aba[aria-selected="true"] .t{color:#fff}
+.aba[aria-selected="true"] .s{color:var(--azul-luz)}
+/* dente ligando a aba ativa ao conteúdo */
+.aba[aria-selected="true"]::after{content:"";position:absolute;left:22px;bottom:-8px;width:13px;height:13px;
+  background:var(--azul);transform:rotate(45deg);z-index:2}
+@media (max-width:900px){
+  .abas-in{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(190px,1fr);
+    overflow-x:auto;scrollbar-width:none}
+  .abas-in::-webkit-scrollbar{display:none}
 }
 
-/* ---------------- ADICAO: MARCAS EM CARROSSEL ---------------- */
-.marcas-cab,.frentes-cab{
-  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  flex-wrap:wrap;margin-top:34px;padding-bottom:8px;border-bottom:1px solid var(--regra);
-}
-.marcas-tit{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em}
-.marcas-nota{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--tinta-3)}
-.marcas{overflow:hidden;margin-top:14px;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.marcas-fita{display:flex;width:max-content;animation:marcas-desliza 70s linear infinite}
-.marcas:hover .marcas-fita{animation-play-state:paused}
-@keyframes marcas-desliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marca-cel{flex:none;width:150px;height:84px;display:flex;align-items:center;
-  justify-content:center;padding:14px;background:var(--papel);
-  border:1px solid var(--regra);margin-right:-1px}
-.marca-cel--escura{background:var(--tinta)}
-.marca-cel img{max-height:100%;max-width:100%;width:auto;object-fit:contain;
-  opacity:1}
+.pg{display:none;padding-top:6px}
+.pg.on{display:block}
+.pg-cab{padding:16px 0 10px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
+.pg-cab .num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--azul);padding-top:7px;border-top:2.5px solid var(--azul)}
+.pg-cab h2{font-family:var(--ui);font-weight:700;font-size:23px;letter-spacing:-.02em}
+.pg-cab p{color:var(--fg-2);margin-top:4px;max-width:76ch;font-family:var(--serif);font-size:15px}
 
-/* ---------------- ADICAO: INTEGRACOES POR FRENTE ---------------- */
-.frentes{margin-top:40px}
-.frente-abas{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.frente-aba{
-  font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--tinta-2);background:var(--papel-2);border:1px solid var(--regra);
-  padding:9px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
-  transition:background .16s,color .16s,border-color .16s;
-}
-.frente-aba b{font-size:10px;color:var(--tinta-3);font-weight:500}
-.frente-aba:hover{background:#fff;border-color:var(--planta)}
-.frente-aba[aria-selected="true"]{background:var(--planta);color:var(--papel);
-  border-color:var(--planta)}
-.frente-aba[aria-selected="true"] b{color:var(--planta-luz)}
-.frente-paineis{margin-top:2px;border-top:2.5px solid var(--planta)}
-.frente-linha{display:grid;grid-template-columns:190px minmax(0,1fr) minmax(0,1fr);
-  gap:18px;padding:14px 2px;border-bottom:1px solid var(--regra);align-items:start}
-.frente-linha:hover{background:var(--papel-2)}
-.frente-cli{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.01em}
-.frente-desc{color:var(--tinta-2);font-size:16px;line-height:1.45}
-.frente-apis{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
-.frente-apis span{font-family:var(--mono);font-size:11px;letter-spacing:.03em;
-  color:var(--planta-2);background:var(--planta-luz);border:1px solid #cddbe7;
-  padding:4px 7px;white-space:nowrap}
-@media (max-width:820px){
-  .frente-linha{grid-template-columns:1fr;gap:8px}
-  .marca-cel{width:126px;height:74px}
-}
-@media (prefers-reduced-motion:reduce){
-  .marcas-fita{animation:none}
-  .marcas{overflow-x:auto}
-}
 
-.frentes-chamada{
-  margin-top:14px;padding:11px 14px;background:var(--planta-luz);
-  border-left:3px solid var(--planta);color:var(--planta-2);
-  font-family:var(--display);font-weight:500;font-size:16px;line-height:1.4;
-}
-.frentes-chamada b{font-weight:700}
-.frente-apis::after{
-  content:"× Protheus";font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.06em;color:var(--tinta-3);align-self:center;
+/* ---------- LISTA DE PROJETOS ---------- */
+/* mestre-detalhe: índice de módulos à esquerda, projetos abertos à direita */
+.md{display:grid;grid-template-columns:236px minmax(0,1fr);gap:22px;align-items:start;padding-bottom:14px}
+.indice{border:1px solid var(--linha-2);background:var(--sup);position:sticky;top:60px}
+.indice-tit{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);padding:9px 14px;border-bottom:1px solid var(--linha);background:var(--sup-2)}
+.indice button{display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;padding:9px 14px;border-bottom:1px solid var(--linha);font-size:13.5px;font-weight:500;color:var(--fg-2);border-left:3px solid transparent;transition:background .13s,color .13s}
+.indice button:last-child{border-bottom:none}
+.indice button:hover{background:var(--sup-2);color:var(--fg)}
+.indice button b{font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--fg-3);margin-left:auto}
+.indice button[aria-current="true"]{background:var(--azul);color:#fff;border-left-color:var(--carimbo,var(--dest));font-weight:700}
+.indice button[aria-current="true"] b{color:rgba(255,255,255,.75)}
+/* sub-caixa com rolagem própria: o conteúdo rola sem mover a página nem o índice */
+.rolavel{max-height:clamp(340px,calc(100vh - 250px),760px);overflow-y:auto;overscroll-behavior:contain;
+  padding:2px 10px 2px 2px;scrollbar-width:thin;scrollbar-color:var(--linha-2) transparent}
+.rolavel::-webkit-scrollbar{width:10px}
+.rolavel::-webkit-scrollbar-track{background:var(--sup-2);border-left:1px solid var(--linha)}
+.rolavel::-webkit-scrollbar-thumb{background:var(--linha-2);border:2px solid var(--sup-2)}
+.rolavel::-webkit-scrollbar-thumb:hover{background:var(--fg-3)}
+.indice{max-height:clamp(340px,calc(100vh - 250px),760px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--linha-2) transparent}
+.painel-cab{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:9px;margin-bottom:12px;border-bottom:2px solid var(--fg)}
+.painel-cab h3{font-size:21px;font-weight:800;letter-spacing:-.025em}
+.painel-cab span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.painel-cab em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--fg-2);margin-left:auto}
+.convite{border:1px dashed var(--linha-2);background:var(--sup);padding:34px 30px;text-align:center}
+.cv-tit{font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--fg)}
+.cv-txt{font-family:var(--serif);font-size:16px;color:var(--fg-2);margin:8px auto 0;max-width:52ch}
+.cv-txt b{color:var(--fg);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
+.card{border:1px solid var(--linha-2);border-left:3px solid var(--azul);background:var(--sup);padding:14px 16px 15px}
+.card.dest{border-left-color:var(--dest);background:var(--dest-luz)}
+.card h4{font-size:15.5px;font-weight:700;letter-spacing:-.015em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .cli{font-family:var(--mono);font-size:10.5px;color:var(--azul);margin:4px 0 7px;letter-spacing:.02em}
+.card .cli i{font-style:normal;color:var(--dest)}
+.card p{font-family:var(--serif);font-size:15px;line-height:1.5;color:var(--fg-2)}
+.card .meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;align-items:center}
+.selo9{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--dest);background:var(--bg);border:1.5px solid var(--dest);padding:2px 6px;text-transform:uppercase}
+.tag{font-family:var(--mono);font-size:10.5px;color:var(--fg-2);border:1px solid var(--linha-2);padding:3px 7px;background:var(--sup-2)}
+.tag.nota{color:var(--ok);border-color:#BFD6C8;background:#F0F6F2}
+.tag.pasta{color:var(--fg-3)}
+
+/* ---------- INTEGRAÇÕES ---------- */
+.ints{border-top:1px solid var(--linha)}
+.int{display:grid;grid-template-columns:190px minmax(0,1.6fr) minmax(0,1.1fr);gap:16px;padding:10px 10px 10px 12px;border-bottom:1px solid var(--linha);align-items:baseline;border-left:3px solid transparent}
+.int:hover{background:var(--sup);border-left-color:var(--dest)}
+.int .c{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+.int .d{font-family:var(--serif);font-size:15px;color:var(--fg-2)}
+.int .a{display:flex;flex-wrap:wrap;gap:5px}
+.int .a span{font-family:var(--mono);font-size:10.5px;color:var(--azul);background:var(--azul-luz);border:1px solid #cddbe7;padding:2px 6px}
+
+/* ---------- PRODUTOS / TRAJETÓRIA / CONTATO ---------- */
+.prod{border:1px solid var(--linha-2);border-left:3px solid var(--azul);background:var(--sup);padding:18px 20px}
+.prod p{color:var(--fg-2);max-width:76ch;font-family:var(--serif);font-size:16.5px}
+.nums{display:flex;flex-wrap:wrap;gap:26px;margin-top:16px;padding-top:14px;border-top:1px solid var(--linha)}
+.nums div b{display:block;font-size:21px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.nums div span{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3)}
+.caixa-traj{border:1px solid var(--linha-2);background:var(--sup);padding:2px 18px}
+.cargo{display:grid;grid-template-columns:118px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid var(--linha)}
+.cargo:last-child{border-bottom:none}
+.cargo .ano{font-family:var(--mono);font-size:12px;color:var(--fg-3);padding-top:2px}
+.cargo h3{font-size:19px;font-weight:700;letter-spacing:-.017em}
+.cargo .fn{font-family:var(--serif);font-size:15px;color:var(--azul);font-weight:600;margin:1px 0 6px}
+.cargo p{color:var(--fg-2);font-family:var(--serif);font-size:15.5px;max-width:80ch}
+.contato{border:2px solid var(--fg);background:var(--sup-2);padding:clamp(24px,4vw,40px);margin:18px 0 0}
+.contato h2{font-family:var(--ui);font-size:27px;font-weight:700;letter-spacing:-.02em;max-width:24ch}
+.contato p{color:var(--fg-2);font-family:var(--serif);font-size:17px;margin-top:10px;max-width:60ch}
+.canais{display:flex;flex-wrap:wrap;gap:24px;margin-top:22px;padding-top:18px;border-top:1px solid var(--linha);font-family:var(--mono);font-size:13px}
+.canais a,.canais span{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--fg-2);word-break:break-word}
+.canais span{color:var(--fg-3)}
+.canais a:hover{color:var(--azul)}
+.canais svg{width:15px;height:15px;flex:none;color:var(--azul)}
+.canais .c-in svg{color:#0A66C2}
+.canais .c-gh svg{color:#181717}
+.canais .c-tel svg{color:#25D366}
+footer{padding:26px 0 40px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--linha);padding-top:16px}
+
+@media (max-width:900px){
+  .capa-grid{grid-template-columns:1fr;gap:20px;align-items:start}
+  .md{grid-template-columns:1fr;gap:14px}
+  .indice{position:static}
+  .indice button{border-left-width:3px}
+  .int{grid-template-columns:1fr;gap:4px}
+  .int .a{margin-top:2px}
+  .cargo{grid-template-columns:1fr;gap:2px}
+  .contador{margin-left:0;width:100%}
+  .pg-cab{grid-template-columns:1fr;gap:6px}
+  .pg-cab .num{border-top:none;padding-top:0}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#lista">Pular para os projetos</a>
 
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-<header class="indice">
-  <div class="indice-in">
-    <a class="marca" href="#topo">Rubens<i>.</i>Simi</a>
-    <nav aria-label="Índice do dossiê">
-      <a href="#clientes"><b>01</b>Clientes</a>
-      <a href="#entregas"><b>02</b>Entregas</a>
-      <a href="#stack"><b>03</b>Stack</a>
-      <a href="#trajetoria"><b>04</b>Trajetória</a>
-      <a href="#produtos"><b>05</b>Produtos</a>
-      <a href="#artigos"><b>06</b>Artigos</a>
-      <a href="#contato"><b>07</b>Contato</a>
-    </nav>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#topo">Rubens<span>.</span>Simi</a>
+    <span class="topo-tag">Analista Desenvolvedor Sênior · TOTVS Protheus</span>
   </div>
 </header>
 
-<main id="conteudo">
-
-<!-- ============ CAPA ============ -->
-<div class="capa" id="topo">
-  <div class="wrap">
-    <div class="registro">
-      <span>Dossiê profissional</span>
-      <span>Reg. <b>RS-2005/2026</b></span>
-      <span>Revisão <b>Agosto&nbsp;2026</b></span>
-      <span>Mogi das Cruzes — <b>SP</b></span>
+<div class="capa">
+  <div class="wrap capa-grid">
+    <div>
+      <p class="registro"><span>Dossiê profissional</span><span>Reg. <b>RS-2005/2026</b></span><span>Revisão <b>Agosto 2026</b></span><span>Mogi das Cruzes — <b>SP</b></span></p>
+      <h1>Vinte e um anos fazendo o <em>Protheus</em> <span class="risco">conversar</span> com o resto do mundo.</h1>
+      <p class="lede"><strong>Analista desenvolvedor sênior em AdvPL e TLPP</strong> — seis deles
+      dentro da própria TOTVS. Já coloquei o ERP para falar com VTEX, banco, Correios, WhatsApp,
+      balança de chão de fábrica e sistema de companhia aérea, em operação onde a falha custa caro:
+      avião parado, linha sem pesagem, loja sem preço. Nos últimos anos também projeto
+      <strong>produtos próprios em Java e React Native</strong>, do banco de dados à tela.</p>
+      <p class="assinatura">
+        Sou contador de formação — Ciências Contábeis com ênfase em Análise de Sistemas.<br>
+        Discuto o <b>fechamento</b> com a controladoria e o <b>RPO</b> com o TI na mesma reunião.
+      </p>
+      <div class="acoes">
+        <a class="btn btn-pdf" href="Rubens-Simi-CV.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6m0 0 2.5-2.5M12 17l-2.5-2.5"/></svg>
+          Baixar currículo (PDF)
+        </a>
+        <a class="btn btn-in" href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-gh" href="https://github.com/simirubens-dotcom" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/5511953523317" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.53 3.75 1.44 5.31L2 22l4.98-1.6a9.8 9.8 0 0 0 5.06 1.39h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.75 14.05c-.24.68-1.4 1.3-1.93 1.34-.51.05-1.16.07-1.87-.12-.43-.13-.98-.31-1.7-.62-2.98-1.29-4.93-4.29-5.08-4.49-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.7-.17 1.38z"/></svg>
+          WhatsApp
+        </a>
+      </div>
     </div>
-
-    <div class="capa-grid">
-      <div>
-        <h1>Vinte e um anos dentro do <em>ERP</em> que a empresa <span class="risco">não pode desligar</span>.</h1>
-        <p class="lede">
-          <strong>Analista Desenvolvedor Sênior em TOTVS Protheus</strong> (AdvPL/TLPP). Integrações
-          críticas em aviação, indústria, logística e meios de pagamento — e, nos últimos anos,
-          <strong>produtos próprios em Java, Spring Boot e React Native</strong>, escritos do banco de dados
-          à tela.
-        </p>
-        <p class="assinatura">
-          Formado em Ciências Contábeis com ênfase em Análise de Sistemas.<br>
-          <b>Leio a regra de negócio na origem</b> — não só o requisito já traduzido.
-        </p>
-
-        <div class="acoes">
-          <a class="btn btn-forte" href="Rubens-Simi-CV.pdf" download>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            Baixar currículo (PDF)
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z"/></svg>
-            LinkedIn
-          </a>
-          <a class="btn" href="https://github.com/simirubens-dotcom" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-            GitHub
-          </a>
-          <a class="btn" href="https://wa.me/5511953523317" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.53 3.75 1.44 5.31L2 22l4.98-1.6a9.8 9.8 0 0 0 5.06 1.39h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.75 14.05c-.24.68-1.4 1.3-1.93 1.34-.51.05-1.16.07-1.87-.12-.43-.13-.98-.31-1.7-.62-2.98-1.29-4.93-4.29-5.08-4.49-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.7-.17 1.38z"/></svg>
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <ul class="provas">
-          <li>
-            <span class="n">01</span>
-            <span><strong>Ex-TOTVS.</strong> Seis anos na fabricante do ERP: suporte de nível 2 em chamados
-            complexos e <strong>instrutor oficial homologado</strong> dos módulos de controladoria.</span>
-          </li>
-          <li>
-            <span class="n">02</span>
-            <span><strong>270+ pontos de venda</strong> sincronizados ao sistema central na Goodyear —
-            escala provada em produção, não em slide.</span>
-          </li>
-          <li>
-            <span class="n">03</span>
-            <span><strong>36 mil linhas de Java</strong> num produto autoral sujeito à regulamentação da
-            ANAC, com multi-tenant, assinatura eletrônica e auditoria imutável.</span>
-          </li>
-        </ul>
-        <div class="carimbo">
-          Disponível para projetos
-          <span>consultoria · alocação · squad</span>
-        </div>
-      </div>
+    <div>
+      <ul class="provas">
+        <li><span class="n">01</span><span><strong>Ex-TOTVS.</strong> Seis anos na fabricante do ERP:
+        suporte de nível 2 em chamados complexos e <strong>instrutor oficial homologado</strong> dos
+        módulos de controladoria.</span></li>
+        <li><span class="n">02</span><span><strong>270+ pontos de venda</strong> sincronizados ao
+        sistema central na Goodyear — escala provada em produção, não em slide.</span></li>
+        <li><span class="n">03</span><span><strong>36 mil linhas de Java</strong> num produto autoral
+        sujeito à regulamentação da ANAC, com multi-tenant, assinatura eletrônica e auditoria
+        imutável.</span></li>
+      </ul>
+      <div class="carimbo">Disponível para projetos<span>consultoria · alocação · squad</span></div>
     </div>
   </div>
 </div>
 
-<!-- ============ 01 CLIENTES ============ -->
-<section id="clientes">
+<div class="esteira">
   <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;01</div>
-      <div>
-        <h2>Onde esse código roda</h2>
-        <p class="sec-sub">Empresas cujos processos passaram por rotinas e integrações que escrevi, direta ou
-        indiretamente, ao longo de 21 anos de consultoria e desenvolvimento.</p>
-      </div>
+    <div class="esteira-cab">
+      <span class="e-mais">+ de</span>
+      <span class="e-num" id="n-clientes">120</span>
+      <span class="e-txt">empresas atendidas</span>
     </div>
-    <div class="logos">
-      <a class="logo-cel" href="#e-avianca"><img src="Avianca-Logo.png" alt="Avianca" width="480" height="270" loading="lazy"></a>
-      <a class="logo-cel" href="#e-goodyear"><img src="goodyear.png" alt="Goodyear" width="355" height="142" loading="lazy"></a>
-      <a class="logo-cel" href="#e-natura"><img src="natura-logo-png_seeklogo-97474.png" alt="Natura" width="480" height="480" loading="lazy"></a>
-      <a class="logo-cel" href="#e-totvs"><img src="totvs logo.jpg" alt="TOTVS" width="319" height="158" loading="lazy"></a>
-      <a class="logo-cel" href="#e-ampm"><img src="ampm logo.jpg" alt="AmPm" width="346" height="145" loading="lazy"></a>
-      <a class="logo-cel" href="#e-jadlog"><img src="JadLog.jpg" alt="JadLog" width="225" height="225" loading="lazy"></a>
-      <a class="logo-cel" href="#e-petros"><img src="Petros.png" alt="Petros" width="180" height="144" loading="lazy"></a>
-      <a class="logo-cel" href="#e-certisign"><img src="Certisign.png" alt="Certisign" width="261" height="193" loading="lazy"></a>
-      <a class="logo-cel" href="#e-schneider"><img src="Schneider.png" alt="Schneider Electric" width="480" height="270" loading="lazy"></a>
-      <a class="logo-cel" href="#e-multilaser"><img src="multilase.png" alt="Multilaser" width="225" height="225" loading="lazy"></a>
-    </div>
-  
-    <!-- ============ ADICAO: marcas em carrossel ============ -->
-    <div class="marcas-cab">
-      <span class="marcas-tit">Mais marcas atendidas</span>
-      <span class="marcas-nota">47 empresas &middot; passe o mouse para parar</span>
-    </div>
-    <div class="marcas">
-      <div class="marcas-fita"><div class="marca-cel"><img src="logos/adias.webp" alt="A.Dias" decoding="async"></div><div class="marca-cel"><img src="logos/adimax.png" alt="Adimax" decoding="async"></div><div class="marca-cel"><img src="logos/alliar_ico.png" alt="Alliar" decoding="async"></div><div class="marca-cel"><img src="logos/alice_ico.png" alt="Alice" decoding="async"></div><div class="marca-cel"><img src="logos/asics.png" alt="Asics" decoding="async"></div><div class="marca-cel"><img src="logos/athena.svg" alt="Athena Saúde" decoding="async"></div><div class="marca-cel"><img src="logos/atrialub.png" alt="Atria Lub" decoding="async"></div><div class="marca-cel"><img src="logos/baciodilatte.svg" alt="Bacio di Latte" decoding="async"></div><div class="marca-cel"><img src="logos/careplus.png" alt="Care Plus" decoding="async"></div><div class="marca-cel"><img src="logos/cemigsaude.svg" alt="CEMIG Saúde" decoding="async"></div><div class="marca-cel"><img src="logos/certisign.gif" alt="Certisign" decoding="async"></div><div class="marca-cel"><img src="logos/comerc.png" alt="Comerc Energia" decoding="async"></div><div class="marca-cel"><img src="logos/conexao.webp" alt="Conexão" decoding="async"></div><div class="marca-cel marca-cel--escura"><img src="logos/crawford.svg" alt="Crawford" decoding="async"></div><div class="marca-cel"><img src="logos/criare.png" alt="Criare" decoding="async"></div><div class="marca-cel"><img src="logos/csu_ico.png" alt="CSU" decoding="async"></div><div class="marca-cel"><img src="logos/espro.png" alt="Espro" decoding="async"></div><div class="marca-cel"><img src="logos/fernandez.png" alt="Fernandez Papel" decoding="async"></div><div class="marca-cel"><img src="logos/flash.svg" alt="FlashOn" decoding="async"></div><div class="marca-cel"><img src="logos/fortbras.png" alt="Fortbras" decoding="async"></div><div class="marca-cel"><img src="logos/geru.png" alt="Geru" decoding="async"></div><div class="marca-cel"><img src="logos/glovis.jpg" alt="Hyundai Glovis" decoding="async"></div><div class="marca-cel"><img src="logos/golden.webp" alt="Golden" decoding="async"></div><div class="marca-cel"><img src="logos/grupoaldo_ico.png" alt="Grupo Aldo" decoding="async"></div><div class="marca-cel"><img src="logos/hbr.svg" alt="HBR Aviação" decoding="async"></div><div class="marca-cel"><img src="logos/hci_ico.png" alt="HCI" decoding="async"></div><div class="marca-cel"><img src="logos/hinode.png" alt="Hinode" decoding="async"></div><div class="marca-cel"><img src="logos/reciclabr_ico.jpg" alt="Latasa / Recicla BR" decoding="async"></div><div class="marca-cel"><img src="logos/madeiramadeira_ico.png" alt="MadeiraMadeira" decoding="async"></div><div class="marca-cel"><img src="logos/madero.png" alt="Madero" decoding="async"></div><div class="marca-cel"><img src="logos/master.svg" alt="Master" decoding="async"></div><div class="marca-cel"><img src="logos/mentholatum_ico.png" alt="Mentholatum" decoding="async"></div><div class="marca-cel"><img src="logos/mgn.png" alt="MGN" decoding="async"></div><div class="marca-cel"><img src="logos/oncoclinicas.png" alt="Oncoclínicas" decoding="async"></div><div class="marca-cel marca-cel--escura"><img src="logos/ontime.png" alt="Ontime" decoding="async"></div><div class="marca-cel marca-cel--escura"><img src="logos/opusoculos.svg" alt="Opus Óculos / Óticas Diniz" decoding="async"></div><div class="marca-cel"><img src="logos/osklen_ico.png" alt="Osklen" decoding="async"></div><div class="marca-cel"><img src="logos/petz.svg" alt="Petz" decoding="async"></div><div class="marca-cel"><img src="logos/prozyn.png" alt="Prozyn" decoding="async"></div><div class="marca-cel"><img src="logos/renova.png" alt="Renova" decoding="async"></div><div class="marca-cel"><img src="logos/setta.png" alt="Setta" decoding="async"></div><div class="marca-cel"><img src="logos/tateti.png" alt="Tateti" decoding="async"></div><div class="marca-cel"><img src="logos/tiscoski_ico.png" alt="Tiscoski" decoding="async"></div><div class="marca-cel"><img src="logos/topico.svg" alt="Tópico" decoding="async"></div><div class="marca-cel"><img src="logos/verquimica.png" alt="Verquímica" decoding="async"></div><div class="marca-cel"><img src="logos/wdc_ico.png" alt="WDC Networks" decoding="async"></div><div class="marca-cel"><img src="logos/yama.svg" alt="Yama" decoding="async"></div><div class="marca-cel"><img src="logos/adias.webp" alt="A.Dias" decoding="async"></div><div class="marca-cel"><img src="logos/adimax.png" alt="Adimax" decoding="async"></div><div class="marca-cel"><img src="logos/alliar_ico.png" alt="Alliar" decoding="async"></div><div class="marca-cel"><img src="logos/alice_ico.png" alt="Alice" decoding="async"></div><div class="marca-cel"><img src="logos/asics.png" alt="Asics" decoding="async"></div><div class="marca-cel"><img src="logos/athena.svg" alt="Athena Saúde" decoding="async"></div><div class="marca-cel"><img src="logos/atrialub.png" alt="Atria Lub" decoding="async"></div><div class="marca-cel"><img src="logos/baciodilatte.svg" alt="Bacio di Latte" decoding="async"></div><div class="marca-cel"><img src="logos/careplus.png" alt="Care Plus" decoding="async"></div><div class="marca-cel"><img src="logos/cemigsaude.svg" alt="CEMIG Saúde" decoding="async"></div><div class="marca-cel"><img src="logos/certisign.gif" alt="Certisign" decoding="async"></div><div class="marca-cel"><img src="logos/comerc.png" alt="Comerc Energia" decoding="async"></div><div class="marca-cel"><img src="logos/conexao.webp" alt="Conexão" decoding="async"></div><div class="marca-cel marca-cel--escura"><img src="logos/crawford.svg" alt="Crawford" decoding="async"></div><div class="marca-cel"><img src="logos/criare.png" alt="Criare" decoding="async"></div><div class="marca-cel"><img src="logos/csu_ico.png" alt="CSU" decoding="async"></div><div class="marca-cel"><img src="logos/espro.png" alt="Espro" decoding="async"></div><div class="marca-cel"><img src="logos/fernandez.png" alt="Fernandez Papel" decoding="async"></div><div class="marca-cel"><img src="logos/flash.svg" alt="FlashOn" decoding="async"></div><div class="marca-cel"><img src="logos/fortbras.png" alt="Fortbras" decoding="async"></div><div class="marca-cel"><img src="logos/geru.png" alt="Geru" decoding="async"></div><div class="marca-cel"><img src="logos/glovis.jpg" alt="Hyundai Glovis" decoding="async"></div><div class="marca-cel"><img src="logos/golden.webp" alt="Golden" decoding="async"></div><div class="marca-cel"><img src="logos/grupoaldo_ico.png" alt="Grupo Aldo" decoding="async"></div><div class="marca-cel"><img src="logos/hbr.svg" alt="HBR Aviação" decoding="async"></div><div class="marca-cel"><img src="logos/hci_ico.png" alt="HCI" decoding="async"></div><div class="marca-cel"><img src="logos/hinode.png" alt="Hinode" decoding="async"></div><div class="marca-cel"><img src="logos/reciclabr_ico.jpg" alt="Latasa / Recicla BR" decoding="async"></div><div class="marca-cel"><img src="logos/madeiramadeira_ico.png" alt="MadeiraMadeira" decoding="async"></div><div class="marca-cel"><img src="logos/madero.png" alt="Madero" decoding="async"></div><div class="marca-cel"><img src="logos/master.svg" alt="Master" decoding="async"></div><div class="marca-cel"><img src="logos/mentholatum_ico.png" alt="Mentholatum" decoding="async"></div><div class="marca-cel"><img src="logos/mgn.png" alt="MGN" decoding="async"></div><div class="marca-cel"><img src="logos/oncoclinicas.png" alt="Oncoclínicas" decoding="async"></div><div class="marca-cel marca-cel--escura"><img src="logos/ontime.png" alt="Ontime" decoding="async"></div><div class="marca-cel"><img src="logos/opusoculos.svg" alt="Opus Óculos / Óticas Diniz" decoding="async"></div><div class="marca-cel"><img src="logos/osklen_ico.png" alt="Osklen" decoding="async"></div><div class="marca-cel"><img src="logos/petz.svg" alt="Petz" decoding="async"></div><div class="marca-cel"><img src="logos/prozyn.png" alt="Prozyn" decoding="async"></div><div class="marca-cel"><img src="logos/renova.png" alt="Renova" decoding="async"></div><div class="marca-cel"><img src="logos/setta.png" alt="Setta" decoding="async"></div><div class="marca-cel"><img src="logos/tateti.png" alt="Tateti" decoding="async"></div><div class="marca-cel"><img src="logos/tiscoski_ico.png" alt="Tiscoski" decoding="async"></div><div class="marca-cel"><img src="logos/topico.svg" alt="Tópico" decoding="async"></div><div class="marca-cel"><img src="logos/verquimica.png" alt="Verquímica" decoding="async"></div><div class="marca-cel"><img src="logos/wdc_ico.png" alt="WDC Networks" decoding="async"></div><div class="marca-cel"><img src="logos/yama.svg" alt="Yama" decoding="async"></div></div>
-    </div>
+    <div class="mask"><div class="fita" id="fita-a"></div></div>
+  </div>
+</div>
 
-    <!-- ============ ADICAO: integracoes por frente ============ -->
-    <div class="frentes" id="integracoes">
-      <div class="frentes-cab">
-        <span class="marcas-tit">Integra&ccedil;&otilde;es por frente</span>
-        <span class="marcas-nota">sistema externo &times; Protheus</span>
-      </div>
-      <p class="frentes-chamada">Clique na frente para abrir as integra&ccedil;&otilde;es que entreguei nela &mdash; cada linha liga um <b>sistema externo ao Protheus</b>.</p>
-      <div class="frente-abas" role="tablist" aria-label="Frentes de integra&ccedil;&atilde;o"><button class="frente-aba" role="tab" id="aba-fin" aria-controls="p-fin" aria-selected="true" tabindex="0">Financeiro e bancos<b>17</b></button><button class="frente-aba" role="tab" id="aba-log" aria-controls="p-log" aria-selected="false" tabindex="-1">Logística e frete<b>16</b></button><button class="frente-aba" role="tab" id="aba-fiscal" aria-controls="p-fiscal" aria-selected="false" tabindex="-1">Fiscal e documentos<b>14</b></button><button class="frente-aba" role="tab" id="aba-ecom" aria-controls="p-ecom" aria-selected="false" tabindex="-1">E-commerce e vendas<b>13</b></button><button class="frente-aba" role="tab" id="aba-bpm" aria-controls="p-bpm" aria-selected="false" tabindex="-1">BPM e ECM<b>13</b></button><button class="frente-aba" role="tab" id="aba-dados" aria-controls="p-dados" aria-selected="false" tabindex="-1">Dados e cadastros<b>12</b></button><button class="frente-aba" role="tab" id="aba-compras" aria-controls="p-compras" aria-selected="false" tabindex="-1">Compras e suprimentos<b>7</b></button><button class="frente-aba" role="tab" id="aba-msg" aria-controls="p-msg" aria-selected="false" tabindex="-1">Mensageria<b>7</b></button><button class="frente-aba" role="tab" id="aba-rh" aria-controls="p-rh" aria-selected="false" tabindex="-1">RH e ponto<b>7</b></button><button class="frente-aba" role="tab" id="aba-iot" aria-controls="p-iot" aria-selected="false" tabindex="-1">IoT e telemetria<b>5</b></button><button class="frente-aba" role="tab" id="aba-saude" aria-controls="p-saude" aria-selected="false" tabindex="-1">Saúde<b>5</b></button><button class="frente-aba" role="tab" id="aba-wms" aria-controls="p-wms" aria-selected="false" tabindex="-1">WMS e armazém<b>3</b></button><button class="frente-aba" role="tab" id="aba-crm" aria-controls="p-crm" aria-selected="false" tabindex="-1">CRM<b>2</b></button></div>
-      <div class="frente-paineis"><div class="frente-painel" role="tabpanel" id="p-fin" aria-labelledby="aba-fin"><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Vindi</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>Vadu</span></div></div><div class="frente-linha"><div class="frente-cli">Avanço Resources</div><div class="frente-desc">Requisições, adiantamentos e prestação de contas</div><div class="frente-apis"><span>Argo</span></div></div><div class="frente-linha"><div class="frente-cli">Care Plus</div><div class="frente-desc">Conciliação de recebíveis de cartão</div><div class="frente-apis"><span>Conciliadora</span></div></div><div class="frente-linha"><div class="frente-cli">Certisign</div><div class="frente-desc">Gestão de pedidos e AR, conciliação de pagamentos</div><div class="frente-apis"><span>GAR ERP</span><span>Adyen</span></div></div><div class="frente-linha"><div class="frente-cli">Cronimet</div><div class="frente-desc">Open Banking e manifestação do destinatário</div><div class="frente-apis"><span>Finnet</span></div></div><div class="frente-linha"><div class="frente-cli">DMC / Sou Vaga Lume</div><div class="frente-desc">Chatbot, pagamentos, marketing e consulta de crédito</div><div class="frente-apis"><span>BluPay</span><span>SPC</span><span>Bradesco</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>Serasa</span></div></div><div class="frente-linha"><div class="frente-cli">FlashOn</div><div class="frente-desc">Despesas corporativas e benefícios</div><div class="frente-apis"><span>ExpenseOn</span></div></div><div class="frente-linha"><div class="frente-cli">Funpar</div><div class="frente-desc">Boletos registrados e PIX</div><div class="frente-apis"><span>Itaú</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Kobold</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Braspag</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Conciliadora</span></div></div><div class="frente-linha"><div class="frente-cli">Opus Óculos / Óticas Diniz</div><div class="frente-desc">Conciliação de cartões e consulta de CEP</div><div class="frente-apis"><span>ConciliadorBR</span></div></div><div class="frente-linha"><div class="frente-cli">Surf Telecom</div><div class="frente-desc">Despesas corporativas e NFS-e</div><div class="frente-apis"><span>VExpenses</span></div></div><div class="frente-linha"><div class="frente-cli">Vivest</div><div class="frente-desc">Benefícios, pagamentos e prestação de contas ao TCE</div><div class="frente-apis"><span>Facil Informática</span><span>CMFlex</span></div></div><div class="frente-linha"><div class="frente-cli">WDC Networks</div><div class="frente-desc">Assinatura digital e boletos</div><div class="frente-apis"><span>Portal de Boletos</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-log" aria-labelledby="aba-log" hidden><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Correios SIGEP</span><span>Rapidão Cometa</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>Correios</span><span>Veloe</span></div></div><div class="frente-linha"><div class="frente-cli">Biodente</div><div class="frente-desc">Impressão remota, postagem e índices econômicos</div><div class="frente-apis"><span>VisualSet</span></div></div><div class="frente-linha"><div class="frente-cli">Conexão</div><div class="frente-desc">Frete, rastreio e etiquetas de postagem</div><div class="frente-apis"><span>Correios API</span><span>LeanTrack</span><span>VisualSet</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>SimFrete</span></div></div><div class="frente-linha"><div class="frente-cli">Fernandez Papel</div><div class="frente-desc">Transporte e CT-e, cotação de câmbio</div><div class="frente-apis"><span>Usemol</span><span>Multiembarcador</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>Correios</span></div></div><div class="frente-linha"><div class="frente-cli">Golden</div><div class="frente-desc">Averbação de carga e integração de vendas</div><div class="frente-apis"><span>Averbe Porto</span><span>Connect Inc</span></div></div><div class="frente-linha"><div class="frente-cli">HCI</div><div class="frente-desc">Rastreio de encomendas e portal de chamados</div><div class="frente-apis"><span>Track3r</span></div></div><div class="frente-linha"><div class="frente-cli">Hyundai Glovis</div><div class="frente-desc">Comércio exterior</div><div class="frente-apis"><span>Ecomex</span></div></div><div class="frente-linha"><div class="frente-cli">Mentholatum</div><div class="frente-desc">E-commerce e rastreio de transportadoras</div><div class="frente-apis"><span>Correios</span><span>Braspress</span><span>Total Express</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>Comprovei</span></div></div><div class="frente-linha"><div class="frente-cli">Ontime</div><div class="frente-desc">Gestão operacional e TSS</div><div class="frente-apis"><span>Apply System</span></div></div><div class="frente-linha"><div class="frente-cli">Paviloche</div><div class="frente-desc">Roteirização de entregas e NF-e</div><div class="frente-apis"><span>Way Data Solution</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>Loggi</span><span>Shippify</span><span>ClickEntregas</span><span>JadLog</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>Intelipost</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-fiscal" aria-labelledby="aba-fiscal" hidden><div class="frente-linha"><div class="frente-cli">Alice</div><div class="frente-desc">Faturamento de saúde e emissão de NFS-e</div><div class="frente-apis"><span>eNotas</span></div></div><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Arquivei</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>Dootax</span></div></div><div class="frente-linha"><div class="frente-cli">Comerc Energia</div><div class="frente-desc">NFS-e e mercado livre de energia</div><div class="frente-apis"><span>Prefeitura de SP</span><span>CCEE</span></div></div><div class="frente-linha"><div class="frente-cli">Criare</div><div class="frente-desc">NFS-e e portal de suprimentos</div><div class="frente-apis"><span>TecnoSpeed</span></div></div><div class="frente-linha"><div class="frente-cli">Cronimet</div><div class="frente-desc">Open Banking e manifestação do destinatário</div><div class="frente-apis"><span>TOTVS</span></div></div><div class="frente-linha"><div class="frente-cli">Geru</div><div class="frente-desc">Assinatura eletrônica e cálculo tributário</div><div class="frente-apis"><span>AddTax Cloud</span></div></div><div class="frente-linha"><div class="frente-cli">Ontime</div><div class="frente-desc">Gestão operacional e TSS</div><div class="frente-apis"><span>TSS TOTVS</span></div></div><div class="frente-linha"><div class="frente-cli">Paviloche</div><div class="frente-desc">Roteirização de entregas e NF-e</div><div class="frente-apis"><span>WMSul</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>Conexão NFe</span></div></div><div class="frente-linha"><div class="frente-cli">Surf Telecom</div><div class="frente-desc">Despesas corporativas e NFS-e</div><div class="frente-apis"><span>Prefeituras SP e Rio</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>IBPT</span></div></div><div class="frente-linha"><div class="frente-cli">Vivest</div><div class="frente-desc">Benefícios, pagamentos e prestação de contas ao TCE</div><div class="frente-apis"><span>AUDESP</span></div></div><div class="frente-linha"><div class="frente-cli">Yama</div><div class="frente-desc">Força de vendas e XML de notas</div><div class="frente-apis"><span>Arquivei</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-ecom" aria-labelledby="aba-ecom" hidden><div class="frente-linha"><div class="frente-cli">A.Dias</div><div class="frente-desc">Pedidos de e-commerce, marketplace e gateway de pagamento</div><div class="frente-apis"><span>FBits</span><span>AnyMarket</span><span>ClicArCondicionado</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>FastChannel</span><span>SignaShop</span></div></div><div class="frente-linha"><div class="frente-cli">Bacio di Latte</div><div class="frente-desc">Integração de vendas</div><div class="frente-apis"><span>MakeValue</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Dorel</div><div class="frente-desc">Portal B2B, webhooks de clientes, frete e crédito</div><div class="frente-apis"><span>API Dorel</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>VTEX</span><span>Mercado Livre</span></div></div><div class="frente-linha"><div class="frente-cli">Hinode</div><div class="frente-desc">E-commerce e cotação de câmbio</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Mentholatum</div><div class="frente-desc">E-commerce e rastreio de transportadoras</div><div class="frente-apis"><span>VTEX</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>Illimitar</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>WS Petz</span><span>Aptus</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>PalmApp</span></div></div><div class="frente-linha"><div class="frente-cli">São Rafael</div><div class="frente-desc">Força de vendas em campo</div><div class="frente-apis"><span>uMov.me</span></div></div><div class="frente-linha"><div class="frente-cli">Yama</div><div class="frente-desc">Força de vendas e XML de notas</div><div class="frente-apis"><span>SoftSite / GeoSales</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-bpm" aria-labelledby="aba-bpm" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>TOTVS iPaaS</span><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Espro</div><div class="frente-desc">Vagas e recrutamento, workflow e cálculo de distância</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Fortbras</div><div class="frente-desc">Frete, e-commerce, marketplace e workflow</div><div class="frente-apis"><span>LinkAPI</span><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">Geru</div><div class="frente-desc">Assinatura eletrônica e cálculo tributário</div><div class="frente-apis"><span>SmartDocx</span></div></div><div class="frente-linha"><div class="frente-cli">Grupo Aldo</div><div class="frente-desc">Gestão jurídica</div><div class="frente-apis"><span>Projuris</span></div></div><div class="frente-linha"><div class="frente-cli">Grupo Águas do Brasil</div><div class="frente-desc">BPM de aprovações e API corporativa do grupo</div><div class="frente-apis"><span>Zeev</span><span>API própria</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Fluig</span></div></div><div class="frente-linha"><div class="frente-cli">TOTVS / TIFIN</div><div class="frente-desc">Portais corporativos, assinatura eletrônica e marketing</div><div class="frente-apis"><span>SSIM</span><span>Fluig</span><span>DocuSign</span></div></div><div class="frente-linha"><div class="frente-cli">Tateti</div><div class="frente-desc">Tributos, frete e BPM</div><div class="frente-apis"><span>AgileProcess</span></div></div><div class="frente-linha"><div class="frente-cli">Tiscoski</div><div class="frente-desc">Barramento de integração</div><div class="frente-apis"><span>Digibee</span></div></div><div class="frente-linha"><div class="frente-cli">WDC Networks</div><div class="frente-desc">Assinatura digital e boletos</div><div class="frente-apis"><span>Portal de Assinaturas</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-dados" aria-labelledby="aba-dados" hidden><div class="frente-linha"><div class="frente-cli">Athena Saúde</div><div class="frente-desc">Exposição do ERP por API gateway</div><div class="frente-apis"><span>Sensedia</span><span>AllStrategy</span></div></div><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>ReceitaWS</span><span>Strider / Cropwise</span></div></div><div class="frente-linha"><div class="frente-cli">Biodente</div><div class="frente-desc">Impressão remota, postagem e índices econômicos</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Comerc Energia</div><div class="frente-desc">NFS-e e mercado livre de energia</div><div class="frente-apis"><span>PowerView</span></div></div><div class="frente-linha"><div class="frente-cli">Fernandez Papel</div><div class="frente-desc">Transporte e CT-e, cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Hinode</div><div class="frente-desc">E-commerce e cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Opus Óculos / Óticas Diniz</div><div class="frente-desc">Conciliação de cartões e consulta de CEP</div><div class="frente-apis"><span>ViaCEP</span><span>Postmon</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>CNPJ.ws</span></div></div><div class="frente-linha"><div class="frente-cli">Prozyn</div><div class="frente-desc">Força de vendas, NF-e e cotação de câmbio</div><div class="frente-apis"><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">Setta</div><div class="frente-desc">Plataforma de dados</div><div class="frente-apis"><span>Carol (TOTVS)</span></div></div><div class="frente-linha"><div class="frente-cli">Verquímica</div><div class="frente-desc">Consulta de CNPJ e cotação de câmbio</div><div class="frente-apis"><span>ReceitaWS</span><span>CNPJ.ws</span><span>Banco Central</span></div></div><div class="frente-linha"><div class="frente-cli">ViaMarke</div><div class="frente-desc">Exposição de REST do Protheus: pedidos, títulos e estoque</div><div class="frente-apis"><span>VMBrain</span><span>StarMaker</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-compras" aria-labelledby="aba-compras" hidden><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Bionexo</span></div></div><div class="frente-linha"><div class="frente-cli">Criare</div><div class="frente-desc">NFS-e e portal de suprimentos</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Nimbi</span></div></div><div class="frente-linha"><div class="frente-cli">Madero</div><div class="frente-desc">WMS de centro de distribuição e EDI de fornecedores</div><div class="frente-apis"><span>Neogrid</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>Bionexo</span></div></div><div class="frente-linha"><div class="frente-cli">Petz</div><div class="frente-desc">Pedidos, entregas, compras e EDI</div><div class="frente-apis"><span>Nimbi</span><span>Neogrid</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-msg" aria-labelledby="aba-msg" hidden><div class="frente-linha"><div class="frente-cli">Atria Lub</div><div class="frente-desc">E-commerce, crédito rural, WhatsApp e cadastro</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Campneus / Pirelli</div><div class="frente-desc">E-commerce, tributos, URA de atendimento e pagamento digital</div><div class="frente-apis"><span>Confirma Fácil</span></div></div><div class="frente-linha"><div class="frente-cli">DMC / Sou Vaga Lume</div><div class="frente-desc">Chatbot, pagamentos, marketing e consulta de crédito</div><div class="frente-apis"><span>Blip</span><span>Salesforce Marketing Cloud</span></div></div><div class="frente-linha"><div class="frente-cli">HBR Aviação</div><div class="frente-desc">Envio de mensagens WhatsApp</div><div class="frente-apis"><span>WhatsMsg</span></div></div><div class="frente-linha"><div class="frente-cli">MGN</div><div class="frente-desc">Telemetria industrial e WhatsApp</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Osklen</div><div class="frente-desc">Força de vendas, WhatsApp e cadastro</div><div class="frente-apis"><span>ConnectZap</span></div></div><div class="frente-linha"><div class="frente-cli">Pernambuco Construtora</div><div class="frente-desc">WhatsApp e boletos</div><div class="frente-apis"><span>Zenvia</span><span>Infobip</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-rh" aria-labelledby="aba-rh" hidden><div class="frente-linha"><div class="frente-cli">CSU</div><div class="frente-desc">Integração de folha e RH</div><div class="frente-apis"><span>AcessoRH</span></div></div><div class="frente-linha"><div class="frente-cli">Crawford</div><div class="frente-desc">Envio de holerites e rescisão para o RH (SFTP)</div><div class="frente-apis"><span>PeopleHub</span></div></div><div class="frente-linha"><div class="frente-cli">Espro</div><div class="frente-desc">Vagas e recrutamento, workflow e cálculo de distância</div><div class="frente-apis"><span>Taqe</span></div></div><div class="frente-linha"><div class="frente-cli">FlashOn</div><div class="frente-desc">Despesas corporativas e benefícios</div><div class="frente-apis"><span>Flash</span></div></div><div class="frente-linha"><div class="frente-cli">Leccor</div><div class="frente-desc">Ponto eletrônico</div><div class="frente-apis"><span>Nexti</span></div></div><div class="frente-linha"><div class="frente-cli">MadeiraMadeira</div><div class="frente-desc">Suprimentos, conciliação de pagamentos, ponto e mensageria</div><div class="frente-apis"><span>Secullum</span></div></div><div class="frente-linha"><div class="frente-cli">Tópico</div><div class="frente-desc">CRM e ponto eletrônico</div><div class="frente-apis"><span>Dimep Kairos</span><span>Nexti</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-iot" aria-labelledby="aba-iot" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Omnilink</span></div></div><div class="frente-linha"><div class="frente-cli">Bauminas</div><div class="frente-desc">iPaaS, telemetria de frota, frete e pedágio</div><div class="frente-apis"><span>Autotrac</span></div></div><div class="frente-linha"><div class="frente-cli">Latasa / Recicla BR</div><div class="frente-desc">Suprimentos, crédito e manutenção de ativos</div><div class="frente-apis"><span>Astrein</span></div></div><div class="frente-linha"><div class="frente-cli">MGN</div><div class="frente-desc">Telemetria industrial e WhatsApp</div><div class="frente-apis"><span>ScadaBR</span></div></div><div class="frente-linha"><div class="frente-cli">Renova</div><div class="frente-desc">Manutenção de ativos</div><div class="frente-apis"><span>Tractian</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-saude" aria-labelledby="aba-saude" hidden><div class="frente-linha"><div class="frente-cli">Alice</div><div class="frente-desc">Faturamento de saúde e emissão de NFS-e</div><div class="frente-apis"><span>Alice (Wonderland)</span></div></div><div class="frente-linha"><div class="frente-cli">Alliar</div><div class="frente-desc">Workflow, laudos, compras hospitalares e cobrança recorrente</div><div class="frente-apis"><span>Pleres</span></div></div><div class="frente-linha"><div class="frente-cli">CEMIG Saúde</div><div class="frente-desc">Cartão virtual, agendamento e custos assistenciais</div><div class="frente-apis"><span>MobileSaúde</span><span>SigQuali</span></div></div><div class="frente-linha"><div class="frente-cli">MultCare</div><div class="frente-desc">Pedidos de laboratórios, compras e comprovante de entrega</div><div class="frente-apis"><span>SinSolution</span><span>Roche</span><span>Fidelize</span></div></div><div class="frente-linha"><div class="frente-cli">Oncoclínicas</div><div class="frente-desc">Workflow, conciliação, compras e equipamentos médicos</div><div class="frente-apis"><span>Philips</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-wms" aria-labelledby="aba-wms" hidden><div class="frente-linha"><div class="frente-cli">Adimax</div><div class="frente-desc">Portaria e WMS de armazém, ECM e telemetria de frota</div><div class="frente-apis"><span>Koerber WCS</span></div></div><div class="frente-linha"><div class="frente-cli">Madero</div><div class="frente-desc">WMS de centro de distribuição e EDI de fornecedores</div><div class="frente-apis"><span>SAGA / Abnet</span></div></div><div class="frente-linha"><div class="frente-cli">Master</div><div class="frente-desc">WMS de armazém</div><div class="frente-apis"><span>Alcis</span></div></div></div><div class="frente-painel" role="tabpanel" id="p-crm" aria-labelledby="aba-crm" hidden><div class="frente-linha"><div class="frente-cli">Asics</div><div class="frente-desc">CRM de vendas, etiquetas e rastreio de transporte</div><div class="frente-apis"><span>Salesforce</span></div></div><div class="frente-linha"><div class="frente-cli">Tópico</div><div class="frente-desc">CRM e ponto eletrônico</div><div class="frente-apis"><span>Salesforce</span></div></div></div></div>
+<nav class="abas" role="tablist" aria-label="Seções do portfólio">
+  <div class="abas-in">
+    <button class="aba" role="tab" data-r="trajetoria" aria-selected="true">
+      <span class="n">21</span><span class="t">Trajetória</span>
+      <span class="s">anos, da TOTVS a arquiteto</span>
+    </button>
+    <button class="aba" role="tab" data-r="projetos" aria-selected="false">
+      <span class="n" id="n-proj">40</span><span class="t">Projetos</span>
+      <span class="s">em produção, por módulo</span>
+    </button>
+    <button class="aba" role="tab" data-r="integracoes" aria-selected="false">
+      <span class="n" id="n-int">121</span><span class="t">Integrações</span>
+      <span class="s">sistemas externos no ERP</span>
+    </button>
+    <button class="aba" role="tab" data-r="produtos" aria-selected="false">
+      <span class="n">3</span><span class="t">Produtos</span>
+      <span class="s">autorais, do banco à tela</span>
+    </button>
+    <button class="aba" role="tab" data-r="contato" aria-selected="false">
+      <span class="n seta" aria-hidden="true">→</span><span class="t">Contato</span>
+      <span class="s">disponível para projetos</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= PROJETOS ================= -->
+<section class="pg" data-pg="projetos">
+  <div class="wrap pg-cab">
+    <div class="num">§&nbsp;02</div>
+    <div>
+      <h2>Projetos em produção</h2>
+      <p>Escolha o módulo do Protheus no índice à esquerda; os projetos aparecem ao lado,
+      já com a descrição. O selo vermelho marca os que passaram na dupla auditoria com nota
+      acima de 9.</p>
     </div>
+  </div>
+  <div class="wrap md">
+    <nav class="indice" id="indice" aria-label="Módulos"></nav>
+    <div id="painel"></div>
   </div>
 </section>
 
-<!-- ============ 02 ENTREGAS ============ -->
-<section id="entregas">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;02</div>
-      <div>
-        <h2>Entregas em produção</h2>
-        <p class="sec-sub">Cada ficha é um problema real de negócio e o que foi construído para resolvê-lo.
-        Ambientes em que falha custa caro: avião parado, linha de produção sem pesagem, loja sem preço.</p>
-      </div>
+<!-- ================= INTEGRAÇÕES ================= -->
+<section class="pg" data-pg="integracoes">
+  <div class="wrap pg-cab">
+    <div class="num">§&nbsp;03</div>
+    <div>
+      <h2>Integrações por frente</h2>
+      <p>Cada linha liga um sistema externo ao Protheus. Escolha a frente no índice à esquerda
+      para ver os clientes e as APIs de cada uma.</p>
     </div>
-
-    <div class="fichas">
-      <article class="ficha" id="e-avianca">
-        <div class="ficha-meta"><span class="num">01</span><span>Avianca</span><span class="setor">Aviação</span></div>
-        <h3>Avianca</h3>
-        <p class="tit">Integração do ERP com o Oracle central</p>
-        <p>Arquitetura de comunicação via Web Services entre o ERP local e o sistema central Oracle da
-        companhia, com troca contínua de dados e tolerância a falha de rede.</p>
-        <p class="onde">Via QsDoBrasil · 2013—2015</p>
-        <div class="tags"><span class="tag">AdvPL</span><span class="tag">SOAP / REST</span><span class="tag">Oracle</span><span class="tag">TXT/EDI</span></div>
-      </article>
-
-      <article class="ficha" id="e-goodyear">
-        <div class="ficha-meta"><span class="num">02</span><span>Goodyear</span><span class="setor">Indústria · Varejo</span></div>
-        <h3>Goodyear</h3>
-        <p class="tit">Sincronização de 270+ pontos de venda</p>
-        <p>Implantação da carga de dados logísticos e de vendas conectando mais de 270 PDVs ao sistema
-        central — volume que expõe qualquer consulta mal indexada.</p>
-        <div class="tags"><span class="tag">Sincronização</span><span class="tag">Escala</span><span class="tag">SQL</span></div>
-      </article>
-
-      <article class="ficha" id="e-natura">
-        <div class="ficha-meta"><span class="num">03</span><span>Natura</span><span class="setor">Indústria</span></div>
-        <h3>Natura</h3>
-        <p class="tit">ERP conversando com balança industrial</p>
-        <p>Comunicação direta entre o ERP e balanças eletrônicas do chão de fábrica, garantindo que o peso
-        registrado no sistema seja o peso real, no momento da pesagem.</p>
-        <div class="tags"><span class="tag">IoT industrial</span><span class="tag">AdvPL</span><span class="tag">Automação</span></div>
-      </article>
-
-      <article class="ficha" id="e-totvs">
-        <div class="ficha-meta"><span class="num">04</span><span>TOTVS</span><span class="setor">Meios de pagamento</span></div>
-        <h3>TOTVS</h3>
-        <p class="tit">Gateways de pagamento homologados</p>
-        <p>Integrações de transação financeira com adquirentes Master e Visa, sob exigência de homologação
-        e compliance — onde erro de centavo vira incidente.</p>
-        <div class="tags"><span class="tag">APIs de pagamento</span><span class="tag">Homologação</span><span class="tag">Segurança</span></div>
-      </article>
-
-      <article class="ficha" id="e-ampm">
-        <div class="ficha-meta"><span class="num">05</span><span>AmPm</span><span class="setor">Varejo · E-commerce</span></div>
-        <h3>AmPm</h3>
-        <p class="tit">Omnichannel com a VTEX</p>
-        <p>Integração bidirecional de pedidos e logística entre o ERP financeiro e a plataforma VTEX,
-        unificando a operação de loja física e digital.</p>
-        <div class="tags"><span class="tag">VTEX API</span><span class="tag">REST/JSON</span><span class="tag">Logística</span></div>
-      </article>
-
-      <article class="ficha" id="e-jadlog">
-        <div class="ficha-meta"><span class="num">06</span><span>JadLog</span><span class="setor">Logística</span></div>
-        <h3>JadLog</h3>
-        <p class="tit">Reengenharia do módulo financeiro</p>
-        <p>Reestruturação do financeiro para suportar a volumetria de uma das maiores transportadoras do
-        país, com foco em desempenho de fechamento.</p>
-        <div class="tags"><span class="tag">SIGAFIN</span><span class="tag">Performance</span><span class="tag">SQL tuning</span></div>
-      </article>
-
-      <article class="ficha" id="e-petros">
-        <div class="ficha-meta"><span class="num">07</span><span>Petros</span><span class="setor">Previdência</span></div>
-        <h3>Petros</h3>
-        <p class="tit">Migração de sistemas legados</p>
-        <p>Mapeamento de dados sensíveis e construção das integrações de comunicação contínua com os
-        sistemas legados da fundação.</p>
-        <div class="tags"><span class="tag">Data mapping</span><span class="tag">Legados</span><span class="tag">Integração</span></div>
-      </article>
-
-      <article class="ficha" id="e-certisign">
-        <div class="ficha-meta"><span class="num">08</span><span>Certisign</span><span class="setor">Certificação digital</span></div>
-        <h3>Certisign</h3>
-        <p class="tit">Controladoria e conformidade contábil</p>
-        <p>Suporte de nível 3 e melhorias sistêmicas no módulo de Controladoria, sustentando o fechamento
-        contábil dentro do prazo legal.</p>
-        <div class="tags"><span class="tag">SIGACTB</span><span class="tag">Compliance</span></div>
-      </article>
-
-      <article class="ficha" id="e-schneider">
-        <div class="ficha-meta"><span class="num">09</span><span>Schneider Electric</span><span class="setor">Energia</span></div>
-        <h3>Schneider Electric</h3>
-        <p class="tit">SPED Contábil e Ativo Fixo</p>
-        <p>Geração do SPED Contábil e adequação do Ativo Fixo, com a obrigação acessória entregue dentro
-        do layout e do calendário fiscal.</p>
-        <p class="onde">Via QsDoBrasil · 2013—2015</p>
-        <div class="tags"><span class="tag">SPED</span><span class="tag">SIGAATF</span><span class="tag">Fiscal</span></div>
-      </article>
-
-      <article class="ficha" id="e-multilaser">
-        <div class="ficha-meta"><span class="num">10</span><span>Multilaser</span><span class="setor">Eletroeletrônicos</span></div>
-        <h3>Multilaser</h3>
-        <p class="tit">Comunicação bancária (CNAB) e SPED</p>
-        <p>Implantação de remessa e retorno bancário e das obrigações do SPED, com conciliação automática
-        substituindo conferência manual.</p>
-        <p class="onde">Via Symm Consultoria · 2011</p>
-        <div class="tags"><span class="tag">CNAB</span><span class="tag">SPED</span><span class="tag">SIGAFIN</span></div>
-      </article>
-    </div>
+  </div>
+  <div class="wrap md">
+    <nav class="indice" id="indice-int" aria-label="Frentes de integração"></nav>
+    <div id="painel-int"></div>
   </div>
 </section>
 
-<!-- ============ 03 PRODUTOS AUTORAIS ============ -->
-
-
-<!-- ============ 04 STACK ============ -->
-<section id="stack">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;03</div>
-      <div>
-        <h2>Ferramentas de trabalho</h2>
-        <p class="sec-sub">O que eu uso de fato — não uma lista de tudo que já vi na frente.</p>
-      </div>
+<!-- ================= PRODUTOS ================= -->
+<section class="pg" data-pg="produtos">
+  <div class="wrap pg-cab">
+    <div class="num">§&nbsp;04</div>
+    <div>
+      <h2>O que eu construo quando o problema não cabe no ERP</h2>
+      <p>Produtos concebidos, arquitetados e desenvolvidos por mim — do modelo de dados à
+      interface. Em case de cliente eu afirmo; aqui eu mostro.</p>
     </div>
-
-    <div class="stack">
-      <div class="stack-col">
-        <h3>ERP TOTVS Protheus</h3>
-        <ul>
-          <li><b>AdvPL e TLPP</b> <i>— 21 anos, do procedural à orientação a objetos</i></li>
-          <li><b>MVC</b> <i>— FWFormModel / FWFormView / FWMBrowse</i></li>
-          <li><b>Pontos de entrada</b> <i>— customizar sem quebrar o padrão</i></li>
-          <li><b>MsExecAuto</b> <i>— carga e automação de rotinas</i></li>
-          <li><b>REST TLPP e FWRest</b> <i>— publicar e consumir API</i></li>
-          <li><b>Dicionário</b> <i>— SX2, SX3, SIX, SX6, SX7 e compatibilizadores</i></li>
-          <li><b>Módulos</b> <i>— SIGAFIN, SIGACTB, SIGAATF, SIGAFAT, SIGACOM, PCP, SIGATAF</i></li>
-          <li><b>PO-UI</b> <i>— interface web sobre o ERP</i></li>
-        </ul>
-      </div>
-
-      <div class="stack-col">
-        <h3>Engenharia de software</h3>
-        <ul>
-          <li><b>Java 21 · Spring Boot 4</b> <i>— Data JPA, Hibernate, Security, Thymeleaf</i></li>
-          <li><b>PostgreSQL</b> <i>— multi-tenant, keyset, pg_trgm, trigger</i></li>
-          <li><b>SQL Server e Oracle</b> <i>— modelagem, tuning, plano de execução</i></li>
-          <li><b>React Native · Expo</b> <i>— app publicado nas lojas</i></li>
-          <li><b>TypeScript · Node.js · Next.js</b></li>
-          <li><b>Git</b> <i>— versionamento aplicado inclusive ao RPO</i></li>
-          <li><b>Testes</b> <i>— JUnit, node:test, QA de tela com Playwright</i></li>
-        </ul>
-      </div>
-
-      <div class="stack-col">
-        <h3>Integração e segurança</h3>
-        <ul>
-          <li><b>REST/JSON e SOAP</b> <i>— em larga escala, com retentativa</i></li>
-          <li><b>VTEX</b> <i>— e-commerce omnichannel</i></li>
-          <li><b>Gateways de pagamento</b> <i>— Master e Visa</i></li>
-          <li><b>CNAB e SPED</b> <i>— bancário e obrigação acessória</i></li>
-          <li><b>WhatsApp API</b> <i>— envio automatizado de boleto</i></li>
-          <li><b>Google Maps API</b> <i>— roteirização de frota</i></li>
-          <li><b>IoT industrial</b> <i>— balanças e automação fabril</i></li>
-          <li><b>2FA TOTP · RLS · RBAC</b> <i>— auditoria imutável, LGPD</i></li>
-        </ul>
-      </div>
-    </div>
+  </div>
+  <div class="wrap md">
+    <nav class="indice" id="indice-prod" aria-label="Produtos autorais"></nav>
+    <div id="painel-prod"></div>
   </div>
 </section>
 
-<!-- ============ 05 TRAJETÓRIA ============ -->
-<section id="trajetoria">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;04</div>
-      <div>
-        <h2>Trajetória</h2>
-        <p class="sec-sub">De suporte nível 2 na fabricante do ERP a arquiteto das próprias soluções.</p>
-      </div>
-    </div>
-
-    <div class="traj">
-      <article class="cargo">
-        <div class="cargo-anos">2025 — 2026</div>
-        <div>
-          <h3>Beesby</h3>
-          <p class="funcao">Analista Desenvolvedor Sênior</p>
-          <p>Projetos no ecossistema TOTVS Protheus, do levantamento de requisitos à definição de
-          arquitetura. Desenvolvimento e refatoração de rotinas em AdvPL e TLPP, integrações via APIs
-          RESTful (JSON), otimização de consultas em SQL Server e Oracle, versionamento com Git e
-          interfaces web com PO-UI.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2022 — 2025</div>
-        <div>
-          <h3>Totalit Solutions</h3>
-          <p class="funcao">Analista Desenvolvedor Sênior</p>
-          <p>Atuação consultiva em análise, desenvolvimento e projetos, com levantamento de dados,
-          definição de método e recursos para implantação e alteração de sistemas em múltiplos clientes
-          simultâneos.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2015 — 2022</div>
-        <div>
-          <h3>São Rafael Câmaras Frigoríficas</h3>
-          <p class="funcao">Analista Sênior</p>
-          <p>Supervisão de dois analistas Protheus. Desenvolvimento do módulo de assistência técnica,
-          integração do ERP com plataforma mobile para o comercial, rotinas de logística e separação, fluxo
-          de caixa customizado, integração com AutoCAD, implantação do SIGATAF e acompanhamento do eSocial.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2013 — 2015</div>
-        <div>
-          <h3>QsDoBrasil</h3>
-          <p class="funcao">Consultor | Programador Sênior</p>
-          <p>Integrações entre sistemas via TXT e Web Service na Avianca; lista de preços e pedidos de venda
-          na Alpla; reestruturação contábil na Premier Pescados e na Igaratiba Metais; SPED Contábil e Ativo
-          Fixo na Schneider Electric.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2011 — 2013</div>
-        <div>
-          <h3>Montarte Indústria e Comércio</h3>
-          <p class="funcao">Consultor Pleno</p>
-          <p>Rotina de controle de contratos, implantação do PCP e comunicação bancária. Conectou o ERP à
-          API do Google Maps para roteirização de entregas e criou consumo do portal dos Correios para a
-          logística.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2011</div>
-        <div>
-          <h3>Symm Consultoria</h3>
-          <p class="funcao">Consultor Pleno</p>
-          <p>Implantação dos módulos de controladoria (Contábil, Financeiro, PCO e Ativo Fixo), SPED Contábil
-          e comunicação bancária CNAB em clientes como Multilaser, Razzo e Só Gelo, com treinamento de
-          usuários.</p>
-        </div>
-      </article>
-
-      <article class="cargo">
-        <div class="cargo-anos">2005 — 2011</div>
-        <div>
-          <h3>TOTVS S/A</h3>
-          <p class="funcao">Consultor Pleno · Analista Nível 2</p>
-          <p>Na fabricante do ERP: suporte de nível 2 a chamados complexos dos módulos de controladoria, com
-          montagem de bases para diagnóstico, e atuação como instrutor oficial dos módulos Contábil,
-          Financeiro e Ativo Fixo.</p>
-        </div>
-      </article>
+<!-- ================= TRAJETÓRIA ================= -->
+<section class="pg" data-pg="trajetoria">
+  <div class="wrap pg-cab">
+    <div class="num">§&nbsp;01</div>
+    <div>
+      <h2>Trajetória</h2>
+      <p>De suporte nível 2 na fabricante do ERP a arquiteto das próprias soluções.</p>
     </div>
   </div>
+  <div class="wrap"><div class="rolavel caixa-traj" id="cargos"></div></div>
 </section>
 
-<section id="produtos">
+<!-- ================= CONTATO ================= -->
+<section class="pg" data-pg="contato">
   <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;05</div>
-      <div>
-        <h2>O que eu construo quando o problema não cabe no ERP</h2>
-        <p class="sec-sub">Produtos concebidos, arquitetados e desenvolvidos por mim — do modelo de dados à
-        interface, incluindo segurança, desempenho e conformidade. Em case de cliente eu afirmo; aqui eu mostro.</p>
-      </div>
-    </div>
-
-    <article class="produto">
-      <div class="produto-cab">
-        <h3>MRoTrack</h3>
-        <span class="papel-tag">Java 21 · Spring Boot 4 · PostgreSQL</span>
-      </div>
-      <p class="resumo">Plataforma web multiempresa para manutenção de aeronaves segundo a regulamentação da
-      ANAC (RBAC 91, 135 e 145). Concepção, arquitetura e desenvolvimento integral — hoje o sistema mais
-      complexo que já escrevi sozinho.</p>
-
-      <div class="numeros">
-        <div class="numero"><b>36.000</b><span>linhas de Java</span></div>
-        <div class="numero"><b>68</b><span>entidades de domínio</span></div>
-        <div class="numero"><b>173</b><span>telas</span></div>
-        <div class="numero"><b>43</b><span>relatórios</span></div>
-        <div class="numero"><b>8</b><span>documentos ANAC</span></div>
-      </div>
-
-      <ul class="marcas">
-        <li><strong>Multi-tenant real por schema</strong> no PostgreSQL, com catálogo global compartilhado e
-        chave estrangeira atravessando schemas — cada empresa isolada na própria base lógica.</li>
-        <li><strong>Motor declarativo de relatórios</strong> em PDF e Excel com tela única de parâmetros, que
-        emite os documentos regulatórios exigidos: Ordem de Serviço, SEGVOO 001/003, FCDA, CVA, Peso e
-        Balanceamento, Cadernetas e MEL.</li>
-        <li><strong>Assinatura eletrônica com 2FA TOTP</strong> e hash SHA-256, registro imutável depois de
-        assinado e auditoria protegida por trigger no banco — o que a norma chama de rastreabilidade.</li>
-        <li><strong>Desempenho dimensionado para crescer:</strong> paginação por cursor (keyset, sem OFFSET)
-        nas tabelas de movimento, eliminação de N+1 e busca textual com <code>pg_trgm</code>.</li>
-      </ul>
-    </article>
-
-    <article class="produto secundario">
-      <div class="produto-cab">
-        <h3>MatchCards</h3>
-        <span class="papel-tag">React Native · Expo · Supabase</span>
-      </div>
-      <p class="resumo">Aplicativo mobile para iOS e Android, com mecânica de cartas colecionáveis aplicada a
-      relacionamento. Full-stack: banco, backend serverless, app e publicação nas lojas.</p>
-      <ul class="marcas">
-        <li><strong>Backend serverless</strong> em Supabase com Row Level Security por tabela, funções SQL,
-        migrações versionadas e Edge Functions — inclusive a exclusão de conta exigida pela <strong>LGPD</strong>.</li>
-        <li><strong>Tempo real:</strong> duelos, chat com mídia, notificações push, geolocalização e
-        animações nativas; painel administrativo próprio em Next.js.</li>
-      </ul>
-    </article>
-
-    <article class="produto secundario">
-      <div class="produto-cab">
-        <h3>Vagas-Bot</h3>
-        <span class="papel-tag">Node.js · SQLite · Playwright</span>
-      </div>
-      <p class="resumo">Pipeline de coleta e qualificação de oportunidades e decisores, com painel web e
-      suíte de testes.</p>
-      <ul class="marcas">
-        <li>Coleta multi-fonte com <strong>deduplicação por similaridade</strong>, classificação de cargos e
-        empresas-alvo, ranqueamento e métricas de degradação das fontes.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<!-- ============ 06 ARTIGOS ============ -->
-<section id="artigos">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;06</div>
-      <div>
-        <h2>Publicado</h2>
-        <p class="sec-sub">Artigos técnicos no LinkedIn — o que aprendi apanhando, escrito para quem vai
-        apanhar depois.</p>
-      </div>
-    </div>
-
-    <div class="artigos">
-      <a class="artigo" href="https://www.linkedin.com/feed/update/urn:li:activity:7406334711566077952/" target="_blank" rel="noopener">
-        <span class="a-num">01</span>
-        <span>
-          <h3>Arquitetura TLPP: a morte do <span translate="no">Do Case</span></h3>
-          <p>Por que ADVPL procedural é uma bomba-relógio, e o que polimorfismo e type safety mudam na prática.</p>
-        </span>
-        <span class="seta">Ler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></svg></span>
-      </a>
-
-      <a class="artigo" href="https://www.linkedin.com/feed/update/urn:li:activity:7453136339321024512/" target="_blank" rel="noopener">
-        <span class="a-num">02</span>
-        <span>
-          <h3>Git e Protheus: o fim do <span translate="no">Fonte_Final_V3.prw</span></h3>
-          <p>Compilar no mesmo RPO não precisa ser um teste cardíaco. Fluxo de versionamento aplicado ao AdvPL.</p>
-        </span>
-        <span class="seta">Ler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></svg></span>
-      </a>
-
-      <a class="artigo" href="https://www.linkedin.com/feed/update/urn:li:activity:6709169960486273025/" target="_blank" rel="noopener">
-        <span class="a-num">03</span>
-        <span>
-          <h3>Protheus × WhatsApp: envio de boletos</h3>
-          <p>Arquitetura completa para o ERP mandar o boleto direto ao cliente, sem operador no meio.</p>
-        </span>
-        <span class="seta">Ler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></svg></span>
-      </a>
-
-      <a class="artigo" href="https://www.linkedin.com/feed/update/urn:li:activity:6717758699034738688/" target="_blank" rel="noopener">
-        <span class="a-num">04</span>
-        <span>
-          <h3>O quebra-cabeça da logística: automação de cargas</h3>
-          <p>Montagem de carga com <span translate="no">dbTree</span>, do controle de caixas e paletes ao romaneio final.</p>
-        </span>
-        <span class="seta">Ler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></svg></span>
-      </a>
-
-      <a class="artigo" href="https://www.linkedin.com/feed/update/urn:li:activity:6957726557247279105/" target="_blank" rel="noopener">
-        <span class="a-num">05</span>
-        <span>
-          <h3>Conciliação de caixa no SigaLoja</h3>
-          <p>Rotina de conciliação substituta com fechamento e relatório em Excel em poucos cliques.</p>
-        </span>
-        <span class="seta">Ler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></svg></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CREDENCIAIS ============ -->
-<section id="credenciais">
-  <div class="wrap">
-    <div class="sec-cab">
-      <div class="sec-num">§&nbsp;07</div>
-      <div>
-        <h2>Formação e credenciais</h2>
-      </div>
-    </div>
-
-    <div class="cred">
-      <div class="cred-bloco">
-        <h3>Formação</h3>
-        <ul>
-          <li><b>2000</b><span><strong>Ciências Contábeis com ênfase em Análise de Sistemas</strong><br>
-          Universidade de Cuiabá — UNIC</span></li>
-          <li><b>—</b><span>Inglês intermediário, leitura técnica fluente</span></li>
-        </ul>
-      </div>
-
-      <div class="cred-bloco">
-        <h3>Certificações TOTVS</h3>
-        <ul>
-          <li><b>2007</b><span><strong>HCT</strong> — Homologação Certificada TOTVS em diversos módulos</span></li>
-          <li><b>2007</b><span><strong>AMT</strong> — Agente Multiplicador TOTVS</span></li>
-          <li><b>2007</b><span>ADVPL básico, intermediário e avançado</span></li>
-          <li><b>2007</b><span>Capacitação Pedagógica</span></li>
-          <li><b>2008</b><span>SQL</span></li>
-        </ul>
-      </div>
-
-      <div class="cred-bloco">
-        <h3>Fora do expediente</h3>
-        <ul>
-          <li><b>SENAI</b><span>Instrutor voluntário de informática para comunidades no sertão baiano,
-          desenvolvendo e ministrando os cursos.</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTATO ============ -->
-<section id="contato" class="contato">
-  <div class="wrap">
-    <div class="contato-cx">
-      <h2>Seu próximo projeto precisa de quem já quebrou a cara nesse problema.</h2>
-      <p>Arquitetura, integração de larga escala, reengenharia de módulo ou consultoria pontual —
-      me conte o desafio e eu digo com honestidade se sou a pessoa certa para ele.</p>
-
+    <div class="contato">
+      <h2>Vamos conversar sobre o seu projeto.</h2>
+      <p>Arquitetura, integração de larga escala, reengenharia de módulo ou consultoria pontual.
+      Respondo no WhatsApp e por e-mail.</p>
       <div class="acoes">
-        <a class="btn btn-forte" href="https://wa.me/5511953523317" target="_blank" rel="noopener">
+        <a class="btn btn-wa" href="https://wa.me/5511953523317" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.53 3.75 1.44 5.31L2 22l4.98-1.6a9.8 9.8 0 0 0 5.06 1.39h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.75 14.05c-.24.68-1.4 1.3-1.93 1.34-.51.05-1.16.07-1.87-.12-.43-.13-.98-.31-1.7-.62-2.98-1.29-4.93-4.29-5.08-4.49-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.3 2.36 1.45.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.7-.17 1.38z"/></svg>
           Chamar no WhatsApp
         </a>
-        <a class="btn" href="mailto:rubens.c.simi@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Enviar e-mail
-        </a>
-        <a class="btn" href="Rubens-Simi-CV.pdf" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <a class="btn btn-pdf" href="Rubens-Simi-CV.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6m0 0 2.5-2.5M12 17l-2.5-2.5"/></svg>
           Currículo em PDF
         </a>
       </div>
-
-      <div class="linhas">
+      <div class="canais">
         <a href="mailto:rubens.c.simi@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>
           rubens.c.simi@gmail.com
         </a>
-        <a href="tel:+5511953523317">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1z"/></svg>
+        <a class="c-tel" href="tel:+5511953523317">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1z"/></svg>
           (11) 95352-3317
         </a>
-        <a href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener">
+        <a class="c-in" href="https://www.linkedin.com/in/rubens-simi/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z"/></svg>
           /in/rubens-simi
         </a>
-        <a href="https://github.com/simirubens-dotcom" target="_blank" rel="noopener">
+        <a class="c-gh" href="https://github.com/simirubens-dotcom" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
           /simirubens-dotcom
         </a>
         <span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          Mogi das Cruzes / São Paulo — SP
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Mogi das Cruzes — SP
         </span>
       </div>
     </div>
@@ -1193,61 +463,470 @@ footer{padding:26px 0 40px}
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="rodape">
-      <span>© 2026 Rubens Carneiro Simi</span>
-      <span>Dossiê rev. Agosto 2026 — compilado sem warnings</span>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap">
+  <span>© 2026 Rubens Carneiro Simi</span>
+  <span>Revisão agosto 2026</span>
+</div></footer>
 
 <script>
-/* Marca a seção corrente no índice. A página funciona sem isto. */
-(function () {
-  var alvos = document.querySelectorAll('main section[id], .capa[id]');
-  var links = {};
-  document.querySelectorAll('.indice nav a').forEach(function (a) {
-    links[a.getAttribute('href').slice(1)] = a;
-  });
-  if (!('IntersectionObserver' in window)) return;
-  var io = new IntersectionObserver(function (entradas) {
-    entradas.forEach(function (e) {
-      var link = links[e.target.id];
-      if (!link) return;
-      if (e.isIntersecting) {
-        Object.keys(links).forEach(function (k) { links[k].removeAttribute('aria-current'); });
-        link.setAttribute('aria-current', 'true');
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  alvos.forEach(function (s) { io.observe(s); });
-})();
-</script>
+/* ===================== DADOS ===================== */
+var GRUPOS = {
+  fin:{n:"Financeiro",s:"SIGAFIN"}, ctb:{n:"Controladoria",s:"SIGACTB · SIGAATF"},
+  fat:{n:"Faturamento e vendas",s:"SIGAFAT"}, com:{n:"Compras e suprimentos",s:"SIGACOM"},
+  est:{n:"Estoque e WMS",s:"SIGAEST"}, pcp:{n:"Produção",s:"SIGAPCP"},
+  tms:{n:"Transporte",s:"SIGATMS"}, gpe:{n:"RH e folha",s:"SIGAGPE"},
+  loja:{n:"Varejo e pagamentos",s:"SIGALOJA"}, cfg:{n:"Configurador e operação",s:"ADM"},
+  corp:{n:"Integração corporativa",s:"multi-módulo"}
+};
+var ORDEM = ["fin","ctb","fat","com","est","pcp","tms","gpe","loja","cfg","corp"];
 
+/* i=integração · o=ótimo (nota do subagente e do revisor >= 9,0) */
+var P = [
+ {n:"Canivete Suíço",c:"Produto próprio (multi-cliente)",g:"gpe",i:1,o:1,
+  d:"App mobile React Native/Expo com arquitetura de cartuchos plugáveis (RH, TMS, PCP) falando com endpoints REST TLPP no Protheus. Holerite e dados do funcionário autenticados pelo próprio usuário do ERP, com desenho anti-IDOR: a matrícula nunca vem da URL, é resolvida no servidor. Um worker headless implanta uma base SIGAGPE zerada via protocolo de arquivos JSON.",
+  t:["TLPP","REST","React Native","Expo","TypeScript"],p:"Canivete_suiço",no:[9.0,9.4]},
+ {n:"Central 4Fin",c:"Framework multi-cliente (Orthometric, GranCorte, Teletex, Rommanel)",g:"fin",o:1,
+  d:"Plataforma proprietária de contas a receber sobre o Protheus, reusada em vários clientes: boletos e notas por e-mail, conciliação de retorno bancário (Itaú, BB, Safra), rastreio e conciliação automática de PIX, monitor de jobs e portal do cliente. 125 fontes, ~67 mil linhas.",
+  t:["AdvPL","TLPP","MVC","PIX","Boleto","CNAB"],p:"faz_4fin/Central-4Fin",no:[9.0,9.2]},
+ {n:"JobTasy — reprocessamento de integração hospitalar",c:"Oncoclínicas",g:"fin",i:1,
+  d:"Job que varre o log de falhas da integração Protheus × Tasy, identifica remessas travadas e refaz o envio automaticamente pelos módulos de origem (fornecedores, NF de entrada e saída, baixas). Integração que se recupera sozinha, sem intervenção manual a cada queda de comunicação.",
+  t:["AdvPL","SOAP","Embedded SQL","Job com retry"],p:"Onco",no:[8.5,8.7]},
+ {n:"Integração Track3r TMS",c:"HCI",g:"tms",i:1,
+  d:"Integração logística em TLPP orientado a objetos (classes TMSApiService e TMSApiConfig, namespace dedicado): autentica, gera e estorna encomendas na API da transportadora Track3r, com webhook próprio recebendo atualização de rastreio direto no Protheus.",
+  t:["TLPP","Classes/OO","FWRest","Webhook"],p:"hci/0009-HCI",no:[8.0,8.4]},
+ {n:"EDI farmacêutico (Roche, Janssen, Amgen)",c:"MultCare",g:"com",i:1,
+  d:"Webservices SOAP autenticados por certificado digital (mTLS) com farmacêuticas globais e provedor de fidelização, além de EDI de fornecedores. Integração B2B de saúde com requisito real de segurança, não só troca de arquivo.",
+  t:["AdvPL","TLPP","SOAP","mTLS","EDI"],p:"MultCare",no:[8.0,8.3]},
+ {n:"Demonstrativo de produtividade + cadastro via SEFAZ",c:"COOTEVA",g:"tms",
+  d:"Relatório de produtividade do cooperado com layout gráfico próprio em FWMSPrinter (917 linhas), alimentado pelos contratos de carreteiro, e projeto de EDI para cadastro automático de clientes consultando o SEFAZ — ambos com escopo documentado formalmente.",
+  t:["AdvPL","FWMSPrinter","EDI","SEFAZ"],p:"Cooperativa",no:[8.0,8.2]},
+ {n:"Field Service × CRM",c:"Comerc Energia",g:"corp",i:1,
+  d:"Field Service de comercializadora de energia: tela MVC de agendas e job que replica documentos para o CRM via webservice HTTP, com produção e homologação segregadas. No mesmo ambiente, integração SOAP com a CCEE para contratos de energia.",
+  t:["AdvPL","MVC","SOAP/WSDL","HTTP"],p:"Doc88/Comerc",no:[8.0,8.2]},
+ {n:"Consumo AWS Cognito + iPaaS",c:"TOTVS / TIFIN",g:"fin",i:1,
+  d:"Classe TLPP que autentica em AWS Cognito (Basic para Bearer) e consome APIs REST em nuvem, com pacote iPaaS, webservices de CRM e SFTP com a Serasa. Integração cloud-native escrita em TLPP, não RPC clássico.",
+  t:["TLPP","AWS Cognito","REST","SFTP"],p:"mkt_totvs_tifin",no:[8.0,8.0]},
+ {n:"Portais de fornecedor e cliente + NFe",c:"MadeiraMadeira",g:"fat",i:1,
+  d:"Camada de entidades orientada a objetos (produto, nota fiscal) e webservices REST ligando o Protheus aos portais de fornecedor e de cliente de um dos maiores e-commerces de móveis do país, cobrindo faturamento, compras, financeiro e RH na mesma base.",
+  t:["AdvPL","WSRESTFUL","OO","NFe"],p:"MadeiraMadeira",no:[8.0,7.8]},
+ {n:"Motor de integração com TracOS",c:"Renova",g:"est",i:1,
+  d:"Motor completo de sincronização de cadastro com a plataforma TracOS de ordens de serviço em campo: jobs agendados, chamadas REST e idempotência gravando o ID externo de volta no cadastro do Protheus para nunca duplicar item.",
+  t:["TLPP","REST","Schedule","Idempotência"],p:"Renova",no:[7.5,8.0]},
+ {n:"Automação de acesso massivo PAC",c:"Grupo Águas do Brasil",g:"cfg",
+  d:"Rotina TLPP que lê a planilha de acesso massivo e gera o script SQL de inclusão e remoção na tabela PAC, versionado no repositório de operação. Roda sem interface, disparada por URL com parâmetros, e publica a saída via CpyF2Web para download.",
+  t:["TLPP","SQL","FWFileReader"],p:"aguasdobrasil",no:[7.5,8.0]},
+ {n:"API de admissão de funcionários",c:"Ecolimp",g:"gpe",i:1,
+  d:"APIs REST de RH que admitem funcionário de ponta a ponta, com classe de retorno espelhando o layout do eSocial (~70 campos). Comprovada em produção com collection Postman e sonda validando o que de fato foi gravado na base.",
+  t:["AdvPL","REST","JSON","eSocial"],p:"ecolimp",no:[7.0,8.0]},
+ {n:"API de sincronização de transferências",c:"Cronimet",g:"est",i:1,
+  d:"API REST própria (GET/POST/DELETE) para sincronizar transferências entre sistemas numa multinacional de reciclagem de metais, com validação de status antes da exclusão. No mesmo ambiente, monitor de importação automática de XML de NF-e e CT-e como job.",
+  t:["AdvPL","WsRestful","SQL"],p:"Cronimet",no:[7.5,7.8]},
+ {n:"Distribuição de holerite via SFTP",c:"Crawford",g:"gpe",i:1,
+  d:"Job que varre a caixa de saída de holerites e envia por SFTP ao PeopleHub logo após o fechamento da folha. Nenhuma credencial hardcoded: aborta com log explícito se os parâmetros do dicionário estiverem vazios.",
+  t:["AdvPL","SFTP","Schedule"],p:"CrawFord",no:[7.5,7.8]},
+ {n:"PSIntegra — ordens de produção",c:"Grupo Onix",g:"pcp",i:1,
+  d:"Rotinas receptoras que traduzem o JSON de um app externo de produção em chamadas de rotina automática para criar OPs, tratando prioridade, departamento e local de estoque, com rollback de numeração quando a inclusão falha.",
+  t:["AdvPL","MsExecAuto","JSON"],p:"Onix_git/mgn",no:[7.5,7.7]},
+ {n:"Cadastro unificado de produto (POUI)",c:"Fortbras",g:"com",
+  d:"Classes AdvPL de backend servindo uma aplicação web em POUI — AdvPL clássico e frontend web moderno no mesmo módulo, dentro de uma suíte grande de varejo com call center, PDV, compras e estoque.",
+  t:["AdvPL","POUI","JavaScript"],p:"fortibras_api",no:[7.0,7.5]},
+ {n:"Portal de pedidos Usemol",c:"Fernandez Papel",g:"com",i:1,
+  d:"API REST de pedidos com o portal de compras Usemol, com auditoria de verdade: tabela de log dedicada registrando método HTTP, endpoint, payload de entrada e saída e status por pedido. Inclui canhoto digital de entrega.",
+  t:["AdvPL","WSRESTFUL","Auditoria"],p:"Fernandez",no:[7.0,7.4]},
+ {n:"Integração com WMS ALCIS",c:"Master",g:"est",i:1,
+  d:"Suíte de endpoints REST para sincronizar o Protheus com o WMS ALCIS: confirmação de recebimento de compras, notificações e validação estruturada de JSON com resposta de erro padronizada por código.",
+  t:["AdvPL","TLPP","WSRESTFUL"],p:"Master",no:[7.0,7.4]},
+ {n:"Estorno automático de baixas (OSKWS005)",c:"Osklen",g:"fin",i:1,
+  d:"Rotina transacional de estorno dentro do webservice financeiro corporativo, distinguindo compensação por nota de crédito de baixa simples e reaproveitando a rotina automática padrão do financeiro.",
+  t:["AdvPL","MsExecAuto","Transação"],p:"Osklen",no:[7.5,7.3]},
+ {n:"Pedidos VTEX + eSocial/Reinf",c:"Hinode",g:"fat",i:1,
+  d:"Endpoints TLPP anotados manipulando pedidos vindos do marketplace VTEX numa grande marca de venda direta, além das rotinas fiscais de envio ao eSocial e Reinf e das aprovações web internas.",
+  t:["TLPP","VTEX","eSocial"],p:"Hinode_projetos",no:[7.0,7.2]},
+ {n:"Processamento de pedidos VTEX",c:"Mentholatum (Rothos)",g:"fat",i:1,
+  d:"Endpoint REST TLPP próprio para inclusão de serviço e nota, agendamento da importação de pedidos VTEX e rotinas de rastreio e cancelamento integradas ao painel web.",
+  t:["TLPP","VTEX","Schedule"],p:"Mentholatum",no:[7.0,7.1]},
+ {n:"Migração de SOAP para REST",c:"ViaMarke",g:"est",i:1,
+  d:"Troca da camada SOAP legada por endpoints REST em TLPP para produtos, lançamentos contábeis, fornecedores e notas de entrada, consumidos pelo e-commerce e por terceiros, com ambiente resolvido dinamicamente por requisição.",
+  t:["TLPP","REST","JsonObject"],p:"ViaMarke",no:[7.0,7.2]},
+ {n:"Cotação de frete pela API dos Correios",c:"Conexão",g:"fat",i:1,
+  d:"Cotação de frete com contrato integrada à API REST dos Correios e reaproveitada nos pontos de entrada de pedido de venda e telemarketing — o frete aparece na tela do vendedor, na hora.",
+  t:["AdvPL","REST","Correios"],p:"CONEXAO",no:[7.0,7.2]},
+ {n:"Integração de RH com Senior e VExpenses",c:"Elevação",g:"gpe",i:1,
+  d:"Camada de APIs REST próprias expondo dados do Protheus a sistemas externos, com integração financeira e de RH ao ERP Senior e sincronização de despesas com o VExpenses.",
+  t:["AdvPL","WSRESTFUL"],p:"Elevacao",no:[7.0,7.0]},
+ {n:"Baixa em lote de títulos por CSV",c:"Alice",g:"fin",
+  d:"Ferramenta de baixa em lote de contas a receber a partir de CSV, com contagem prévia de linhas para barra de progresso precisa e log de execução, numa health-insurtech.",
+  t:["AdvPL","FWFileReader"],p:"Alice",no:[7.0,6.9]},
+ {n:"Gerador do arquivo Alelo (400 posições)",c:"Prozyn",g:"gpe",i:1,
+  d:"Tela de parâmetros e motor de geração do arquivo posicional de créditos do cartão-benefício Alelo a partir da folha de pagamento, cobrindo pedidos normais e complementares.",
+  t:["AdvPL","ParamBox","Layout posicional"],p:"Prozin",no:[7.0,6.9]},
+ {n:"Relatório de plano de corte",c:"CENTRASA",g:"pcp",
+  d:"Relatório de plano de corte para indústria de chapas metálicas, impresso via FWMSPrinter com layout tabular customizado de item, produto, saldo e IPI.",
+  t:["AdvPL","FWMSPrinter"],p:"CENTRASA",no:[7.0,6.8]},
+ {n:"Compensação automática na entrada",c:"Tiscoski",g:"fin",
+  d:"Ao finalizar o documento de entrada com transferência de carteira, a rotina localiza os títulos relacionados, compensa e grava a instrução de cobrança — trabalho manual repetitivo eliminado do financeiro.",
+  t:["AdvPL","Embedded SQL"],p:"tiscosk",no:[7.0,6.8]},
+ {n:"Boleto Itaú e Caixa (BLTITAU)",c:"Ricco",g:"fin",
+  d:"Extensão de uma rotina de boleto de 2005 para suportar também a Caixa Econômica (layout vertical, agência e fonte próprios) sem quebrar o fluxo Itaú que já rodava em produção.",
+  t:["AdvPL","TReport"],p:"RICCO",no:[7.0,6.7]},
+ {n:"Cadastro MVC de uniforme e EPI",c:"Petz",g:"est",
+  d:"Cadastro auxiliar de uniformes e EPIs ligado ao controle de estoque das lojas, construído do zero em MVC completo (Model, View e Menu) seguindo o padrão de telas do cliente.",
+  t:["AdvPL","MVC"],p:"pet_fora",no:[7.0,6.5]},
+ /* --- cases clássicos --- */
+ {n:"Integração do ERP com o Oracle central",c:"Avianca",g:"corp",i:1,
+  d:"Arquitetura de comunicação via Web Services entre o ERP local e o sistema central Oracle da companhia aérea, com troca contínua de dados e tolerância a falha de rede.",
+  t:["AdvPL","SOAP/REST","Oracle","EDI"],p:"2013–2015 · via QsDoBrasil"},
+ {n:"Sincronização de 270+ pontos de venda",c:"Goodyear",g:"loja",
+  d:"Implantação da carga de dados logísticos e de vendas conectando mais de 270 PDVs ao sistema central — volume que expõe qualquer consulta mal indexada.",
+  t:["Sincronização","Escala","SQL"],p:"case clássico"},
+ {n:"ERP conversando com balança industrial",c:"Natura",g:"pcp",i:1,
+  d:"Comunicação direta entre o ERP e as balanças eletrônicas do chão de fábrica, garantindo que o peso registrado no sistema seja o peso real, no momento da pesagem.",
+  t:["IoT industrial","AdvPL","Automação"],p:"case clássico"},
+ {n:"Gateways de pagamento homologados",c:"TOTVS",g:"loja",i:1,
+  d:"Integrações de transação financeira com adquirentes Master e Visa, sob exigência de homologação e compliance — onde erro de centavo vira incidente.",
+  t:["Pagamentos","Homologação","Segurança"],p:"case clássico"},
+ {n:"Omnichannel com a VTEX",c:"AmPm",g:"fat",i:1,
+  d:"Integração bidirecional de pedidos e logística entre o ERP financeiro e a plataforma VTEX, unificando a operação de loja física e digital.",
+  t:["VTEX","REST/JSON","Logística"],p:"case clássico"},
+ {n:"Reengenharia do módulo financeiro",c:"JadLog",g:"fin",
+  d:"Reestruturação do financeiro para suportar a volumetria de uma das maiores transportadoras do país, com foco em desempenho de fechamento.",
+  t:["SIGAFIN","Performance","SQL tuning"],p:"case clássico"},
+ {n:"Migração de sistemas legados",c:"Petros",g:"corp",i:1,
+  d:"Mapeamento de dados sensíveis e construção das integrações de comunicação contínua com os sistemas legados da fundação de previdência.",
+  t:["Data mapping","Legados","Integração"],p:"case clássico"},
+ {n:"Controladoria e conformidade contábil",c:"Certisign",g:"ctb",
+  d:"Suporte de nível 3 e melhorias sistêmicas no módulo de Controladoria, sustentando o fechamento contábil dentro do prazo legal.",
+  t:["SIGACTB","Compliance"],p:"case clássico"},
+ {n:"SPED Contábil e Ativo Fixo",c:"Schneider Electric",g:"ctb",
+  d:"Geração do SPED Contábil e adequação do Ativo Fixo, com a obrigação acessória entregue dentro do layout e do calendário fiscal.",
+  t:["SPED","SIGAATF","Fiscal"],p:"2013–2015 · via QsDoBrasil"},
+ {n:"Comunicação bancária CNAB e SPED",c:"Multilaser",g:"fin",
+  d:"Implantação de remessa e retorno bancário e das obrigações do SPED, com conciliação automática substituindo a conferência manual.",
+  t:["CNAB","SPED","SIGAFIN"],p:"2011 · via Symm Consultoria"}
+];
 
-<script>
-/* ADICAO: alterna as frentes de integracao */
+var FRENTES = [
+ ["Financeiro e bancos",[
+  ["Alliar","Workflow, laudos, compras hospitalares e cobrança recorrente",["Vindi"]],
+  ["Atria Lub","E-commerce, crédito rural, WhatsApp e cadastro",["Vadu"]],
+  ["Avanço Resources","Requisições, adiantamentos e prestação de contas",["Argo"]],
+  ["Care Plus","Conciliação de recebíveis de cartão",["Conciliadora"]],
+  ["Certisign","Gestão de pedidos e AR, conciliação de pagamentos",["GAR ERP","Adyen"]],
+  ["Cronimet","Open Banking e manifestação do destinatário",["Finnet"]],
+  ["DMC / Sou Vaga Lume","Chatbot, pagamentos, marketing e consulta de crédito",["BluPay","SPC","Bradesco"]],
+  ["Dorel","Portal B2B, webhooks de clientes, frete e crédito",["Serasa"]],
+  ["FlashOn","Despesas corporativas e benefícios",["ExpenseOn"]],
+  ["Funpar","Boletos registrados e PIX",["Itaú"]],
+  ["Latasa / Recicla BR","Suprimentos, crédito e manutenção de ativos",["Kobold"]],
+  ["MadeiraMadeira","Suprimentos, conciliação de pagamentos, ponto e mensageria",["Braspag"]],
+  ["Oncoclínicas","Workflow, conciliação, compras e equipamentos médicos",["Conciliadora"]],
+  ["Opus Óculos / Óticas Diniz","Conciliação de cartões e consulta de CEP",["ConciliadorBR"]],
+  ["Surf Telecom","Despesas corporativas e NFS-e",["VExpenses"]],
+  ["Vivest","Benefícios, pagamentos e prestação de contas ao TCE",["Facil Informática","CMFlex"]],
+  ["WDC Networks","Assinatura digital e boletos",["Portal de Boletos"]]]],
+ ["Logística e frete",[
+  ["Asics","CRM de vendas, etiquetas e rastreio de transporte",["Correios SIGEP","Rapidão Cometa"]],
+  ["Bauminas","iPaaS, telemetria de frota, frete e pedágio",["Correios","Veloe"]],
+  ["Biodente","Impressão remota, postagem e índices econômicos",["VisualSet"]],
+  ["Conexão","Frete, rastreio e etiquetas de postagem",["Correios API","LeanTrack","VisualSet"]],
+  ["Dorel","Portal B2B, webhooks de clientes, frete e crédito",["SimFrete"]],
+  ["Fernandez Papel","Transporte e CT-e, cotação de câmbio",["Usemol","Multiembarcador"]],
+  ["Fortbras","Frete, e-commerce, marketplace e workflow",["Correios"]],
+  ["Golden","Averbação de carga e integração de vendas",["Averbe Porto","Connect Inc"]],
+  ["HCI","Rastreio de encomendas e portal de chamados",["Track3r"]],
+  ["Hyundai Glovis","Comércio exterior",["Ecomex"]],
+  ["Mentholatum","E-commerce e rastreio de transportadoras",["Correios","Braspress","Total Express"]],
+  ["MultCare","Pedidos de laboratórios, compras e comprovante de entrega",["Comprovei"]],
+  ["Ontime","Gestão operacional e TSS",["Apply System"]],
+  ["Paviloche","Roteirização de entregas e NF-e",["Way Data Solution"]],
+  ["Petz","Pedidos, entregas, compras e EDI",["Loggi","Shippify","ClickEntregas","JadLog"]],
+  ["Tateti","Tributos, frete e BPM",["Intelipost"]]]],
+ ["Fiscal e documentos",[
+  ["Alice","Faturamento de saúde e emissão de NFS-e",["eNotas"]],
+  ["Asics","CRM de vendas, etiquetas e rastreio",["Arquivei"]],
+  ["Campneus / Pirelli","E-commerce, tributos, URA e pagamento digital",["Dootax"]],
+  ["Comerc Energia","NFS-e e mercado livre de energia",["Prefeitura de SP","CCEE"]],
+  ["Criare","NFS-e e portal de suprimentos",["TecnoSpeed"]],
+  ["Cronimet","Open Banking e manifestação do destinatário",["TOTVS"]],
+  ["Geru","Assinatura eletrônica e cálculo tributário",["AddTax Cloud"]],
+  ["Ontime","Gestão operacional e TSS",["TSS TOTVS"]],
+  ["Paviloche","Roteirização de entregas e NF-e",["WMSul"]],
+  ["Prozyn","Força de vendas, NF-e e cotação de câmbio",["Conexão NFe"]],
+  ["Surf Telecom","Despesas corporativas e NFS-e",["Prefeituras SP e Rio"]],
+  ["Tateti","Tributos, frete e BPM",["IBPT"]],
+  ["Vivest","Benefícios, pagamentos e prestação de contas ao TCE",["AUDESP"]],
+  ["Yama","Força de vendas e XML de notas",["Arquivei"]]]],
+ ["E-commerce e vendas",[
+  ["A.Dias","Pedidos de e-commerce, marketplace e gateway de pagamento",["FBits","AnyMarket","ClicArCondicionado"]],
+  ["Atria Lub","E-commerce, crédito rural, WhatsApp e cadastro",["FastChannel","SignaShop"]],
+  ["Bacio di Latte","Integração de vendas",["MakeValue"]],
+  ["Campneus / Pirelli","E-commerce, tributos, URA e pagamento digital",["VTEX"]],
+  ["Dorel","Portal B2B, webhooks de clientes, frete e crédito",["API Dorel"]],
+  ["Fortbras","Frete, e-commerce, marketplace e workflow",["VTEX","Mercado Livre"]],
+  ["Hinode","E-commerce e cotação de câmbio",["VTEX"]],
+  ["Mentholatum","E-commerce e rastreio de transportadoras",["VTEX"]],
+  ["Osklen","Força de vendas, WhatsApp e cadastro",["Illimitar"]],
+  ["Petz","Pedidos, entregas, compras e EDI",["WS Petz","Aptus"]],
+  ["Prozyn","Força de vendas, NF-e e cotação de câmbio",["PalmApp"]],
+  ["São Rafael","Força de vendas em campo",["uMov.me"]],
+  ["Yama","Força de vendas e XML de notas",["SoftSite / GeoSales"]]]],
+ ["BPM e ECM",[
+  ["Adimax","Portaria e WMS de armazém, ECM e telemetria",["Fluig"]],
+  ["Alliar","Workflow, laudos e compras hospitalares",["Fluig"]],
+  ["Bauminas","iPaaS, telemetria de frota, frete e pedágio",["TOTVS iPaaS","Fluig"]],
+  ["Espro","Vagas e recrutamento, workflow e cálculo de distância",["Fluig"]],
+  ["Fortbras","Frete, e-commerce, marketplace e workflow",["LinkAPI","Fluig"]],
+  ["Geru","Assinatura eletrônica e cálculo tributário",["SmartDocx"]],
+  ["Grupo Aldo","Gestão jurídica",["Projuris"]],
+  ["Grupo Águas do Brasil","BPM de aprovações e API corporativa do grupo",["Zeev","API própria"]],
+  ["Oncoclínicas","Workflow, conciliação e compras",["Fluig"]],
+  ["TOTVS / TIFIN","Portais corporativos, assinatura eletrônica e marketing",["SSIM","Fluig","DocuSign"]],
+  ["Tateti","Tributos, frete e BPM",["AgileProcess"]],
+  ["Tiscoski","Barramento de integração",["Digibee"]],
+  ["WDC Networks","Assinatura digital e boletos",["Portal de Assinaturas"]]]],
+ ["Dados e cadastros",[
+  ["Athena Saúde","Exposição do ERP por API gateway",["Sensedia","AllStrategy"]],
+  ["Atria Lub","E-commerce, crédito rural, WhatsApp e cadastro",["ReceitaWS","Strider / Cropwise"]],
+  ["Biodente","Impressão remota, postagem e índices econômicos",["Banco Central"]],
+  ["Comerc Energia","NFS-e e mercado livre de energia",["PowerView"]],
+  ["Fernandez Papel","Transporte e CT-e, cotação de câmbio",["Banco Central"]],
+  ["Hinode","E-commerce e cotação de câmbio",["Banco Central"]],
+  ["Opus Óculos / Óticas Diniz","Conciliação de cartões e consulta de CEP",["ViaCEP","Postmon"]],
+  ["Osklen","Força de vendas, WhatsApp e cadastro",["CNPJ.ws"]],
+  ["Prozyn","Força de vendas, NF-e e cotação de câmbio",["Banco Central"]],
+  ["Setta","Plataforma de dados",["Carol (TOTVS)"]],
+  ["Verquímica","Consulta de CNPJ e cotação de câmbio",["ReceitaWS","CNPJ.ws","Banco Central"]],
+  ["ViaMarke","REST do Protheus: pedidos, títulos e estoque",["VMBrain","StarMaker"]]]],
+ ["Compras e suprimentos",[
+  ["Alliar","Compras hospitalares",["Bionexo"]],
+  ["Criare","NFS-e e portal de suprimentos",["Nimbi"]],
+  ["Latasa / Recicla BR","Suprimentos, crédito e manutenção de ativos",["Nimbi"]],
+  ["MadeiraMadeira","Suprimentos, conciliação, ponto e mensageria",["Nimbi"]],
+  ["Madero","WMS de centro de distribuição e EDI de fornecedores",["Neogrid"]],
+  ["MultCare","Pedidos de laboratórios, compras e comprovante de entrega",["Bionexo"]],
+  ["Petz","Pedidos, entregas, compras e EDI",["Nimbi","Neogrid"]]]],
+ ["Mensageria",[
+  ["Atria Lub","E-commerce, crédito rural, WhatsApp e cadastro",["ConnectZap"]],
+  ["Campneus / Pirelli","E-commerce, tributos, URA e pagamento digital",["Confirma Fácil"]],
+  ["DMC / Sou Vaga Lume","Chatbot, pagamentos, marketing e crédito",["Blip","Salesforce Marketing Cloud"]],
+  ["HBR Aviação","Envio de mensagens WhatsApp",["WhatsMsg"]],
+  ["MGN","Telemetria industrial e WhatsApp",["ConnectZap"]],
+  ["Osklen","Força de vendas, WhatsApp e cadastro",["ConnectZap"]],
+  ["Pernambuco Construtora","WhatsApp e boletos",["Zenvia","Infobip"]]]],
+ ["RH e ponto",[
+  ["CSU","Integração de folha e RH",["AcessoRH"]],
+  ["Crawford","Holerites e rescisão para o RH (SFTP)",["PeopleHub"]],
+  ["Espro","Vagas e recrutamento, workflow e cálculo de distância",["Taqe"]],
+  ["FlashOn","Despesas corporativas e benefícios",["Flash"]],
+  ["Leccor","Ponto eletrônico",["Nexti"]],
+  ["MadeiraMadeira","Suprimentos, conciliação, ponto e mensageria",["Secullum"]],
+  ["Tópico","CRM e ponto eletrônico",["Dimep Kairos","Nexti"]]]],
+ ["IoT e telemetria",[
+  ["Adimax","Portaria e WMS de armazém, ECM e telemetria",["Omnilink"]],
+  ["Bauminas","iPaaS, telemetria de frota, frete e pedágio",["Autotrac"]],
+  ["Latasa / Recicla BR","Suprimentos, crédito e manutenção de ativos",["Astrein"]],
+  ["MGN","Telemetria industrial e WhatsApp",["ScadaBR"]],
+  ["Renova","Manutenção de ativos",["Tractian"]]]],
+ ["Saúde",[
+  ["Alice","Faturamento de saúde e emissão de NFS-e",["Alice (Wonderland)"]],
+  ["Alliar","Workflow, laudos e compras hospitalares",["Pleres"]],
+  ["CEMIG Saúde","Cartão virtual, agendamento e custos assistenciais",["MobileSaúde","SigQuali"]],
+  ["MultCare","Pedidos de laboratórios e fidelização",["SinSolution","Roche","Fidelize"]],
+  ["Oncoclínicas","Workflow, conciliação e equipamentos médicos",["Philips"]]]],
+ ["WMS e armazém",[
+  ["Adimax","Portaria e WMS de armazém",["Koerber WCS"]],
+  ["Madero","WMS de centro de distribuição e EDI",["SAGA / Abnet"]],
+  ["Master","WMS de armazém",["Alcis"]]]],
+ ["CRM",[
+  ["Asics","CRM de vendas, etiquetas e rastreio",["Salesforce"]],
+  ["Tópico","CRM e ponto eletrônico",["Salesforce"]]]]
+];
+
+var PRODUTOS = [
+ {n:"MRoTrack",s:"Java 21 · Spring Boot 4 · PostgreSQL",
+  d:"Plataforma web multiempresa para manutenção de aeronaves segundo a regulamentação da ANAC (RBAC 91, 135 e 145). Multi-tenant real por schema, motor declarativo de relatórios regulatórios, assinatura eletrônica com 2FA TOTP e auditoria imutável protegida por trigger no banco.",
+  nums:[["36.000","linhas de Java"],["68","entidades"],["173","telas"],["43","relatórios"],["8","documentos ANAC"]]},
+ {n:"MatchCards",s:"React Native · Expo · Supabase",
+  d:"App mobile para iOS e Android com mecânica de cartas colecionáveis aplicada a relacionamento. Backend serverless com Row Level Security por tabela, migrações versionadas e Edge Functions, duelos em tempo real, chat com mídia e painel administrativo em Next.js.",nums:[]},
+ {n:"Vagas-Bot",s:"Node.js · SQLite · Playwright",
+  d:"Pipeline de coleta e qualificação de oportunidades e decisores, com deduplicação por similaridade, classificação de cargos e empresas-alvo, ranqueamento e métricas de degradação das fontes.",nums:[]}
+];
+
+var CARGOS = [
+ ["2025 — 2026","Beesby","Analista Desenvolvedor Sênior","Projetos no ecossistema TOTVS Protheus, do levantamento de requisitos à definição de arquitetura: AdvPL e TLPP, integrações REST, otimização de consultas em SQL Server e Oracle, versionamento com Git e interfaces web com PO-UI."],
+ ["2022 — 2025","Totalit Solutions","Analista Desenvolvedor Sênior","Atuação consultiva em análise, desenvolvimento e projetos, com múltiplos clientes simultâneos."],
+ ["2015 — 2022","São Rafael Câmaras Frigoríficas","Analista Sênior","Supervisão de dois analistas. Módulo de assistência técnica, integração com plataforma mobile, rotinas de logística e separação, fluxo de caixa customizado, integração com AutoCAD, SIGATAF e eSocial."],
+ ["2013 — 2015","QsDoBrasil","Consultor | Programador Sênior","Integrações via TXT e Web Service na Avianca; lista de preços e pedidos na Alpla; reestruturação contábil na Premier Pescados; SPED Contábil e Ativo Fixo na Schneider Electric."],
+ ["2011 — 2013","Montarte Indústria e Comércio","Consultor Pleno","Controle de contratos, implantação do PCP e comunicação bancária. Conectou o ERP à API do Google Maps para roteirização e ao portal dos Correios."],
+ ["2011","Symm Consultoria","Consultor Pleno","Implantação dos módulos de controladoria, SPED Contábil e CNAB em clientes como Multilaser e Razzo, com treinamento de usuários."],
+ ["2005 — 2011","TOTVS S/A","Consultor Pleno · Analista Nível 2","Na fabricante do ERP: suporte de nível 2 a chamados complexos de controladoria e instrutor oficial dos módulos Contábil, Financeiro e Ativo Fixo."]
+];
+
+var LOGOS_G = [["Avianca-Logo.png","Avianca"],["goodyear.png","Goodyear"],["natura-logo-png_seeklogo-97474.png","Natura"],["totvs%20logo.jpg","TOTVS"],["ampm%20logo.jpg","AmPm"],["JadLog.jpg","JadLog"],["Petros.png","Petros"],["Certisign.png","Certisign"],["Schneider.png","Schneider Electric"],["multilase.png","Multilaser"]];
+var LOGOS = [["adias.webp","A.Dias"],["adimax.png","Adimax"],["alliar_ico.png","Alliar"],["alice_ico.png","Alice"],["asics.png","Asics"],["athena.svg","Athena Saúde"],["atrialub.png","Atria Lub"],["baciodilatte.svg","Bacio di Latte"],["careplus.png","Care Plus"],["cemigsaude.svg","CEMIG Saúde"],["certisign.gif","Certisign"],["comerc.png","Comerc Energia"],["conexao.webp","Conexão"],["crawford.svg","Crawford",1],["criare.png","Criare"],["csu_ico.png","CSU"],["espro.png","Espro"],["fernandez.png","Fernandez Papel"],["flash.svg","FlashOn"],["fortbras.png","Fortbras"],["geru.png","Geru"],["glovis.jpg","Hyundai Glovis"],["golden.webp","Golden"],["grupoaldo_ico.png","Grupo Aldo"],["hbr.svg","HBR Aviação"],["hci_ico.png","HCI"],["hinode.png","Hinode"],["reciclabr_ico.jpg","Latasa / Recicla BR"],["madeiramadeira_ico.png","MadeiraMadeira"],["madero.png","Madero"],["master.svg","Master"],["mentholatum_ico.png","Mentholatum"],["mgn.png","MGN"],["oncoclinicas.png","Oncoclínicas"],["ontime.png","Ontime",1],["opusoculos.svg","Opus Óculos",1],["osklen_ico.png","Osklen"],["petz.svg","Petz"],["prozyn.png","Prozyn"],["renova.png","Renova"],["setta.png","Setta"],["tateti.png","Tateti"],["tiscoski_ico.png","Tiscoski"],["topico.svg","Tópico"],["verquimica.png","Verquímica"],["wdc_ico.png","WDC Networks"],["yama.svg","Yama"],
+["bauminas.svg","Bauminas"],["campneus.png","Campneus",1],["centrasa.png","Centrasa"],
+["cronimet.png","Cronimet",1],["dorel.svg","Dorel Juvenile"],["elevacao.png","Construtora Elevação"],
+["funpar.png","Funpar"],["leccor.png","Leccor",1],["orthometric.png","Orthometric"],
+["paviloche.png","Paviloche"],["pernambucoconstrutora.svg","Pernambuco Construtora"],
+["pirelli.svg","Pirelli"],["saorafael.png","São Rafael"],["surftelecom.png","Surf Telecom"],
+["vivest.svg","Vivest"]];
+
+/* ===================== RENDER ===================== */
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+
+/* esteiras */
+/* sem loading="lazy": a fita rola por transform, e o lazy deixaria as células
+   entrarem na tela ainda vazias (logo em branco).
+   Só entra no carrossel empresa que tem arquivo de logo. */
 (function(){
-  var abas = document.querySelectorAll('.frente-aba');
-  function abrir(aba){
-    abas.forEach(function(b){
-      var on = b === aba;
-      b.setAttribute('aria-selected', on ? 'true' : 'false');
-      b.tabIndex = on ? 0 : -1;
-      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
-    });
+  var t = LOGOS_G.map(function(l){return '<div class="lg g"><img src="'+l[0]+'" alt="'+esc(l[1])+'" decoding="async"></div>';}).join("")
+        + LOGOS.map(function(l){return '<div class="lg'+(l[2]?' esc':'')+'"><img src="logos/'+l[0]+'" alt="'+esc(l[1])+'" decoding="async"></div>';}).join("");
+  document.getElementById("fita-a").innerHTML = t+t;
+})();
+
+var filtro = {tipo:""};       /* "" | "i" integrações | "o" destaques */
+var moduloAtivo = null;       /* começa vazio: o painel só abre quando escolhem o módulo */
+
+function pinta(){
+  var vis = P;
+  /* índice de módulos */
+  var comProjeto = ORDEM.filter(function(g){ return vis.some(function(p){return p.g===g;}); });
+  if(moduloAtivo && comProjeto.indexOf(moduloAtivo)<0) moduloAtivo = null;
+  document.getElementById("indice").innerHTML =
+    '<p class="indice-tit">Módulo do Protheus</p>' +
+    comProjeto.map(function(g){
+      var n = vis.filter(function(p){return p.g===g;}).length;
+      return '<button data-g="'+g+'" aria-current="'+(g===moduloAtivo?"true":"false")+'">'
+           + esc(GRUPOS[g].n)+'<b>'+n+'</b></button>';
+    }).join("");
+
+  /* nada escolhido: painel em branco com o convite */
+  if(!moduloAtivo){
+    document.getElementById("painel").innerHTML =
+      '<div class="convite"><p class="cv-tit">Escolha um módulo ao lado</p>'
+      + '<p class="cv-txt">Os projetos daquele módulo aparecem aqui, com cliente, descrição e as '
+      + 'tecnologias usadas. São <b>'+vis.length+' projetos</b> distribuídos em <b>'+comProjeto.length+' módulos</b> do Protheus.</p></div>';
+    return;
   }
-  abas.forEach(function(aba, i){
-    aba.addEventListener('click', function(){ abrir(aba); });
-    aba.addEventListener('keydown', function(ev){
-      var d = ev.key === 'ArrowRight' ? 1 : ev.key === 'ArrowLeft' ? -1 : 0;
-      if(!d) return;
-      ev.preventDefault();
-      var alvo = abas[(i + d + abas.length) % abas.length];
-      abrir(alvo); alvo.focus();
+
+  /* painel do módulo escolhido — projetos já abertos, sem clique extra */
+  var doModulo = vis.filter(function(p){return p.g===moduloAtivo;});
+  document.getElementById("painel").innerHTML =
+    '<div class="painel-cab"><h3>'+esc(GRUPOS[moduloAtivo].n)+'</h3>'
+    + '<span>'+esc(GRUPOS[moduloAtivo].s)+'</span>'
+    + '<em>'+doModulo.length+' projeto'+(doModulo.length>1?"s":"")+'</em></div>'
+    + '<div class="rolavel"><div class="cards">' + doModulo.map(function(p){
+        return '<article class="card'+(p.o?" dest":"")+'">'
+          + '<h4>'+esc(p.n)+(p.o?' <span class="selo9">9+</span>':'')+'</h4>'
+          + '<p class="cli">'+esc(p.c)+(p.i?' <i>· integração</i>':'')+'</p>'
+          + '<p>'+esc(p.d)+'</p>'
+          + '<div class="meta">'
+          + p.t.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")
+          + (p.no?'<span class="tag nota">avaliação '+p.no[0].toFixed(1)+' / '+p.no[1].toFixed(1)+'</span>':'')
+          + '</div></article>';
+      }).join("") + '</div></div>';
+}
+
+/* trocar de módulo no índice */
+document.getElementById("indice").addEventListener("click",function(ev){
+  var b = ev.target.closest("button[data-g]"); if(!b) return;
+  moduloAtivo = b.getAttribute("data-g");
+  pinta();
+});
+
+/* integrações — mesma lógica: índice de frentes + painel aberto */
+var frenteAtiva = null;
+function pintaInt(){
+  var total = FRENTES.reduce(function(s,f){ return s+f[1].length; },0);
+  document.getElementById("indice-int").innerHTML =
+    '<p class="indice-tit">Frente de integração</p>' +
+    FRENTES.map(function(f,i){
+      return '<button data-f="'+i+'" aria-current="'+(i===frenteAtiva?"true":"false")+'">'
+           + esc(f[0])+'<b>'+f[1].length+'</b></button>';
+    }).join("");
+  if(frenteAtiva===null){
+    document.getElementById("painel-int").innerHTML =
+      '<div class="convite"><p class="cv-tit">Escolha uma frente ao lado</p>'
+      + '<p class="cv-txt">Cada frente lista os clientes e as APIs que liguei ao Protheus. '
+      + 'São <b>'+total+' integrações</b> em <b>'+FRENTES.length+' frentes</b>.</p></div>';
+    return;
+  }
+  var f = FRENTES[frenteAtiva];
+  document.getElementById("painel-int").innerHTML =
+    '<div class="painel-cab"><h3>'+esc(f[0])+'</h3><span>sistema externo × Protheus</span>'
+    + '<em>'+f[1].length+' integrações</em></div>'
+    + '<div class="rolavel"><div class="ints">' + f[1].map(function(l){
+        return '<div class="int"><div class="c">'+esc(l[0])+'</div><div class="d">'+esc(l[1])+'</div>'
+             + '<div class="a">'+l[2].map(function(a){return '<span>'+esc(a)+'</span>';}).join("")+'</div></div>';
+      }).join("") + '</div></div>';
+}
+document.getElementById("indice-int").addEventListener("click",function(ev){
+  var b = ev.target.closest("button[data-f]"); if(!b) return;
+  frenteAtiva = +b.getAttribute("data-f");
+  pintaInt();
+});
+
+/* produtos — mesmo padrão: índice à esquerda, detalhe à direita */
+var produtoAtivo = null;
+function pintaProd(){
+  document.getElementById("indice-prod").innerHTML =
+    '<p class="indice-tit">Produto autoral</p>' +
+    PRODUTOS.map(function(p,i){
+      return '<button data-p="'+i+'" aria-current="'+(i===produtoAtivo?"true":"false")+'">'+esc(p.n)+'</button>';
+    }).join("");
+  if(produtoAtivo===null){
+    document.getElementById("painel-prod").innerHTML =
+      '<div class="convite"><p class="cv-tit">Escolha um produto ao lado</p>'
+      + '<p class="cv-txt">Três produtos concebidos, arquitetados e desenvolvidos por mim — '
+      + 'plataforma web regulada pela ANAC, app mobile publicado nas lojas e pipeline de dados.</p></div>';
+    return;
+  }
+  var p = PRODUTOS[produtoAtivo];
+  document.getElementById("painel-prod").innerHTML =
+    '<div class="painel-cab"><h3>'+esc(p.n)+'</h3><span>'+esc(p.s)+'</span>'
+    + '<em>autoria integral</em></div>'
+    + '<div class="rolavel"><article class="prod"><p>'+esc(p.d)+'</p>'
+    + (p.nums.length?'<div class="nums">'+p.nums.map(function(n){return '<div><b>'+n[0]+'</b><span>'+esc(n[1])+'</span></div>';}).join("")+'</div>':'')
+    + '</article></div>';
+}
+document.getElementById("indice-prod").addEventListener("click",function(ev){
+  var b = ev.target.closest("button[data-p]"); if(!b) return;
+  produtoAtivo = +b.getAttribute("data-p");
+  pintaProd();
+});
+pintaProd();
+document.getElementById("cargos").innerHTML = CARGOS.map(function(c){
+  return '<article class="cargo"><div class="ano">'+c[0]+'</div><div><h3>'+esc(c[1])+'</h3>'
+    + '<p class="fn">'+esc(c[2])+'</p><p>'+esc(c[3])+'</p></div></article>';
+}).join("");
+document.getElementById("n-proj").textContent = P.length;
+
+pinta();
+pintaInt();
+document.getElementById("n-proj").textContent = P.length;
+document.getElementById("n-int").textContent = FRENTES.reduce(function(s,f){return s+f[1].length;},0);
+
+/* abas: alternam a seção e mantêm deep-link e botão voltar */
+(function(){
+  var abas = document.querySelectorAll(".aba"), pgs = document.querySelectorAll(".pg");
+  function mostra(r,rolar){
+    var ok = false;
+    pgs.forEach(function(p){ var on = p.getAttribute("data-pg")===r; p.classList.toggle("on",on); if(on) ok=true; });
+    if(!ok){ document.querySelector('.pg[data-pg="trajetoria"]').classList.add("on"); r = "trajetoria"; }
+    abas.forEach(function(a){ a.setAttribute("aria-selected", a.getAttribute("data-r")===r?"true":"false"); });
+    if(rolar){
+      var y = document.querySelector(".abas").offsetTop - 52;
+      window.scrollTo({top:y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto":"smooth"});
+    }
+  }
+  abas.forEach(function(a){
+    a.addEventListener("click",function(){
+      var r = a.getAttribute("data-r");
+      if(location.hash !== "#"+r){ location.hash = r; } else { mostra(r,true); }
     });
   });
+  window.addEventListener("hashchange",function(){ mostra(location.hash.replace(/^#/,"") || "trajetoria", true); });
+  mostra(location.hash.replace(/^#/,"") || "trajetoria", false);
 })();
 </script>
 </body>
