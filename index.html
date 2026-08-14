@@ -199,15 +199,12 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .cv-txt b{color:var(--fg);font-weight:600}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
 .card{border:1px solid var(--linha-2);border-left:3px solid var(--azul);background:var(--sup);padding:14px 16px 15px}
-.card.dest{border-left-color:var(--dest);background:var(--dest-luz)}
 .card h4{font-size:15.5px;font-weight:700;letter-spacing:-.015em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .card .cli{font-family:var(--mono);font-size:10.5px;color:var(--azul);margin:4px 0 7px;letter-spacing:.02em}
 .card .cli i{font-style:normal;color:var(--dest)}
 .card p{font-family:var(--serif);font-size:15px;line-height:1.5;color:var(--fg-2)}
 .card .meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;align-items:center}
-.selo9{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--dest);background:var(--bg);border:1.5px solid var(--dest);padding:2px 6px;text-transform:uppercase}
 .tag{font-family:var(--mono);font-size:10.5px;color:var(--fg-2);border:1px solid var(--linha-2);padding:3px 7px;background:var(--sup-2)}
-.tag.nota{color:var(--ok);border-color:#BFD6C8;background:#F0F6F2}
 .tag.pasta{color:var(--fg-3)}
 
 /* ---------- INTEGRAÇÕES ---------- */
@@ -363,9 +360,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="num">§&nbsp;02</div>
     <div>
       <h2>Projetos em produção</h2>
-      <p>Escolha o módulo do Protheus no índice à esquerda; os projetos aparecem ao lado,
-      já com a descrição. O selo vermelho marca os que passaram na dupla auditoria com nota
-      acima de 9.</p>
+      <p>Quarenta entregas que rodam no dia a dia de quem me contratou, organizadas pelo módulo
+      do Protheus que atendem. Escolha um módulo no índice ao lado: cada projeto traz o cliente,
+      o problema que resolveu e as tecnologias envolvidas.</p>
     </div>
   </div>
   <div class="wrap md">
@@ -816,13 +813,12 @@ function pinta(){
     + '<span>'+esc(GRUPOS[moduloAtivo].s)+'</span>'
     + '<em>'+doModulo.length+' projeto'+(doModulo.length>1?"s":"")+'</em></div>'
     + '<div class="rolavel"><div class="cards">' + doModulo.map(function(p){
-        return '<article class="card'+(p.o?" dest":"")+'">'
-          + '<h4>'+esc(p.n)+(p.o?' <span class="selo9">9+</span>':'')+'</h4>'
+        return '<article class="card">'
+          + '<h4>'+esc(p.n)+'</h4>'
           + '<p class="cli">'+esc(p.c)+(p.i?' <i>· integração</i>':'')+'</p>'
           + '<p>'+esc(p.d)+'</p>'
           + '<div class="meta">'
           + p.t.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")
-          + (p.no?'<span class="tag nota">avaliação '+p.no[0].toFixed(1)+' / '+p.no[1].toFixed(1)+'</span>':'')
           + '</div></article>';
       }).join("") + '</div></div>';
 }
