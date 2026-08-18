@@ -925,5 +925,186 @@ document.getElementById("n-int").textContent = FRENTES.reduce(function(s,f){retu
   mostra(location.hash.replace(/^#/,"") || "trajetoria", false);
 })();
 </script>
+<script>
+(function () {
+  // Rastreio de acesso ao portfolio. Nao toca no layout: nenhum estilo, nenhum elemento.
+  // A chave abaixo e publicavel de proposito -- pelo RLS do Supabase ela so consegue
+  // INSERIR evento, nao le a lista de contatos nem os acessos.
+  var SB = 'https://mtvxkbhwkdqabaslnnwh.supabase.co/rest/v1/';
+  var KEY = 'sb_publishable_GOqHvcZK_iZ-aYUn_RZdEw_ugUThINJ';
+  var ATRASO_ABERTURA_MS = 3000;
+
+  if (!window.fetch || !window.localStorage) return;
+
+  function id() {
+    var a = new Uint8Array(8);
+    if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(a);
+    else for (var i = 0; i < 8; i++) a[i] = Math.floor(Math.random() * 256);
+    return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  }
+
+  function guardar(store, chave) {
+    try {
+      var v = store.getItem(chave);
+      if (!v) { v = id(); store.setItem(chave, v); }
+      return v;
+    } catch (e) { return id(); }
+  }
+
+  function envia(tabela, corpo) {
+    try {
+      fetch(SB + tabela, {
+        method: 'POST', keepalive: true, mode: 'cors',
+        headers: {
+          apikey: KEY, Authorization: 'Bearer ' + KEY,
+          'Content-Type': 'application/json', Prefer: 'return=minimal'
+        },
+        body: JSON.stringify(corpo)
+      }).catch(function () {});
+    } catch (e) { /* rastreio nunca pode quebrar a pagina */ }
+  }
+
+  // anon_id sobrevive entre visitas (identifica o navegador); sessao morre com a aba.
+  var anon = guardar(localStorage, 'pf_anon');
+  var sessao = guardar(sessionStorage, 'pf_s');
+
+  // O token vem na URL uma unica vez e fica salvo: se a pessoa voltar dias depois digitando
+  // o endereco direto, a visita continua tendo nome.
+  var token = null;
+  try {
+    var u = new URL(location.href);
+    var k = u.searchParams.get('k');
+    var salvo = localStorage.getItem('pf_token');
+    token = k || salvo;
+    if (k) {
+      if (k !== salvo) localStorage.setItem('pf_token', k);
+      // Some da barra de enderecos: o link nao denuncia o rastreio e nao viaja com o token
+      // caso a pessoa copie o endereco para outra pessoa.
+      u.searchParams.delete('k');
+      history.replaceState({}, '', u.pathname + (u.search || '') + u.hash);
+      // Liga as visitas anonimas anteriores deste navegador a quem agora se identificou.
+      if (localStorage.getItem('pf_vinc') !== k) {
+        envia('pf_identificacoes', { anon_id: anon, token: k });
+        localStorage.setItem('pf_vinc', k);
+      }
+    }
+  } catch (e) { /* URL exotica: segue anonimo */ }
+
+  function ev(tipo, detalhe, ms, ref) {
+    envia('pf_eventos', {
+      token: token || null, anon_id: anon, sessao: sessao, tipo: tipo,
+      detalhe: detalhe ? String(detalhe).slice(0, 300) : null,
+      referrer: ref || null,
+      duracao_ms: ms ? Math.round(ms) : null
+    });
+  }
+
+  // -- Tempo ativo -------------------------------------------------------------
+  // So conta com a aba do navegador em foco. Sem isso, uma janela esquecida aberta
+  // virava "leu por 3 horas".
+  var ativoMs = 0, enviadoMs = 0, desde = document.hidden ? 0 : Date.now(), abriu = false;
+
+  function agora() { return ativoMs + (desde ? Date.now() - desde : 0); }
+  function pausa() { if (desde) { ativoMs += Date.now() - desde; desde = 0; } }
+  function retoma() { if (!desde) desde = Date.now(); }
+
+  // -- Tempo por secao ---------------------------------------------------------
+  // O portfolio mostra uma <section class="pg"> por vez (a que tem a classe "on"), entao
+  // o tempo de leitura de cada uma e exato: e o intervalo em que ela esteve ativa. Medir
+  // por visibilidade contaria varias secoes ao mesmo tempo e inflaria o total.
+  var secAtual = null, secDesde = 0, secMs = {}, secEnviado = {};
+
+  function secVisivel() {
+    var el = document.querySelector('section.pg.on') || document.querySelector('section.pg');
+    return el ? (el.getAttribute('data-pg') || null) : null;
+  }
+
+  function secFecha() {
+    if (secAtual && secDesde) {
+      secMs[secAtual] = (secMs[secAtual] || 0) + (Date.now() - secDesde);
+    }
+    secDesde = 0;
+  }
+
+  function secTroca() {
+    var nova = secVisivel();
+    if (nova === secAtual) { if (!secDesde && !document.hidden) secDesde = Date.now(); return; }
+    secFecha();
+    secAtual = nova;
+    secDesde = document.hidden ? 0 : Date.now();
+  }
+
+  // -- Abertura ----------------------------------------------------------------
+  // So conta apos 3s de leitura real. O robo que o LinkedIn dispara para montar o card de
+  // preview da mensagem nao executa JS e nao permanece -- sem esta espera, todo link
+  // enviado nasceria como "acessado" no mesmo instante do envio.
+  var refInicial = document.referrer || '(direto)';
+  var timer = setInterval(function () {
+    if (agora() < ATRASO_ABERTURA_MS) return;
+    clearInterval(timer);
+    abriu = true;
+    ev('abertura', null, null, refInicial);
+    secTroca();
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(secTroca);
+      document.querySelectorAll('section.pg').forEach(function (el) {
+        obs.observe(el, { attributes: true, attributeFilter: ['class'] });
+      });
+    }
+  }, 500);
+
+  // -- Cliques -----------------------------------------------------------------
+  // Baixar o CV ou clicar no e-mail vale muito mais que qualquer outro clique: e a
+  // diferenca entre "deu uma olhada" e "esta considerando falar comigo".
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var rotulo =
+        /\.pdf$/i.test(href)        ? 'CV: ' + href.split('/').pop()
+      : /^mailto:/i.test(href)      ? 'E-mail'
+      : /linkedin\.com/i.test(href) ? 'LinkedIn'
+      : /github\.com/i.test(href)   ? 'GitHub'
+      : /^https?:/i.test(href)      ? 'Externo: ' + href
+      : null;
+    if (rotulo) ev('clique', rotulo);
+  }, true);
+
+  // -- Profundidade de rolagem -------------------------------------------------
+  var marcos = [25, 50, 75, 100], vistos = {};
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h <= 0) return;
+    var pct = Math.min(100, Math.round(((window.scrollY || 0) / h) * 100));
+    for (var i = 0; i < marcos.length; i++) {
+      var m = marcos[i];
+      if (pct >= m && !vistos[m]) { vistos[m] = 1; ev('scroll', String(m)); }
+    }
+  }, { passive: true });
+
+  // -- Descarga ----------------------------------------------------------------
+  // Envia so o que ainda nao foi enviado. Roda toda vez que a aba perde o foco, mandando
+  // apenas o delta -- ir e voltar varias vezes soma certo em vez de duplicar.
+  function descarrega() {
+    pausa();
+    secFecha();
+    if (!abriu) return;
+
+    var delta = ativoMs - enviadoMs;
+    if (delta >= 1000) { ev('saida', null, delta); enviadoMs = ativoMs; }
+
+    for (var nome in secMs) {
+      var d = secMs[nome] - (secEnviado[nome] || 0);
+      if (d >= 1000) { ev('secao', nome, d); secEnviado[nome] = secMs[nome]; }
+    }
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) descarrega();
+    else { retoma(); if (secAtual && !secDesde) secDesde = Date.now(); }
+  });
+  window.addEventListener('pagehide', descarrega);
+})();
+</script>
 </body>
 </html>
